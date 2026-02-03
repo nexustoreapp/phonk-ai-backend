@@ -1,32 +1,23 @@
 from fastapi import FastAPI, UploadFile, File
-import os
-import uuid
-
-from engine.audio_analyzer import analyze_audio
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root():
-    return {"status": "PHONK AI backend online"}
-
+    return {"status": "ok"}
 
 @app.post("/upload-audio")
 async def upload_audio(file: UploadFile = File(...)):
-    ext = file.filename.split(".")[-1]
-    filename = f"{uuid.uuid4()}.{ext}"
-    path = os.path.join(UPLOAD_DIR, filename)
-
-    with open(path, "wb") as f:
-        f.write(await file.read())
-
-    analysis = analyze_audio(path)
-
     return {
-        "file_id": filename,
-        "analysis": analysis
+        "filename": file.filename,
+        "content_type": file.content_type
     }
