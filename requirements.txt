@@ -2,6 +2,3 @@ fastapi
 uvicorn
 python-jose
 passlib[bcrypt]
-numpy
-librosa
-soundfile
