@@ -1,34 +1,36 @@
-from fastapi import FastAPI, UploadFile, File, Form
+from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 import os
 import uuid
+import shutil
 
-from engine.audio_analyzer import analyze_audio
-
-app = FastAPI()
-
+# ===== CONFIG =====
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+app = FastAPI(title="Phonk AI API")
 
+
+# ===== ROOT =====
 @app.get("/")
 def root():
     return {"status": "ok", "service": "phonk-ai"}
 
 
+# ===== UPLOAD AUDIO =====
 @app.post("/upload-audio")
 async def upload_audio(file: UploadFile = File(...)):
     if not file.filename:
-        return JSONResponse(
-            status_code=400,
-            content={"error": "no file sent"}
-        )
+        raise HTTPException(status_code=400, detail="No file provided")
 
     file_id = f"{uuid.uuid4()}_{file.filename}"
     file_path = os.path.join(UPLOAD_DIR, file_id)
 
-    with open(file_path, "wb") as buffer:
-        buffer.write(await file.read())
+    try:
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
     return {
         "message": "upload ok",
@@ -37,15 +39,27 @@ async def upload_audio(file: UploadFile = File(...)):
     }
 
 
+# ===== ANALYZE AUDIO =====
 @app.post("/analyze-audio")
-async def analyze_audio_endpoint(file_id: str = Form(...)):
-    file_path = os.path.join(UPLOAD_DIR, file_id)
+async def analyze_audio(file: UploadFile = File(...)):
+    if not file.filename:
+        raise HTTPException(status_code=400, detail="No file provided")
 
-    if not os.path.exists(file_path):
-        return JSONResponse(
-            status_code=404,
-            content={"error": "file not found"}
-        )
+    temp_id = f"{uuid.uuid4()}_{file.filename}"
+    temp_path = os.path.join(UPLOAD_DIR, temp_id)
 
-    result = analyze_audio(file_path)
-    return result
+    try:
+        with open(temp_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    # STUB DE ANÁLISE (sem librosa por enquanto)
+    result = {
+        "status": "ok",
+        "message": "audio received",
+        "analysis_stage": "stub",
+        "file": temp_id
+    }
+
+    return JSONResponse(content=result)
