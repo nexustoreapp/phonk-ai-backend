@@ -13,7 +13,6 @@ MAX_DURATION_SECONDS = 7 * 60  # 7 minutos
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-
 # =========================
 # Utils
 # =========================
@@ -21,30 +20,6 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 def get_audio_duration(file_path: str) -> float:
     info = sf.info(file_path)
     return info.frames / info.samplerate
-
-
-def estimate_bpm(signal: np.ndarray, sr: int) -> float:
-    if signal.ndim > 1:
-        signal = signal.mean(axis=1)
-
-    energy = np.abs(signal)
-    energy = energy / np.max(energy)
-
-    peaks = np.where(energy > 0.9)[0]
-    if len(peaks) < 2:
-        return None
-
-    intervals = np.diff(peaks) / sr
-    avg_interval = np.mean(intervals)
-
-    if avg_interval <= 0:
-        return None
-
-    bpm = 60.0 / avg_interval
-    if bpm < 40 or bpm > 240:
-        return None
-
-    return round(bpm, 2)
 
 
 def classify_audio(signal: np.ndarray) -> str:
@@ -59,6 +34,52 @@ def classify_audio(signal: np.ndarray) -> str:
         return "melody"
     else:
         return "beat"
+
+
+def analyze_bpm(signal: np.ndarray, sr: int):
+    """
+    Retorna:
+    - bpm_reference: BPM mais estável
+    - bpm_performance: BPM médio detectado
+    - confidence: confiança (0–1)
+    """
+
+    if signal.ndim > 1:
+        signal = signal.mean(axis=1)
+
+    # envelope de energia
+    energy = np.abs(signal)
+    max_energy = np.max(energy)
+
+    if max_energy == 0:
+        return None, None, 0.0
+
+    energy = energy / max_energy
+
+    peaks = np.where(energy > 0.9)[0]
+
+    if len(peaks) < 4:
+        return None, None, 0.15  # pouco pulso
+
+    intervals = np.diff(peaks) / sr
+    intervals = intervals[intervals > 0]
+
+    if len(intervals) == 0:
+        return None, None, 0.15
+
+    avg_interval = np.mean(intervals)
+    bpm_perf = 60.0 / avg_interval
+
+    if bpm_perf < 40 or bpm_perf > 240:
+        return None, None, 0.2
+
+    # estabilização
+    bpm_ref = round(bpm_perf / 2) * 2
+
+    variance = np.std(intervals)
+    confidence = max(0.0, min(1.0, 1.0 - (variance * 5)))
+
+    return round(bpm_ref, 2), round(bpm_perf, 2), round(confidence, 2)
 
 
 # =========================
@@ -99,15 +120,18 @@ async def analyze_audio(file_id: str):
 
     signal, sr = sf.read(file_path)
     duration = get_audio_duration(file_path)
-    bpm = estimate_bpm(signal, sr)
+
     audio_type = classify_audio(signal)
+    bpm_ref, bpm_perf, confidence = analyze_bpm(signal, sr)
 
     return {
         "file_id": file_id,
         "duration_seconds": round(duration, 2),
         "sample_rate": sr,
-        "bpm_real": bpm,
-        "audio_type": audio_type
+        "audio_type": audio_type,
+        "bpm_reference": bpm_ref,
+        "bpm_performance": bpm_perf,
+        "bpm_confidence": confidence
     }
 
 
@@ -124,28 +148,35 @@ async def orchestrate(file_id: str):
     file_path = os.path.join(UPLOAD_DIR, matches[0])
     signal, sr = sf.read(file_path)
 
-    bpm = estimate_bpm(signal, sr)
     audio_type = classify_audio(signal)
+    bpm_ref, bpm_perf, confidence = analyze_bpm(signal, sr)
 
     decisions = []
 
     if audio_type == "vocal":
+        decisions.append("vocal detectado")
         decisions.append("necessita beat compatível")
-        decisions.append("ajustar grid ao BPM do vocal")
+        if bpm_ref:
+            decisions.append("grid pode ser ajustado ao BPM do vocal")
+        else:
+            decisions.append("vocal sem pulso definido")
     elif audio_type == "beat":
+        decisions.append("beat detectado")
         decisions.append("pronto para receber vocal")
     else:
-        decisions.append("pode ser base ou elemento melódico")
+        decisions.append("elemento melódico")
 
-    if bpm:
-        decisions.append(f"BPM de referência sugerido: {bpm}")
+    if bpm_ref:
+        decisions.append(f"BPM de referência: {bpm_ref}")
     else:
-        decisions.append("BPM indeterminado – requer referência externa")
+        decisions.append("BPM não definido – referência externa necessária")
 
     return {
         "file_id": file_id,
         "audio_type": audio_type,
-        "bpm_real": bpm,
+        "bpm_reference": bpm_ref,
+        "bpm_performance": bpm_perf,
+        "bpm_confidence": confidence,
         "decisions": decisions,
         "status": "orquestrado"
     }
