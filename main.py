@@ -1,36 +1,28 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 import os
 import uuid
-import shutil
 
-# ===== CONFIG =====
+app = FastAPI()
+
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-app = FastAPI(title="Phonk AI API")
 
-
-# ===== ROOT =====
 @app.get("/")
 def root():
     return {"status": "ok", "service": "phonk-ai"}
 
 
-# ===== UPLOAD AUDIO =====
 @app.post("/upload-audio")
 async def upload_audio(file: UploadFile = File(...)):
     if not file.filename:
-        raise HTTPException(status_code=400, detail="No file provided")
+        raise HTTPException(status_code=400, detail="No file sent")
 
     file_id = f"{uuid.uuid4()}_{file.filename}"
     file_path = os.path.join(UPLOAD_DIR, file_id)
 
-    try:
-        with open(file_path, "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    with open(file_path, "wb") as buffer:
+        buffer.write(await file.read())
 
     return {
         "message": "upload ok",
@@ -39,27 +31,17 @@ async def upload_audio(file: UploadFile = File(...)):
     }
 
 
-# ===== ANALYZE AUDIO =====
 @app.post("/analyze-audio")
-async def analyze_audio(file: UploadFile = File(...)):
-    if not file.filename:
-        raise HTTPException(status_code=400, detail="No file provided")
+async def analyze_audio(file_id: str = Form(...)):
+    file_path = os.path.join(UPLOAD_DIR, file_id)
 
-    temp_id = f"{uuid.uuid4()}_{file.filename}"
-    temp_path = os.path.join(UPLOAD_DIR, temp_id)
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="File not found")
 
-    try:
-        with open(temp_path, "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-    # STUB DE ANÁLISE (sem librosa por enquanto)
-    result = {
+    # Stub por enquanto
+    return {
         "status": "ok",
         "message": "audio received",
         "analysis_stage": "stub",
-        "file": temp_id
+        "file_id": file_id
     }
-
-    return JSONResponse(content=result)
