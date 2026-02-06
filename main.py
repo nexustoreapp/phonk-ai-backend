@@ -2,13 +2,13 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import os
 import uuid
+import subprocess
 import wave
 import struct
 import math
 
 app = FastAPI()
 
-# CORS liberado pra testar de qualquer app (HTTP Shortcut incluso)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -19,6 +19,8 @@ app.add_middleware(
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+ALLOWED_EXTENSIONS = {".wav", ".mp3", ".ogg"}
+
 
 @app.get("/")
 def root():
@@ -26,6 +28,19 @@ def root():
         "status": "ok",
         "message": "PHONK AI API online"
     }
+
+
+def convert_to_wav(input_path: str, output_path: str) -> bool:
+    try:
+        subprocess.run(
+            ["ffmpeg", "-y", "-i", input_path, output_path],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=True
+        )
+        return True
+    except Exception:
+        return False
 
 
 def analyze_wav(path: str):
@@ -42,12 +57,8 @@ def analyze_wav(path: str):
 
         samples = struct.unpack("<" + "h" * (len(raw) // 2), raw)
 
-        # RMS (volume médio)
         rms = math.sqrt(sum(s * s for s in samples) / len(samples))
-
-        # Pico
         peak = max(abs(s) for s in samples)
-
         duration = frames / float(sample_rate)
 
     return {
@@ -61,21 +72,44 @@ def analyze_wav(path: str):
 
 @app.post("/upload-audio")
 async def upload_audio(file: UploadFile = File(...)):
-    if not file.filename.lower().endswith(".wav"):
-        raise HTTPException(status_code=400, detail="Somente WAV é aceito")
+    ext = os.path.splitext(file.filename)[1].lower()
+
+    if ext not in ALLOWED_EXTENSIONS:
+        raise HTTPException(
+            status_code=400,
+            detail="Formato não suportado. Use WAV, MP3 ou OGG"
+        )
 
     file_id = str(uuid.uuid4())
-    file_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
+    original_path = os.path.join(UPLOAD_DIR, f"{file_id}{ext}")
 
-    with open(file_path, "wb") as f:
+    with open(original_path, "wb") as f:
         f.write(await file.read())
 
-    try:
-        analysis = analyze_wav(file_path)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-    return {
+    response = {
         "file_id": file_id,
-        "analysis": analysis
+        "original_name": file.filename,
+        "original_format": ext.replace(".", ""),
+        "stored": True
     }
+
+    wav_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
+
+    if ext != ".wav":
+        converted = convert_to_wav(original_path, wav_path)
+        if not converted:
+            response["analysis_status"] = "skipped"
+            response["note"] = "Conversão para WAV não disponível no servidor"
+            return response
+    else:
+        wav_path = original_path
+
+    try:
+        response["analysis"] = analyze_wav(wav_path)
+        response["analysis_status"] = "full"
+        response["analysis_format"] = "wav"
+    except Exception as e:
+        response["analysis_status"] = "failed"
+        response["error"] = str(e)
+
+    return response
