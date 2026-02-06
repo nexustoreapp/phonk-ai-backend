@@ -1,13 +1,16 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.responses import JSONResponse
 import uuid
 import os
 import soundfile as sf
 import numpy as np
+import math
 
 app = FastAPI()
 
 UPLOAD_DIR = "uploads"
 MAX_DURATION_SECONDS = 7 * 60  # 7 minutos
+DEFAULT_BPM_FALLBACK = 130.0  # usado só para time-base quando BPM não é detectável
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
@@ -20,22 +23,17 @@ def get_audio_duration(file_path: str) -> float:
     return info.frames / info.samplerate
 
 
-def mono(signal: np.ndarray) -> np.ndarray:
-    if signal.ndim > 1:
-        return signal.mean(axis=1)
-    return signal
-
-
 def estimate_bpm(signal: np.ndarray, sr: int) -> float | None:
-    signal = mono(signal)
+    if signal.ndim > 1:
+        signal = signal.mean(axis=1)
 
     energy = np.abs(signal)
     if np.max(energy) == 0:
         return None
 
-    energy /= np.max(energy)
-
+    energy = energy / np.max(energy)
     peaks = np.where(energy > 0.9)[0]
+
     if len(peaks) < 2:
         return None
 
@@ -53,7 +51,9 @@ def estimate_bpm(signal: np.ndarray, sr: int) -> float | None:
 
 
 def classify_audio(signal: np.ndarray) -> str:
-    signal = mono(signal)
+    if signal.ndim > 1:
+        signal = signal.mean(axis=1)
+
     rms = np.sqrt(np.mean(signal ** 2))
 
     if rms < 0.02:
@@ -63,6 +63,21 @@ def classify_audio(signal: np.ndarray) -> str:
     else:
         return "beat"
 
+
+def build_time_base(duration_sec: float, bpm: float) -> dict:
+    seconds_per_beat = 60.0 / bpm
+    beats_total = duration_sec / seconds_per_beat
+    bars_4_4 = beats_total / 4
+
+    return {
+        "bpm": bpm,
+        "seconds_per_beat": round(seconds_per_beat, 6),
+        "total_beats": round(beats_total, 3),
+        "total_bars_4_4": round(bars_4_4, 3),
+        "time_signature": "4/4",
+        "grid_recommendation": "1 beat",
+        "fl_studio_ready": True
+    }
 
 # =========================
 # Upload
@@ -78,15 +93,16 @@ async def upload_audio(file: UploadFile = File(...)):
         f.write(await file.read())
 
     duration = get_audio_duration(file_path)
+
     if duration > MAX_DURATION_SECONDS:
         os.remove(file_path)
         raise HTTPException(status_code=400, detail="Áudio excede 7 minutos")
 
     return {
         "file_id": file_id,
-        "duration_seconds": round(duration, 2)
+        "duration_seconds": round(duration, 2),
+        "status": "uploaded"
     }
-
 
 # =========================
 # Analyze
@@ -99,23 +115,27 @@ async def analyze_audio(file_id: str):
         raise HTTPException(status_code=404, detail="Arquivo não encontrado")
 
     file_path = os.path.join(UPLOAD_DIR, matches[0])
+
     signal, sr = sf.read(file_path)
+    duration = get_audio_duration(file_path)
 
     bpm_real = estimate_bpm(signal, sr)
     audio_type = classify_audio(signal)
-    duration = get_audio_duration(file_path)
+
+    bpm_for_timebase = bpm_real if bpm_real else DEFAULT_BPM_FALLBACK
+    time_base = build_time_base(duration, bpm_for_timebase)
 
     return {
         "file_id": file_id,
         "duration_seconds": round(duration, 2),
         "sample_rate": sr,
+        "audio_type": audio_type,
         "bpm_real": bpm_real,
-        "audio_type": audio_type
+        "time_base": time_base
     }
 
-
 # =========================
-# Orchestrate
+# Orchestrate (FL Ready)
 # =========================
 
 @app.post("/orchestrate")
@@ -126,78 +146,34 @@ async def orchestrate(file_id: str):
 
     file_path = os.path.join(UPLOAD_DIR, matches[0])
     signal, sr = sf.read(file_path)
+    duration = get_audio_duration(file_path)
 
     bpm_real = estimate_bpm(signal, sr)
     audio_type = classify_audio(signal)
 
+    bpm_for_timebase = bpm_real if bpm_real else DEFAULT_BPM_FALLBACK
+    time_base = build_time_base(duration, bpm_for_timebase)
+
     decisions = []
 
     if audio_type == "vocal":
-        decisions += [
-            "necessita beat compatível",
-            "sincronizar grid ao tempo do vocal"
-        ]
+        decisions.append("usar vocal como referência de grid")
+        decisions.append("sincronizar beat ao vocal")
     elif audio_type == "beat":
-        decisions.append("pronto para receber vocal")
+        decisions.append("beat pronto para receber vocal")
     else:
-        decisions.append("elemento melódico ou base")
+        decisions.append("elemento melódico — alinhar ao grid")
 
-    if bpm_real:
-        decisions.append(f"BPM real detectado: {bpm_real}")
-    else:
-        decisions.append("BPM não detectável sem referência externa")
+    decisions.append("time base compatível com FL Studio")
 
     return {
         "file_id": file_id,
         "audio_type": audio_type,
         "bpm_real": bpm_real,
-        "decisions": decisions
+        "time_base": time_base,
+        "decisions": decisions,
+        "status": "fl_time_base_ready"
     }
-
-
-# =========================
-# FL Studio Time Base Sync
-# =========================
-
-@app.post("/fl/sync")
-async def fl_sync(file_id: str):
-    matches = [f for f in os.listdir(UPLOAD_DIR) if f.startswith(file_id)]
-    if not matches:
-        raise HTTPException(status_code=404, detail="Arquivo não encontrado")
-
-    file_path = os.path.join(UPLOAD_DIR, matches[0])
-    signal, sr = sf.read(file_path)
-
-    bpm_real = estimate_bpm(signal, sr)
-    audio_type = classify_audio(signal)
-
-    if bpm_real is None:
-        raise HTTPException(
-            status_code=422,
-            detail="BPM real não detectável. Referência externa necessária."
-        )
-
-    seconds_per_bar = (60 / bpm_real) * 4
-
-    return {
-        "fl_project": {
-            "bpm_project": bpm_real,
-            "time_signature": "4/4",
-            "seconds_per_bar": round(seconds_per_bar, 4),
-            "start_offset_seconds": 0.0
-        },
-        "audio_alignment": {
-            "recommended_stretch_mode": "resample" if audio_type == "beat" else "stretch",
-            "align_to": "bar_1"
-        },
-        "markers": [
-            {"bar": 1, "time_seconds": 0.0},
-            {"bar": 2, "time_seconds": round(seconds_per_bar, 4)},
-            {"bar": 3, "time_seconds": round(seconds_per_bar * 2, 4)}
-        ],
-        "status": "fl_timebase_ready"
-    }
-
 
 # =========================
 # Health
@@ -205,4 +181,4 @@ async def fl_sync(file_id: str):
 
 @app.get("/")
 def root():
-    return {"status": "online"}
+    return {"status": "online", "engine": "phonk-ai-backend"}
