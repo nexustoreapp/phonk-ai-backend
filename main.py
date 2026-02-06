@@ -1,188 +1,116 @@
-import os
-import uuid
-import wave
-import math
-import sqlite3
-import tempfile
-import subprocess
-
+# main.py
 from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.responses import JSONResponse
-
+from fastapi.middleware.cors import CORSMiddleware
+import uuid
+import os
+import subprocess
+import wave
+import contextlib
 import numpy as np
 
 app = FastAPI()
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "audio.db")
-UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
+# CORS liberado (frontend depois)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
-# ---------------------------
-# DATABASE
-# ---------------------------
-def get_db():
-    return sqlite3.connect(DB_PATH)
-
-
-def init_db():
-    with get_db() as conn:
-        conn.execute("""
-        CREATE TABLE IF NOT EXISTS audio (
-            file_id TEXT PRIMARY KEY,
-            filename TEXT,
-            wav_path TEXT,
-            duration REAL,
-            sample_rate INTEGER,
-            channels INTEGER,
-            file_size_mb REAL,
-            bpm REAL,
-            rms REAL,
-            peak REAL
-        )
-        """)
-        conn.commit()
-
-
-init_db()
-
-
-# ---------------------------
-# AUDIO UTILS
-# ---------------------------
 def convert_to_wav(input_path: str, output_path: str):
-    cmd = [
-        "ffmpeg", "-y",
+    """
+    Converte qualquer áudio (mp3, ogg, etc) para WAV PCM 16bit
+    Requer ffmpeg disponível no ambiente (Render tem).
+    """
+    command = [
+        "ffmpeg",
+        "-y",
         "-i", input_path,
-        "-ac", "2",
+        "-ac", "1",
         "-ar", "44100",
+        "-sample_fmt", "s16",
         output_path
     ]
-    subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
 
 
-def analyze_wav_basic(wav_path: str):
-    with wave.open(wav_path, "rb") as wf:
+def analyze_wav(wav_path: str):
+    """
+    Análise simples real (não fake):
+    - duração
+    - sample rate
+    - RMS médio
+    """
+    with contextlib.closing(wave.open(wav_path, 'rb')) as wf:
         frames = wf.getnframes()
         rate = wf.getframerate()
-        channels = wf.getnchannels()
         duration = frames / float(rate)
 
-    size_mb = os.path.getsize(wav_path) / (1024 * 1024)
-    return duration, rate, channels, size_mb
-
-
-def analyze_music(wav_path: str):
-    with wave.open(wav_path, "rb") as wf:
-        frames = wf.readframes(wf.getnframes())
-        channels = wf.getnchannels()
-
-    audio = np.frombuffer(frames, dtype=np.int16)
-    if channels == 2:
-        audio = audio.reshape(-1, 2).mean(axis=1)
-
-    audio = audio / 32768.0
-
-    rms = float(np.sqrt(np.mean(audio ** 2)))
-    peak = float(np.max(np.abs(audio)))
-
-    # BPM estimation (simple energy peak method)
-    energy = audio ** 2
-    window = 1024
-    energy_env = np.convolve(energy, np.ones(window) / window, mode="same")
-
-    peaks = np.where(energy_env > np.mean(energy_env) * 1.5)[0]
-    if len(peaks) > 1:
-        intervals = np.diff(peaks)
-        avg_interval = np.mean(intervals)
-        bpm = float(60 * 44100 / avg_interval)
-    else:
-        bpm = 0.0
-
-    return bpm, rms, peak
-
-
-# ---------------------------
-# ROUTES
-# ---------------------------
-@app.post("/upload-audio")
-async def upload_audio(file: UploadFile = File(...)):
-    file_id = str(uuid.uuid4())
-    ext = os.path.splitext(file.filename)[1].lower()
-
-    with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as tmp:
-        tmp.write(await file.read())
-        tmp_path = tmp.name
-
-    wav_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
-    convert_to_wav(tmp_path, wav_path)
-    os.unlink(tmp_path)
-
-    duration, sr, channels, size_mb = analyze_wav_basic(wav_path)
-
-    with get_db() as conn:
-        conn.execute("""
-        INSERT INTO audio (file_id, filename, wav_path, duration, sample_rate, channels, file_size_mb)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """, (
-            file_id,
-            file.filename,
-            wav_path,
-            duration,
-            sr,
-            channels,
-            size_mb
-        ))
-        conn.commit()
+    with wave.open(wav_path, 'rb') as wf:
+        raw = wf.readframes(wf.getnframes())
+        audio = np.frombuffer(raw, dtype=np.int16)
+        rms = float(np.sqrt(np.mean(audio.astype(np.float64) ** 2)))
 
     return {
-        "file_id": file_id,
-        "status": "uploaded",
-        "analysis": {
-            "duration_seconds": duration,
-            "sample_rate": sr,
-            "channels": channels,
-            "file_size_mb": round(size_mb, 2),
-            "format": "wav"
-        }
-    }
-
-
-@app.get("/analyze-audio/{file_id}")
-def analyze_audio(file_id: str):
-    with get_db() as conn:
-        row = conn.execute(
-            "SELECT wav_path FROM audio WHERE file_id = ?",
-            (file_id,)
-        ).fetchone()
-
-    if not row:
-        raise HTTPException(404, "Audio not found")
-
-    wav_path = row[0]
-    bpm, rms, peak = analyze_music(wav_path)
-
-    with get_db() as conn:
-        conn.execute("""
-        UPDATE audio
-        SET bpm = ?, rms = ?, peak = ?
-        WHERE file_id = ?
-        """, (bpm, rms, peak, file_id))
-        conn.commit()
-
-    return {
-        "file_id": file_id,
-        "status": "done",
-        "music_analysis": {
-            "bpm": round(bpm, 2),
-            "rms": round(rms, 6),
-            "peak": round(peak, 6)
-        }
+        "duration_seconds": round(duration, 2),
+        "sample_rate": rate,
+        "rms": round(rms, 2)
     }
 
 
 @app.get("/")
 def root():
-    return {"status": "ok"}
+    return {"status": "online"}
+
+
+@app.post("/upload")
+async def upload_audio(file: UploadFile = File(...)):
+    if not file.filename:
+        raise HTTPException(status_code=400, detail="Arquivo inválido")
+
+    file_id = str(uuid.uuid4())
+    ext = os.path.splitext(file.filename)[1].lower()
+
+    original_path = os.path.join(UPLOAD_DIR, f"{file_id}{ext}")
+    wav_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
+
+    with open(original_path, "wb") as f:
+        f.write(await file.read())
+
+    try:
+        if ext != ".wav":
+            convert_to_wav(original_path, wav_path)
+        else:
+            os.rename(original_path, wav_path)
+    except Exception:
+        raise HTTPException(status_code=500, detail="Erro ao converter áudio")
+
+    return {
+        "file_id": file_id,
+        "wav_ready": True
+    }
+
+
+@app.post("/analyze/{file_id}")
+def analyze_audio(file_id: str):
+    wav_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
+
+    if not os.path.exists(wav_path):
+        raise HTTPException(status_code=404, detail="Arquivo não encontrado")
+
+    try:
+        analysis = analyze_wav(wav_path)
+    except Exception:
+        raise HTTPException(status_code=500, detail="Erro ao analisar áudio")
+
+    return {
+        "file_id": file_id,
+        "analysis": analysis
+    }
