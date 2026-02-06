@@ -1,16 +1,14 @@
-# main.py
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import uuid
 import os
-import subprocess
+import uuid
 import wave
-import contextlib
+import subprocess
 import numpy as np
 
 app = FastAPI()
 
-# CORS liberado (frontend depois)
+# CORS (liberado pra frontend depois)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -19,98 +17,108 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
+UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
 def convert_to_wav(input_path: str, output_path: str):
     """
-    Converte qualquer áudio (mp3, ogg, etc) para WAV PCM 16bit
-    Requer ffmpeg disponível no ambiente (Render tem).
+    Converte MP3/OGG -> WAV usando ffmpeg.
+    ffmpeg já vem disponível no ambiente do Render.
     """
-    command = [
+    cmd = [
         "ffmpeg",
         "-y",
         "-i", input_path,
         "-ac", "1",
         "-ar", "44100",
-        "-sample_fmt", "s16",
         output_path
     ]
-    subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 def analyze_wav(wav_path: str):
     """
-    Análise simples real (não fake):
+    Análise simples e estável:
     - duração
-    - sample rate
-    - RMS médio
+    - RMS (energia)
+    - BPM aproximado (picos)
     """
-    with contextlib.closing(wave.open(wav_path, 'rb')) as wf:
+    with wave.open(wav_path, "rb") as wf:
+        channels = wf.getnchannels()
+        sample_rate = wf.getframerate()
         frames = wf.getnframes()
-        rate = wf.getframerate()
-        duration = frames / float(rate)
+        duration = frames / float(sample_rate)
+        audio = wf.readframes(frames)
 
-    with wave.open(wav_path, 'rb') as wf:
-        raw = wf.readframes(wf.getnframes())
-        audio = np.frombuffer(raw, dtype=np.int16)
-        rms = float(np.sqrt(np.mean(audio.astype(np.float64) ** 2)))
+    # WAV 16-bit
+    samples = np.frombuffer(audio, dtype=np.int16)
+    if channels > 1:
+        samples = samples[::channels]
+
+    samples = samples.astype(np.float32)
+
+    # Energia (RMS)
+    rms = float(np.sqrt(np.mean(samples ** 2)))
+
+    # BPM simples por picos
+    abs_signal = np.abs(samples)
+    threshold = np.percentile(abs_signal, 95)
+    peaks = np.where(abs_signal > threshold)[0]
+
+    if len(peaks) > 1:
+        peak_intervals = np.diff(peaks) / sample_rate
+        avg_interval = np.mean(peak_intervals)
+        bpm = float(60.0 / avg_interval) if avg_interval > 0 else 0.0
+    else:
+        bpm = 0.0
 
     return {
-        "duration_seconds": round(duration, 2),
-        "sample_rate": rate,
-        "rms": round(rms, 2)
+        "duration_sec": round(duration, 2),
+        "energy_rms": round(rms, 2),
+        "bpm_estimated": round(bpm, 2),
+        "sample_rate": sample_rate
     }
 
 
 @app.get("/")
-def root():
-    return {"status": "online"}
+def health():
+    return {"status": "ok"}
 
 
 @app.post("/upload")
-async def upload_audio(file: UploadFile = File(...)):
+async def upload_and_analyze(file: UploadFile = File(...)):
     if not file.filename:
         raise HTTPException(status_code=400, detail="Arquivo inválido")
 
-    file_id = str(uuid.uuid4())
     ext = os.path.splitext(file.filename)[1].lower()
+    if ext not in [".wav", ".mp3", ".ogg"]:
+        raise HTTPException(
+            status_code=400,
+            detail="Formato não suportado. Use WAV, MP3 ou OGG."
+        )
 
-    original_path = os.path.join(UPLOAD_DIR, f"{file_id}{ext}")
+    file_id = str(uuid.uuid4())
+    raw_path = os.path.join(UPLOAD_DIR, f"{file_id}{ext}")
     wav_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
 
-    with open(original_path, "wb") as f:
+    # salva upload
+    with open(raw_path, "wb") as f:
         f.write(await file.read())
 
-    try:
-        if ext != ".wav":
-            convert_to_wav(original_path, wav_path)
-        else:
-            os.rename(original_path, wav_path)
-    except Exception:
-        raise HTTPException(status_code=500, detail="Erro ao converter áudio")
-
-    return {
-        "file_id": file_id,
-        "wav_ready": True
-    }
-
-
-@app.post("/analyze/{file_id}")
-def analyze_audio(file_id: str):
-    wav_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
+    # converte se precisar
+    if ext != ".wav":
+        convert_to_wav(raw_path, wav_path)
+    else:
+        wav_path = raw_path
 
     if not os.path.exists(wav_path):
-        raise HTTPException(status_code=404, detail="Arquivo não encontrado")
+        raise HTTPException(status_code=500, detail="Erro ao converter áudio")
 
-    try:
-        analysis = analyze_wav(wav_path)
-    except Exception:
-        raise HTTPException(status_code=500, detail="Erro ao analisar áudio")
+    analysis = analyze_wav(wav_path)
 
     return {
         "file_id": file_id,
+        "filename": file.filename,
         "analysis": analysis
     }
