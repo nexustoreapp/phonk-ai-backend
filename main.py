@@ -4,12 +4,21 @@ import os
 import uuid
 import wave
 import contextlib
-import audioop
+import struct
+import math
 
 app = FastAPI()
 
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+
+def compute_rms(samples):
+    if not samples:
+        return 0
+    square_sum = sum(s * s for s in samples)
+    mean_square = square_sum / len(samples)
+    return int(math.sqrt(mean_square))
 
 
 @app.post("/upload-audio")
@@ -36,17 +45,21 @@ async def analyze_audio(file: UploadFile = File(...)):
         buffer.write(await file.read())
 
     try:
-        with contextlib.closing(wave.open(file_path, 'rb')) as wf:
+        with contextlib.closing(wave.open(file_path, "rb")) as wf:
             channels = wf.getnchannels()
             sample_rate = wf.getframerate()
             frames = wf.getnframes()
+            sample_width = wf.getsampwidth()
             duration = frames / float(sample_rate)
 
-            wf.rewind()
             raw_audio = wf.readframes(frames)
 
-            rms = audioop.rms(raw_audio, wf.getsampwidth())
-            peak = audioop.max(raw_audio, wf.getsampwidth())
+            if sample_width != 2:
+                raise Exception("Only 16-bit WAV supported")
+
+            samples = struct.unpack("<" + "h" * (len(raw_audio) // 2), raw_audio)
+            peak = max(abs(s) for s in samples)
+            rms = compute_rms(samples)
 
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"audio analysis failed: {str(e)}")
