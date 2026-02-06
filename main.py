@@ -1,107 +1,104 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
+import numpy as np
+import soundfile as sf
+import tempfile
 import uuid
 import os
-import wave
-import audioop
-import numpy as np
-import subprocess
 
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+app = FastAPI()
 
-app = FastAPI(title="Phonk AI – Audio Analyzer")
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# ---------- UTILIDADES ----------
-
-def convert_to_wav(input_path, output_path):
-    subprocess.run([
-        "ffmpeg", "-y",
-        "-i", input_path,
-        "-ac", "1",
-        "-ar", "44100",
-        output_path
-    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-
-def read_wav(path):
-    with wave.open(path, "rb") as wf:
-        frames = wf.readframes(wf.getnframes())
-        audio = np.frombuffer(frames, dtype=np.int16)
-        return audio, wf.getframerate(), wf.getnframes() / wf.getframerate()
-
-def detect_onsets(audio, sr):
-    diff = np.abs(np.diff(audio))
-    threshold = np.mean(diff) + 2 * np.std(diff)
-    onsets = np.where(diff > threshold)[0]
-    times = onsets / sr
-    return times
-
-def estimate_bpm_from_onsets(onsets):
-    if len(onsets) < 4:
-        return None
-    intervals = np.diff(onsets)
-    intervals = intervals[(intervals > 0.2) & (intervals < 2.0)]
-    if len(intervals) == 0:
-        return None
-    median_interval = np.median(intervals)
-    bpm = 60 / median_interval
-    return round(bpm, 2)
-
-def estimate_performance_bpm(duration, event_count):
-    if duration <= 0 or event_count < 2:
-        return None
-    avg_interval = duration / event_count
-    bpm = 60 / avg_interval
-    return round(bpm, 2)
-
-# ---------- ENDPOINT ----------
-
-@app.post("/analyze-audio")
-async def analyze_audio(file: UploadFile = File(...)):
-    file_id = str(uuid.uuid4())
-    original_path = os.path.join(UPLOAD_DIR, f"{file_id}_{file.filename}")
-    wav_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
-
-    with open(original_path, "wb") as f:
-        f.write(await file.read())
-
-    convert_to_wav(original_path, wav_path)
-
-    audio, sr, duration = read_wav(wav_path)
-    onsets = detect_onsets(audio, sr)
-    bpm_rhythmic = estimate_bpm_from_onsets(onsets)
-
-    if bpm_rhythmic and 40 <= bpm_rhythmic <= 220:
-        bpm = bpm_rhythmic
-        bpm_type = "rhythmic"
-        confidence = min(1.0, len(onsets) / (duration * 2))
-    else:
-        bpm_perf = estimate_performance_bpm(duration, max(len(onsets), 1))
-        if not bpm_perf:
-            raise HTTPException(status_code=422, detail="Could not determine BPM")
-        bpm = bpm_perf
-        bpm_type = "performance"
-        confidence = 0.6
-
-    return {
-        "file_id": file_id,
-        "filename": file.filename,
-        "analysis": {
-            "duration_seconds": round(duration, 2),
-            "sample_rate": sr,
-            "bpm": bpm,
-            "bpm_type": bpm_type,
-            "confidence": round(confidence, 2)
-        }
-    }
+# memória simples (depois vira DB)
+AUDIO_DB = {}
 
 @app.get("/")
 def root():
-    return {"status": "ok", "service": "Phonk AI Analyzer"}
+    return {"status": "ok"}
+
+@app.post("/upload-audio")
+async def upload_audio(file: UploadFile = File(...)):
+    if not file.filename:
+        raise HTTPException(status_code=400, detail="Arquivo inválido")
+
+    file_id = str(uuid.uuid4())
+
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp:
+        contents = await file.read()
+        tmp.write(contents)
+        tmp_path = tmp.name
+
+    AUDIO_DB[file_id] = {
+        "path": tmp_path,
+        "filename": file.filename
+    }
+
+    return {
+        "file_id": file_id,
+        "message": "Upload concluído"
+    }
+
+
+@app.post("/analyze/{file_id}")
+def analyze_audio(file_id: str):
+    if file_id not in AUDIO_DB:
+        raise HTTPException(status_code=404, detail="Arquivo não encontrado")
+
+    path = AUDIO_DB[file_id]["path"]
+
+    try:
+        audio, sr = sf.read(path)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao ler áudio: {str(e)}")
+
+    # mono
+    if audio.ndim > 1:
+        audio = np.mean(audio, axis=1)
+
+    duration = len(audio) / sr
+
+    # envelope simples (energia)
+    frame_size = int(0.05 * sr)
+    energy = np.array([
+        np.sum(np.abs(audio[i:i+frame_size]))
+        for i in range(0, len(audio), frame_size)
+    ])
+
+    # picos = eventos temporais reais
+    threshold = np.mean(energy) * 1.5
+    peaks = np.where(energy > threshold)[0]
+
+    if len(peaks) < 2:
+        bpm = None
+        tempo_map = []
+        bpm_type = "indefinido"
+    else:
+        times = peaks * (frame_size / sr)
+        intervals = np.diff(times)
+        avg_interval = np.mean(intervals)
+        bpm = round(60 / avg_interval, 2)
+        tempo_map = times.tolist()
+        bpm_type = "performance"
+
+    AUDIO_DB[file_id].update({
+        "sample_rate": sr,
+        "duration": duration,
+        "bpm": bpm,
+        "bpm_type": bpm_type,
+        "tempo_map": tempo_map
+    })
+
+    return {
+        "file_id": file_id,
+        "duration": duration,
+        "sample_rate": sr,
+        "bpm": bpm,
+        "bpm_type": bpm_type,
+        "tempo_map": tempo_map
+    }
+
+
+@app.get("/analysis/{file_id}")
+def get_analysis(file_id: str):
+    if file_id not in AUDIO_DB:
+        raise HTTPException(status_code=404, detail="Arquivo não encontrado")
+
+    return AUDIO_DB[file_id]
