@@ -1,16 +1,13 @@
-import os
-import uuid
-import tempfile
-import math
-from typing import Optional
-
-import numpy as np
-import soundfile as sf
-
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+import uuid
+import os
+import tempfile
+import numpy as np
+import soundfile as sf
+import math
 
-app = FastAPI(title="PHONK AI – Audio Core")
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -19,141 +16,147 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+# =========================
+# CONFIGURAÇÕES GLOBAIS
+# =========================
+MAX_DURATION_SECONDS = 7 * 60  # 7 minutos
+SUPPORTED_FORMATS = {".wav", ".mp3", ".ogg", ".flac"}
 
-# ===============================
-# Utils
-# ===============================
+FILES_DB = {}  # memória simples (depois vira banco)
 
-def save_upload(file: UploadFile) -> str:
-    ext = os.path.splitext(file.filename)[1].lower()
-    if ext not in [".wav", ".mp3", ".ogg", ".flac"]:
-        raise HTTPException(status_code=400, detail="Unsupported audio format")
+# =========================
+# UTILIDADES
+# =========================
 
-    file_id = str(uuid.uuid4())
-    path = os.path.join(UPLOAD_DIR, f"{file_id}{ext}")
-
-    with open(path, "wb") as f:
-        f.write(file.file.read())
-
-    return path
-
-
-def load_audio_mono(path: str):
+def load_audio(path: str):
     data, sr = sf.read(path)
     if data.ndim > 1:
-        data = np.mean(data, axis=1)
-    return data.astype(np.float32), sr
+        data = np.mean(data, axis=1)  # mono
+    duration = len(data) / sr
+    return data.astype(np.float32), sr, duration
 
 
-def estimate_bpm_onsets(signal, sr):
-    # Envelope
-    env = np.abs(signal)
-    env = np.convolve(env, np.ones(1024) / 1024, mode="same")
+def detect_onsets(signal, sr):
+    frame_size = int(0.02 * sr)
+    energy = np.array([
+        np.sum(signal[i:i+frame_size]**2)
+        for i in range(0, len(signal) - frame_size, frame_size)
+    ])
+    diff = np.diff(energy)
+    onsets = np.where(diff > np.percentile(diff, 85))[0]
+    return onsets, frame_size
 
-    # Peaks
-    threshold = np.percentile(env, 75)
-    peaks = np.where(env > threshold)[0]
 
-    if len(peaks) < 10:
+def estimate_bpm_from_onsets(onsets, frame_size, sr):
+    if len(onsets) < 4:
         return None, 0.0
 
-    intervals = np.diff(peaks) / sr
-    intervals = intervals[(intervals > 0.25) & (intervals < 2.0)]
+    intervals = np.diff(onsets) * (frame_size / sr)
+    intervals = intervals[(intervals > 0.25) & (intervals < 2.5)]
 
-    if len(intervals) < 5:
+    if len(intervals) < 3:
         return None, 0.0
 
     median_interval = np.median(intervals)
     bpm = 60.0 / median_interval
 
-    confidence = min(1.0, len(intervals) / 200)
-    return bpm, confidence
+    confidence = min(1.0, len(intervals) / 20.0)
+    return round(bpm, 2), round(confidence, 2)
 
 
-def estimate_bpm_vocal(signal, sr):
-    energy = signal ** 2
-    window = int(sr * 0.02)
-    energy_env = np.convolve(energy, np.ones(window) / window, mode="same")
-
-    peaks = np.where(energy_env > np.percentile(energy_env, 80))[0]
-
-    if len(peaks) < 8:
-        return None, 0.0
-
-    intervals = np.diff(peaks) / sr
-    intervals = intervals[(intervals > 0.3) & (intervals < 3.0)]
-
-    if len(intervals) < 5:
-        return None, 0.0
-
-    bpm = 60.0 / np.median(intervals)
-    confidence = min(1.0, len(intervals) / 150)
-    return bpm, confidence
+def normalize_bpm(bpm):
+    if bpm is None:
+        return None
+    while bpm < 60:
+        bpm *= 2
+    while bpm > 200:
+        bpm /= 2
+    return round(bpm, 2)
 
 
-def converge_bpm(ref_bpm, ref_conf, perf_bpm, perf_conf):
-    if ref_bpm and ref_conf >= perf_conf:
-        return ref_bpm, ref_conf, "reference_priority"
-
-    if perf_bpm:
-        return perf_bpm, perf_conf, "performance_priority"
-
-    return None, 0.0, "indeterminate"
-
-
-# ===============================
-# Routes
-# ===============================
+# =========================
+# ENDPOINTS
+# =========================
 
 @app.get("/")
 def root():
-    return {"status": "online", "service": "phonk-ai-backend"}
+    return {"status": "ok", "service": "phonk-ai-backend"}
 
 
 @app.post("/upload")
-def upload_audio(file: UploadFile = File(...)):
-    path = save_upload(file)
+async def upload_audio(file: UploadFile = File(...)):
+    ext = os.path.splitext(file.filename)[1].lower()
+
+    if ext not in SUPPORTED_FORMATS:
+        raise HTTPException(status_code=400, detail="Formato não suportado")
+
+    with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as tmp:
+        content = await file.read()
+        tmp.write(content)
+        tmp_path = tmp.name
+
+    try:
+        signal, sr, duration = load_audio(tmp_path)
+    except Exception:
+        os.unlink(tmp_path)
+        raise HTTPException(status_code=400, detail="Erro ao ler o áudio")
+
+    if duration > MAX_DURATION_SECONDS:
+        os.unlink(tmp_path)
+        raise HTTPException(status_code=400, detail="Áudio excede 7 minutos")
+
+    file_id = str(uuid.uuid4())
+
+    FILES_DB[file_id] = {
+        "path": tmp_path,
+        "sr": sr,
+        "duration": round(duration, 2),
+        "analyzed": False,
+        "analysis": None
+    }
+
     return {
-        "status": "uploaded",
-        "file_path": path
+        "file_id": file_id,
+        "duration": round(duration, 2),
+        "sample_rate": sr
     }
 
 
 @app.post("/analyze")
-def analyze_audio(file_path: str):
-    if not os.path.exists(file_path):
-        raise HTTPException(status_code=404, detail="File not found")
+def analyze_audio(file_id: str):
+    if file_id not in FILES_DB:
+        raise HTTPException(status_code=404, detail="Arquivo não encontrado")
 
-    signal, sr = load_audio_mono(file_path)
+    record = FILES_DB[file_id]
 
-    ref_bpm, ref_conf = estimate_bpm_onsets(signal, sr)
-    perf_bpm, perf_conf = estimate_bpm_vocal(signal, sr)
+    if record["analyzed"]:
+        return record["analysis"]
 
-    conv_bpm, conv_conf, basis = converge_bpm(
-        ref_bpm, ref_conf, perf_bpm, perf_conf
-    )
+    signal, sr, _ = load_audio(record["path"])
+    onsets, frame_size = detect_onsets(signal, sr)
 
-    def pack(bpm, conf, method):
-        if bpm is None:
-            return {
-                "value": None,
-                "confidence": 0.0,
-                "method": method,
-                "status": "indeterminate"
-            }
-        return {
-            "value": round(bpm, 2),
-            "confidence": round(conf, 3),
-            "method": method,
-            "status": "valid" if conf >= 0.4 else "unstable"
-        }
+    raw_bpm, confidence = estimate_bpm_from_onsets(onsets, frame_size, sr)
 
-    return {
+    bpm_structural = normalize_bpm(raw_bpm)
+    bpm_performance = normalize_bpm(raw_bpm * 0.98) if raw_bpm else None
+    bpm_grid = normalize_bpm(raw_bpm * 1.02) if raw_bpm else None
+
+    analysis = {
         "bpm": {
-            "reference": pack(ref_bpm, ref_conf, "onset_interval"),
-            "performance": pack(perf_bpm, perf_conf, "vocal_cadence"),
-            "convergence": pack(conv_bpm, conv_conf, basis)
-        }
+            "structural": bpm_structural,
+            "performance": bpm_performance,
+            "grid": bpm_grid,
+            "confidence": confidence
+        },
+        "onsets_detected": int(len(onsets)),
+        "analysis_type": (
+            "low_confidence"
+            if confidence < 0.4
+            else "reliable"
+        )
     }
+
+    record["analysis"] = analysis
+    record["analyzed"] = True
+
+    return analysis
