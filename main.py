@@ -1,84 +1,81 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import os
 import uuid
 import wave
-import contextlib
 import struct
 import math
 
 app = FastAPI()
 
+# CORS liberado pra testar de qualquer app (HTTP Shortcut incluso)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
-def compute_rms(samples):
-    if not samples:
-        return 0
-    square_sum = sum(s * s for s in samples)
-    mean_square = square_sum / len(samples)
-    return int(math.sqrt(mean_square))
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "message": "PHONK AI API online"
+    }
+
+
+def analyze_wav(path: str):
+    with wave.open(path, "rb") as wf:
+        channels = wf.getnchannels()
+        sample_rate = wf.getframerate()
+        frames = wf.getnframes()
+        sampwidth = wf.getsampwidth()
+
+        raw = wf.readframes(frames)
+
+        if sampwidth != 2:
+            raise ValueError("Somente WAV 16-bit suportado")
+
+        samples = struct.unpack("<" + "h" * (len(raw) // 2), raw)
+
+        # RMS (volume médio)
+        rms = math.sqrt(sum(s * s for s in samples) / len(samples))
+
+        # Pico
+        peak = max(abs(s) for s in samples)
+
+        duration = frames / float(sample_rate)
+
+    return {
+        "channels": channels,
+        "sample_rate": sample_rate,
+        "duration_sec": round(duration, 2),
+        "rms": round(rms, 2),
+        "peak": peak
+    }
 
 
 @app.post("/upload-audio")
 async def upload_audio(file: UploadFile = File(...)):
-    file_id = f"{uuid.uuid4()}_{file.filename}"
-    file_path = os.path.join(UPLOAD_DIR, file_id)
+    if not file.filename.lower().endswith(".wav"):
+        raise HTTPException(status_code=400, detail="Somente WAV é aceito")
 
-    with open(file_path, "wb") as buffer:
-        buffer.write(await file.read())
+    file_id = str(uuid.uuid4())
+    file_path = os.path.join(UPLOAD_DIR, f"{file_id}.wav")
 
-    return {
-        "message": "upload ok",
-        "file_id": file_id,
-        "path": file_path
-    }
-
-
-@app.post("/analyze-audio")
-async def analyze_audio(file: UploadFile = File(...)):
-    file_id = f"{uuid.uuid4()}_{file.filename}"
-    file_path = os.path.join(UPLOAD_DIR, file_id)
-
-    with open(file_path, "wb") as buffer:
-        buffer.write(await file.read())
+    with open(file_path, "wb") as f:
+        f.write(await file.read())
 
     try:
-        with contextlib.closing(wave.open(file_path, "rb")) as wf:
-            channels = wf.getnchannels()
-            sample_rate = wf.getframerate()
-            frames = wf.getnframes()
-            sample_width = wf.getsampwidth()
-            duration = frames / float(sample_rate)
-
-            raw_audio = wf.readframes(frames)
-
-            if sample_width != 2:
-                raise Exception("Only 16-bit WAV supported")
-
-            samples = struct.unpack("<" + "h" * (len(raw_audio) // 2), raw_audio)
-            peak = max(abs(s) for s in samples)
-            rms = compute_rms(samples)
-
+        analysis = analyze_wav(file_path)
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"audio analysis failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
-    return JSONResponse({
-        "status": "ok",
-        "message": "audio analyzed",
-        "analysis_stage": "basic_features",
+    return {
         "file_id": file_id,
-        "analysis": {
-            "duration_seconds": round(duration, 3),
-            "sample_rate": sample_rate,
-            "channels": channels,
-            "rms_energy": rms,
-            "peak_amplitude": peak
-        }
-    })
-
-
-@app.get("/")
-def root():
-    return {"status": "online"}
+        "analysis": analysis
+    }
