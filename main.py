@@ -3,6 +3,7 @@ import uuid
 import os
 import soundfile as sf
 import numpy as np
+import math
 
 app = FastAPI()
 
@@ -11,27 +12,26 @@ MAX_DURATION_SECONDS = 7 * 60  # 7 minutos
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-# =====================================================
+# =========================
 # Utils
-# =====================================================
+# =========================
 
 def get_audio_duration(file_path: str) -> float:
     info = sf.info(file_path)
     return info.frames / info.samplerate
 
 
-def mono(signal: np.ndarray) -> np.ndarray:
+def estimate_bpm(signal: np.ndarray, sr: int):
     if signal.ndim > 1:
-        return signal.mean(axis=1)
-    return signal
+        signal = signal.mean(axis=1)
 
-
-def estimate_bpm(signal: np.ndarray, sr: int) -> float | None:
-    signal = mono(signal)
     energy = np.abs(signal)
-    energy /= np.max(energy) if np.max(energy) != 0 else 1
+    if np.max(energy) == 0:
+        return None
 
+    energy = energy / np.max(energy)
     peaks = np.where(energy > 0.9)[0]
+
     if len(peaks) < 2:
         return None
 
@@ -42,26 +42,51 @@ def estimate_bpm(signal: np.ndarray, sr: int) -> float | None:
         return None
 
     bpm = 60.0 / avg_interval
-    if 40 <= bpm <= 240:
-        return round(bpm, 2)
+    if bpm < 40 or bpm > 240:
+        return None
 
-    return None
+    return round(bpm, 2)
 
 
 def classify_audio(signal: np.ndarray) -> str:
-    signal = mono(signal)
+    if signal.ndim > 1:
+        signal = signal.mean(axis=1)
+
     rms = np.sqrt(np.mean(signal ** 2))
 
     if rms < 0.02:
         return "vocal"
     elif rms < 0.06:
         return "melody"
-    return "beat"
+    else:
+        return "beat"
 
 
-# =====================================================
+def fl_time_base_sync(duration_sec: float, bpm: float):
+    if not bpm:
+        return None
+
+    seconds_per_beat = 60.0 / bpm
+    beats_total = duration_sec / seconds_per_beat
+    bars_4_4 = beats_total / 4
+
+    return {
+        "bpm": bpm,
+        "seconds_per_beat": round(seconds_per_beat, 4),
+        "total_beats": round(beats_total, 2),
+        "bars_4_4": round(bars_4_4, 2),
+        "time_base": "4/4",
+        "fl_grid": {
+            "beats_per_bar": 4,
+            "snap_recommended": "line",
+            "ppq_reference": 96
+        }
+    }
+
+
+# =========================
 # Upload
-# =====================================================
+# =========================
 
 @app.post("/upload")
 async def upload_audio(file: UploadFile = File(...)):
@@ -83,9 +108,9 @@ async def upload_audio(file: UploadFile = File(...)):
     }
 
 
-# =====================================================
+# =========================
 # Analyze
-# =====================================================
+# =========================
 
 @app.post("/analyze")
 async def analyze_audio(file_id: str):
@@ -94,24 +119,26 @@ async def analyze_audio(file_id: str):
         raise HTTPException(status_code=404, detail="Arquivo não encontrado")
 
     file_path = os.path.join(UPLOAD_DIR, matches[0])
-    signal, sr = sf.read(file_path)
 
+    signal, sr = sf.read(file_path)
+    duration = get_audio_duration(file_path)
     bpm = estimate_bpm(signal, sr)
     audio_type = classify_audio(signal)
-    duration = get_audio_duration(file_path)
+    fl_sync = fl_time_base_sync(duration, bpm)
 
     return {
         "file_id": file_id,
-        "audio_type": audio_type,
         "duration_seconds": round(duration, 2),
         "sample_rate": sr,
-        "bpm_real": bpm
+        "bpm_real": bpm,
+        "audio_type": audio_type,
+        "fl_time_base": fl_sync
     }
 
 
-# =====================================================
-# Orchestrate (Decisão musical)
-# =====================================================
+# =========================
+# Orchestrate
+# =========================
 
 @app.post("/orchestrate")
 async def orchestrate(file_id: str):
@@ -121,79 +148,37 @@ async def orchestrate(file_id: str):
 
     file_path = os.path.join(UPLOAD_DIR, matches[0])
     signal, sr = sf.read(file_path)
+    duration = get_audio_duration(file_path)
 
     bpm = estimate_bpm(signal, sr)
     audio_type = classify_audio(signal)
+    fl_sync = fl_time_base_sync(duration, bpm)
 
     decisions = []
 
     if audio_type == "vocal":
-        decisions += [
-            "vocal sem grid fixo",
-            "usar BPM como referência de alinhamento",
-            "ajustar time stretching no FL"
-        ]
+        decisions.append("vocal_detectado")
+        decisions.append("alinhar vocal ao grid do beat")
+        decisions.append("time-stretch permitido")
     elif audio_type == "beat":
-        decisions += [
-            "beat com grid fixo",
-            "BPM define o projeto"
-        ]
+        decisions.append("beat_base_detectado")
+        decisions.append("grid fixo no BPM do beat")
     else:
-        decisions += [
-            "elemento melódico",
-            "pode seguir BPM do projeto"
-        ]
+        decisions.append("elemento_melodico")
+        decisions.append("seguir BPM de referência")
+
+    if bpm:
+        decisions.append(f"BPM confirmado: {bpm}")
+    else:
+        decisions.append("BPM indeterminado – requer referência externa")
 
     return {
         "file_id": file_id,
         "audio_type": audio_type,
         "bpm_real": bpm,
-        "decisions": decisions
-    }
-
-
-# =====================================================
-# FL Studio Time Base Sync
-# =====================================================
-
-@app.post("/fl-sync")
-async def fl_time_base_sync(file_id: str):
-    matches = [f for f in os.listdir(UPLOAD_DIR) if f.startswith(file_id)]
-    if not matches:
-        raise HTTPException(status_code=404, detail="Arquivo não encontrado")
-
-    file_path = os.path.join(UPLOAD_DIR, matches[0])
-    signal, sr = sf.read(file_path)
-    signal = mono(signal)
-
-    bpm = estimate_bpm(signal, sr)
-    if not bpm:
-        raise HTTPException(
-            status_code=400,
-            detail="BPM indeterminado – necessário referência externa"
-        )
-
-    seconds_per_beat = 60.0 / bpm
-    grid_4 = seconds_per_beat
-    grid_8 = seconds_per_beat / 2
-    grid_16 = seconds_per_beat / 4
-
-    return {
-        "file_id": file_id,
-        "bpm_anchor": bpm,
-        "time_base_seconds_per_beat": round(seconds_per_beat, 6),
-        "fl_grid": {
-            "1_beat": round(grid_4, 6),
-            "1_8": round(grid_8, 6),
-            "1_16": round(grid_16, 6)
-        },
-        "instructions": [
-            "Setar BPM do projeto no FL",
-            "Ativar Stretch Mode adequado",
-            "Alinhar início do áudio no grid",
-            "Usar time stretching se for vocal"
-        ],
-        "status": "fl_sync_ready"
+        "fl_time_base": fl_sync,
+        "decisions": decisions,
+        "status": "orquestrado"
     }
 
 
