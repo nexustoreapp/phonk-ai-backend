@@ -5,11 +5,10 @@ import soundfile as sf
 import numpy as np
 import math
 
-app = FastAPI()
+app = FastAPI(title="PHONK AI")
 
 UPLOAD_DIR = "uploads"
 MAX_DURATION_SECONDS = 7 * 60  # 7 minutos
-
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # =========================
@@ -29,7 +28,7 @@ def estimate_bpm(signal: np.ndarray, sr: int):
     if np.max(energy) == 0:
         return None
 
-    energy = energy / np.max(energy)
+    energy /= np.max(energy)
     peaks = np.where(energy > 0.9)[0]
 
     if len(peaks) < 2:
@@ -67,22 +66,21 @@ def fl_time_base_sync(duration_sec: float, bpm: float):
         return None
 
     seconds_per_beat = 60.0 / bpm
-    beats_total = duration_sec / seconds_per_beat
-    bars_4_4 = beats_total / 4
+    total_beats = duration_sec / seconds_per_beat
+    bars_4_4 = total_beats / 4
 
     return {
         "bpm": bpm,
         "seconds_per_beat": round(seconds_per_beat, 4),
-        "total_beats": round(beats_total, 2),
+        "total_beats": round(total_beats, 2),
         "bars_4_4": round(bars_4_4, 2),
-        "time_base": "4/4",
+        "time_signature": "4/4",
         "fl_grid": {
             "beats_per_bar": 4,
-            "snap_recommended": "line",
+            "snap": "line",
             "ppq_reference": 96
         }
     }
-
 
 # =========================
 # Upload
@@ -107,7 +105,6 @@ async def upload_audio(file: UploadFile = File(...)):
         "duration_seconds": round(duration, 2)
     }
 
-
 # =========================
 # Analyze
 # =========================
@@ -119,8 +116,8 @@ async def analyze_audio(file_id: str):
         raise HTTPException(status_code=404, detail="Arquivo não encontrado")
 
     file_path = os.path.join(UPLOAD_DIR, matches[0])
-
     signal, sr = sf.read(file_path)
+
     duration = get_audio_duration(file_path)
     bpm = estimate_bpm(signal, sr)
     audio_type = classify_audio(signal)
@@ -134,7 +131,6 @@ async def analyze_audio(file_id: str):
         "audio_type": audio_type,
         "fl_time_base": fl_sync
     }
-
 
 # =========================
 # Orchestrate
@@ -157,20 +153,26 @@ async def orchestrate(file_id: str):
     decisions = []
 
     if audio_type == "vocal":
-        decisions.append("vocal_detectado")
-        decisions.append("alinhar vocal ao grid do beat")
-        decisions.append("time-stretch permitido")
+        decisions += [
+            "vocal_detectado",
+            "alinhar vocal ao grid",
+            "time_stretch_permitido"
+        ]
     elif audio_type == "beat":
-        decisions.append("beat_base_detectado")
-        decisions.append("grid fixo no BPM do beat")
+        decisions += [
+            "beat_detectado",
+            "grid_fixo_no_bpm"
+        ]
     else:
-        decisions.append("elemento_melodico")
-        decisions.append("seguir BPM de referência")
+        decisions += [
+            "elemento_melodico",
+            "seguir_bpm_referencia"
+        ]
 
     if bpm:
-        decisions.append(f"BPM confirmado: {bpm}")
+        decisions.append(f"BPM_confirmado_{bpm}")
     else:
-        decisions.append("BPM indeterminado – requer referência externa")
+        decisions.append("BPM_indeterminado")
 
     return {
         "file_id": file_id,
@@ -181,16 +183,12 @@ async def orchestrate(file_id: str):
         "status": "orquestrado"
     }
 
-
-@app.get("/")
-def root():
-    return {"status": "online"}
 # =========================
 # FL Studio Time Base Sync
 # =========================
 
 @app.post("/fl/timebase")
-async def fl_timebase_sync(file_id: str):
+async def fl_timebase(file_id: str):
     matches = [f for f in os.listdir(UPLOAD_DIR) if f.startswith(file_id)]
     if not matches:
         raise HTTPException(status_code=404, detail="Arquivo não encontrado")
@@ -202,15 +200,11 @@ async def fl_timebase_sync(file_id: str):
     bpm = estimate_bpm(signal, sr)
 
     if not bpm:
-        raise HTTPException(
-            status_code=422,
-            detail="BPM não pôde ser determinado com precisão"
-        )
+        raise HTTPException(status_code=422, detail="BPM não detectado")
 
-    beats_per_bar = 4
     seconds_per_beat = 60 / bpm
     total_beats = math.floor(duration / seconds_per_beat)
-    total_bars = math.floor(total_beats / beats_per_bar)
+    total_bars = math.floor(total_beats / 4)
 
     tempo_map = []
     current_time = 0.0
@@ -219,18 +213,21 @@ async def fl_timebase_sync(file_id: str):
         tempo_map.append({
             "bar": bar,
             "time_seconds": round(current_time, 3),
-            "bpm": round(bpm, 2)
+            "bpm": bpm
         })
-        current_time += seconds_per_beat * beats_per_bar
+        current_time += seconds_per_beat * 4
 
     return {
         "app": "PHONK AI",
         "file_id": file_id,
-        "duration_seconds": round(duration, 2),
-        "bpm": round(bpm, 2),
+        "bpm": bpm,
         "time_signature": "4/4",
         "bars": total_bars,
         "tempo_map": tempo_map,
         "fl_import_mode": "tempo_markers",
         "status": "timebase_ready"
     }
+
+@app.get("/")
+def root():
+    return {"status": "online"}
