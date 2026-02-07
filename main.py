@@ -185,3 +185,52 @@ async def orchestrate(file_id: str):
 @app.get("/")
 def root():
     return {"status": "online"}
+# =========================
+# FL Studio Time Base Sync
+# =========================
+
+@app.post("/fl/timebase")
+async def fl_timebase_sync(file_id: str):
+    matches = [f for f in os.listdir(UPLOAD_DIR) if f.startswith(file_id)]
+    if not matches:
+        raise HTTPException(status_code=404, detail="Arquivo não encontrado")
+
+    file_path = os.path.join(UPLOAD_DIR, matches[0])
+    signal, sr = sf.read(file_path)
+
+    duration = get_audio_duration(file_path)
+    bpm = estimate_bpm(signal, sr)
+
+    if not bpm:
+        raise HTTPException(
+            status_code=422,
+            detail="BPM não pôde ser determinado com precisão"
+        )
+
+    beats_per_bar = 4
+    seconds_per_beat = 60 / bpm
+    total_beats = math.floor(duration / seconds_per_beat)
+    total_bars = math.floor(total_beats / beats_per_bar)
+
+    tempo_map = []
+    current_time = 0.0
+
+    for bar in range(1, total_bars + 1):
+        tempo_map.append({
+            "bar": bar,
+            "time_seconds": round(current_time, 3),
+            "bpm": round(bpm, 2)
+        })
+        current_time += seconds_per_beat * beats_per_bar
+
+    return {
+        "app": "PHONK AI",
+        "file_id": file_id,
+        "duration_seconds": round(duration, 2),
+        "bpm": round(bpm, 2),
+        "time_signature": "4/4",
+        "bars": total_bars,
+        "tempo_map": tempo_map,
+        "fl_import_mode": "tempo_markers",
+        "status": "timebase_ready"
+    }
