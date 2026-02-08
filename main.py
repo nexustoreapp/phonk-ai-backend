@@ -5,10 +5,11 @@ import soundfile as sf
 import numpy as np
 import math
 
-app = FastAPI(title="PHONK AI")
+app = FastAPI()
 
 UPLOAD_DIR = "uploads"
 MAX_DURATION_SECONDS = 7 * 60  # 7 minutos
+
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # =========================
@@ -28,7 +29,7 @@ def estimate_bpm(signal: np.ndarray, sr: int):
     if np.max(energy) == 0:
         return None
 
-    energy /= np.max(energy)
+    energy = energy / np.max(energy)
     peaks = np.where(energy > 0.9)[0]
 
     if len(peaks) < 2:
@@ -66,20 +67,16 @@ def fl_time_base_sync(duration_sec: float, bpm: float):
         return None
 
     seconds_per_beat = 60.0 / bpm
-    total_beats = duration_sec / seconds_per_beat
-    bars_4_4 = total_beats / 4
+    beats_total = duration_sec / seconds_per_beat
+    bars_4_4 = beats_total / 4
 
     return {
         "bpm": bpm,
         "seconds_per_beat": round(seconds_per_beat, 4),
-        "total_beats": round(total_beats, 2),
+        "total_beats": round(beats_total, 2),
         "bars_4_4": round(bars_4_4, 2),
         "time_signature": "4/4",
-        "fl_grid": {
-            "beats_per_bar": 4,
-            "snap": "line",
-            "ppq_reference": 96
-        }
+        "ppq_reference": 96
     }
 
 # =========================
@@ -116,8 +113,8 @@ async def analyze_audio(file_id: str):
         raise HTTPException(status_code=404, detail="Arquivo não encontrado")
 
     file_path = os.path.join(UPLOAD_DIR, matches[0])
-    signal, sr = sf.read(file_path)
 
+    signal, sr = sf.read(file_path)
     duration = get_audio_duration(file_path)
     bpm = estimate_bpm(signal, sr)
     audio_type = classify_audio(signal)
@@ -155,12 +152,12 @@ async def orchestrate(file_id: str):
     if audio_type == "vocal":
         decisions += [
             "vocal_detectado",
-            "alinhar vocal ao grid",
+            "alinhar_ao_grid",
             "time_stretch_permitido"
         ]
     elif audio_type == "beat":
         decisions += [
-            "beat_detectado",
+            "beat_base_detectado",
             "grid_fixo_no_bpm"
         ]
     else:
@@ -200,7 +197,10 @@ async def fl_timebase(file_id: str):
     bpm = estimate_bpm(signal, sr)
 
     if not bpm:
-        raise HTTPException(status_code=422, detail="BPM não detectado")
+        raise HTTPException(
+            status_code=422,
+            detail="BPM não pôde ser determinado"
+        )
 
     seconds_per_beat = 60 / bpm
     total_beats = math.floor(duration / seconds_per_beat)
@@ -213,14 +213,15 @@ async def fl_timebase(file_id: str):
         tempo_map.append({
             "bar": bar,
             "time_seconds": round(current_time, 3),
-            "bpm": bpm
+            "bpm": round(bpm, 2)
         })
         current_time += seconds_per_beat * 4
 
     return {
         "app": "PHONK AI",
         "file_id": file_id,
-        "bpm": bpm,
+        "duration_seconds": round(duration, 2),
+        "bpm": round(bpm, 2),
         "time_signature": "4/4",
         "bars": total_bars,
         "tempo_map": tempo_map,
