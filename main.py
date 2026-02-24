@@ -5,6 +5,9 @@ import soundfile as sf
 import numpy as np
 import math
 
+# ✅ NOVO: router do Extrator FLP v1
+from flp_corpus.routes import router as flp_router
+
 app = FastAPI()
 
 UPLOAD_DIR = "uploads"
@@ -228,6 +231,15 @@ async def fl_timebase(file_id: str):
         "fl_import_mode": "tempo_markers",
         "status": "timebase_ready"
     }
+
+# =========================
+# ✅ NOVO: Extrator FLP v1 (router)
+# =========================
+app.include_router(flp_router)
+
+# =========================
+# Root
+# =========================
 
 @app.get("/")
 def root():
