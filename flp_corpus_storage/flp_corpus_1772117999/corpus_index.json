@@ -1,0 +1,16 @@
+{
+  "corpus_id": "flp_corpus_1772117999",
+  "created_at": 1772117999,
+  "projects": [],
+  "duplicates": {},
+  "pending_archives": [],
+  "totals": {
+    "archives_found": 0,
+    "projects_built": 0,
+    "pending_archives": 0,
+    "projects_with_flp": 0,
+    "projects_without_flp": 0,
+    "total_audio_files": 0,
+    "total_est_audio_duration_seconds": 0.0
+  }
+}
