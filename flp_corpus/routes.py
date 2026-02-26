@@ -1,10 +1,11 @@
 import os
-import io
 import json
 import time
 import shutil
 import zipfile
 import tempfile
+import base64
+import requests
 
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
@@ -13,8 +14,132 @@ from flp_corpus.extractor_v1 import build_corpus, safe_mkdir
 
 router = APIRouter(prefix="/flp", tags=["FLP Corpus"])
 
+# No Render FREE o disco pode sumir. Por isso: persistimos no GitHub.
 CORPUS_OUT_DIR = "corpus_out"
 
+
+# =========================
+# GitHub Upload (Contents API)
+# =========================
+
+def _gh_headers(token: str):
+    return {
+        "Authorization": f"token {token}",
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "PHONK-AI",
+    }
+
+
+def github_put_file(repo: str, token: str, repo_path: str, content_bytes: bytes, message: str):
+    """
+    Cria/atualiza arquivo via GitHub Contents API.
+    repo: "user/repo"
+    repo_path: "pasta/arquivo.json"
+    """
+    url = f"https://api.github.com/repos/{repo}/contents/{repo_path}"
+    headers = _gh_headers(token)
+
+    # Se já existe, pega sha
+    r = requests.get(url, headers=headers)
+    sha = None
+    if r.status_code == 200:
+        try:
+            sha = r.json().get("sha")
+        except Exception:
+            sha = None
+
+    payload = {
+        "message": message,
+        "content": base64.b64encode(content_bytes).decode("utf-8"),
+    }
+    if sha:
+        payload["sha"] = sha
+
+    w = requests.put(url, headers=headers, json=payload)
+    if w.status_code not in (200, 201):
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "error": "github_put_failed",
+                "status_code": w.status_code,
+                "response": w.text[:4000],
+                "repo_path": repo_path,
+            },
+        )
+
+    return w.json()
+
+
+def upload_corpus_jsons_to_github(corpus_path: str):
+    """
+    Sobe apenas:
+      - corpus_index.json
+      - projects/*.json
+
+    Não sobe áudio/zip/stems (pesado e não precisa).
+    """
+    token = os.getenv("GITHUB_TOKEN")
+    repo = os.getenv("GITHUB_REPO")  # "user/repo"
+
+    if not token or not repo:
+        return {"status": "skipped", "reason": "missing_GITHUB_TOKEN_or_GITHUB_REPO"}
+
+    corpus_id = os.path.basename(corpus_path.rstrip("/"))
+    base_repo_dir = f"flp_corpus_storage/{corpus_id}"
+
+    # 1) index
+    index_path = os.path.join(corpus_path, "corpus_index.json")
+    if os.path.isfile(index_path):
+        with open(index_path, "rb") as f:
+            github_put_file(
+                repo=repo,
+                token=token,
+                repo_path=f"{base_repo_dir}/corpus_index.json",
+                content_bytes=f.read(),
+                message=f"PHONK AI: add corpus index {corpus_id}",
+            )
+
+    # 2) projects
+    projects_dir = os.path.join(corpus_path, "projects")
+    uploaded = 0
+    skipped_big = 0
+
+    if os.path.isdir(projects_dir):
+        for fn in os.listdir(projects_dir):
+            if not fn.endswith(".json"):
+                continue
+
+            fp = os.path.join(projects_dir, fn)
+            if not os.path.isfile(fp):
+                continue
+
+            # Segurança: não sobe json gigante
+            if os.path.getsize(fp) > 5 * 1024 * 1024:  # 5MB
+                skipped_big += 1
+                continue
+
+            with open(fp, "rb") as f:
+                github_put_file(
+                    repo=repo,
+                    token=token,
+                    repo_path=f"{base_repo_dir}/projects/{fn}",
+                    content_bytes=f.read(),
+                    message=f"PHONK AI: add project {fn} ({corpus_id})",
+                )
+            uploaded += 1
+
+    return {
+        "status": "ok",
+        "repo": repo,
+        "github_path": base_repo_dir,
+        "projects_uploaded": uploaded,
+        "projects_skipped_big": skipped_big,
+    }
+
+
+# =========================
+# Helpers
+# =========================
 
 def zip_folder(folder_path: str) -> str:
     """
@@ -25,7 +150,6 @@ def zip_folder(folder_path: str) -> str:
     folder_name = os.path.basename(folder_path)
     zip_path = os.path.join(base_dir, f"{folder_name}.zip")
 
-    # recria sempre (evita zip velho)
     if os.path.isfile(zip_path):
         os.remove(zip_path)
 
@@ -39,17 +163,22 @@ def zip_folder(folder_path: str) -> str:
     return zip_path
 
 
+# =========================
+# Endpoints
+# =========================
+
 @router.post("/ingest")
 async def ingest_flp_archives(file: UploadFile = File(...)):
     """
-    Recebe um ZIP (batch_XX.zip).
-    Extrai, builda corpus, e DEVOLVE um zip do corpus pra você baixar (FREE friendly).
+    Recebe um ZIP (batch_XX.zip) que contém vários zips FLP dentro.
+    Gera corpus local (pode ser efêmero no Render FREE), e sobe o resultado (JSONs) pro GitHub.
     """
     safe_mkdir("flp_uploads")
     safe_mkdir(CORPUS_OUT_DIR)
 
-    # salva upload
+    # 1) salva upload
     upload_path = os.path.join("flp_uploads", file.filename)
+
     with open(upload_path, "wb") as f:
         while True:
             chunk = await file.read(1024 * 1024)
@@ -57,7 +186,7 @@ async def ingest_flp_archives(file: UploadFile = File(...)):
                 break
             f.write(chunk)
 
-    # extrai para pasta temporária de archives
+    # 2) extrai batch para pasta temporária de archives
     ts = int(time.time())
     archives_dir = os.path.join("flp_uploads", f"batch_{ts}")
     safe_mkdir(archives_dir)
@@ -69,44 +198,42 @@ async def ingest_flp_archives(file: UploadFile = File(...)):
         # se não for zip válido, move como archive unitário
         shutil.move(upload_path, os.path.join(archives_dir, os.path.basename(upload_path)))
 
-    # build corpus
+    # 3) build corpus
     corpus_path = build_corpus(archives_dir=archives_dir, output_dir=CORPUS_OUT_DIR)
 
-    # cria zip do corpus para download
-    corpus_zip = zip_folder(corpus_path)
+    # 4) sobe pro GitHub (persistência FREE)
+    gh = upload_corpus_jsons_to_github(corpus_path)
 
-    # limpeza: mantém só o zip do corpus (evita encher o servidor)
+    # 5) limpeza do batch (evita encher)
     shutil.rmtree(archives_dir, ignore_errors=True)
-    if os.path.isfile(upload_path):
-        try:
+    try:
+        if os.path.isfile(upload_path):
             os.remove(upload_path)
-        except Exception:
-            pass
+    except Exception:
+        pass
 
-    # devolve o zip
-    return FileResponse(
-        corpus_zip,
-        filename=os.path.basename(corpus_zip),
-        media_type="application/zip"
-    )
+    return {
+        "status": "ok",
+        "corpus_path": corpus_path,
+        "github": gh,
+    }
 
 
 @router.post("/master/merge")
 async def master_merge(files: list[UploadFile] = File(...)):
     """
-    Recebe vários corpus zips (baixados do /ingest) e devolve um MASTER zip.
-    Não depende de disco persistente.
+    (Opcional) Junta vários corpus zips (se você tiver baixado) e devolve um MASTER zip.
+    Obs: No seu fluxo atual com GitHub, você provavelmente nem vai precisar disso.
     """
     if not files or len(files) < 2:
         raise HTTPException(status_code=400, detail="Envie pelo menos 2 corpus zips.")
 
     tmp_root = tempfile.mkdtemp(prefix="phonk_master_")
     packs_dir = os.path.join(tmp_root, "packs")
-    out_dir = os.path.join(tmp_root, "master_out")
+    out_dir = os.path.join(tmp_root, "extracted")
     os.makedirs(packs_dir, exist_ok=True)
     os.makedirs(out_dir, exist_ok=True)
 
-    # extrai todos os packs
     extracted = []
     for up in files:
         pack_path = os.path.join(packs_dir, up.filename)
@@ -125,7 +252,6 @@ async def master_merge(files: list[UploadFile] = File(...)):
             shutil.rmtree(tmp_root, ignore_errors=True)
             raise HTTPException(status_code=400, detail=f"ZIP inválido: {up.filename} ({e})")
 
-    # junta projects deduplicando por (sha256 FLP principal + title)
     projects_out = os.path.join(tmp_root, "master_projects")
     os.makedirs(projects_out, exist_ok=True)
 
@@ -133,7 +259,6 @@ async def master_merge(files: list[UploadFile] = File(...)):
     kept = 0
     dropped = 0
 
-    # procura todos os projects/*.json dentro do out_dir
     for root, _, files2 in os.walk(out_dir):
         for fn in files2:
             if not fn.endswith(".json"):
@@ -153,6 +278,7 @@ async def master_merge(files: list[UploadFile] = File(...)):
             flp_sha = None
             if flps and isinstance(flps, list) and flps[0].get("sha256"):
                 flp_sha = flps[0]["sha256"]
+
             key = (flp_sha or pj.get("source_archive") or fn, title)
 
             if key in seen:
@@ -170,7 +296,6 @@ async def master_merge(files: list[UploadFile] = File(...)):
     master_folder = os.path.join(tmp_root, master_id)
     os.makedirs(master_folder, exist_ok=True)
 
-    # move projects pro master
     shutil.move(projects_out, os.path.join(master_folder, "projects"))
 
     master_index = {
@@ -188,8 +313,6 @@ async def master_merge(files: list[UploadFile] = File(...)):
 
     master_zip = zip_folder(master_folder)
 
-    # devolve zip e limpa o resto
-    # (não apaga o master_zip antes do FileResponse enviar)
     return FileResponse(
         master_zip,
         filename=os.path.basename(master_zip),
