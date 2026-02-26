@@ -1,5 +1,4 @@
 import os
-import io
 import re
 import json
 import time
@@ -42,20 +41,11 @@ def now_ts() -> int:
     return int(time.time())
 
 def is_suspicious_filename(name: str) -> bool:
-    # bloqueia executáveis e scripts (segurança)
     bad = (".exe", ".bat", ".cmd", ".scr", ".msi", ".apk", ".ps1", ".vbs", ".js")
     ln = name.lower()
     return ln.endswith(bad)
 
 def audio_stats(path: str) -> Optional[Dict]:
-    """
-    Stats rápidos e úteis:
-    - duration
-    - sample_rate
-    - channels
-    - peak
-    - rms
-    """
     try:
         info = sf.info(path)
         sr = int(info.samplerate)
@@ -63,7 +53,6 @@ def audio_stats(path: str) -> Optional[Dict]:
         ch = int(info.channels)
         dur = frames / sr if sr > 0 else None
 
-        # lê só uma parte se for gigante (pra ser rápido)
         max_frames = min(frames, sr * 60)  # até 60s
         data, _ = sf.read(path, frames=max_frames, dtype="float32", always_2d=True)
         peak = float(np.max(np.abs(data))) if data.size else 0.0
@@ -100,17 +89,13 @@ class CorpusIndex:
     corpus_id: str
     created_at: int
     projects: List[Dict]
-    duplicates: Dict[str, List[str]]  # sha256 -> [project_id]
+    duplicates: Dict[str, List[str]]
     pending_archives: List[Dict]
     totals: Dict
 
 # --------- archive extraction ---------
 
 def extract_archive(archive_path: str, out_dir: str) -> Tuple[bool, str]:
-    """
-    Extrai ZIP (nativo) e tenta RAR (se rarfile disponível).
-    Retorna (ok, msg).
-    """
     ext = os.path.splitext(archive_path)[1].lower()
 
     if ext == ".zip":
@@ -128,7 +113,7 @@ def extract_archive(archive_path: str, out_dir: str) -> Tuple[bool, str]:
                 rf.extractall(out_dir)
             return True, "ok"
         except Exception as e:
-            return False, f"rar_error: {e} (se falhar, recompacta em .zip e manda)"
+            return False, f"rar_error: {e} (no Render free pode faltar suporte; recompacta em .zip)"
 
     return False, f"unsupported_archive: {ext}"
 
@@ -153,7 +138,6 @@ def scan_dir_for_files(root: str) -> Dict[str, List[str]]:
     return buckets
 
 def build_project_id(title: str, flp_hash: str) -> str:
-    # id estável: slug + 8 chars do hash
     slug = re.sub(r"[^a-z0-9]+", "-", norm_name(title)).strip("-")
     return f"{slug[:60]}-{flp_hash[:8]}"
 
@@ -162,10 +146,6 @@ def extract_project_from_archive(
     work_dir: str,
     output_projects_dir: str,
 ) -> Tuple[Optional[ProjectRef], Optional[Dict]]:
-    """
-    Extrai 1 archive e gera 1 ProjectRef + JSON no disco.
-    Se não der, retorna pending info.
-    """
     arc_name = os.path.basename(archive_path)
     tmp = os.path.join(work_dir, f"tmp_{now_ts()}_{hashlib.md5(arc_name.encode()).hexdigest()[:8]}")
     safe_mkdir(tmp)
@@ -177,7 +157,6 @@ def extract_project_from_archive(
 
     buckets = scan_dir_for_files(tmp)
 
-    # se não tem FLP, ainda pode ser útil (samples), mas marca como "no_flp"
     flp_infos = []
     for rel in buckets["flp"]:
         p = os.path.join(tmp, rel)
@@ -187,31 +166,33 @@ def extract_project_from_archive(
             "sha256": sha256_file(p),
         })
 
-    # title: tenta usar nome do archive
     title = os.path.splitext(arc_name)[0]
 
-    # escolhe FLP principal (maior)
     main_flp = None
     if flp_infos:
         main_flp = sorted(flp_infos, key=lambda x: x["size_bytes"], reverse=True)[0]
 
-    project_id = build_project_id(title, main_flp["sha256"] if main_flp else sha256_file(archive_path))
+    project_id = build_project_id(
+        title,
+        main_flp["sha256"] if main_flp else sha256_file(archive_path)
+    )
 
     audio_infos = []
     total_audio_dur = 0.0
     sr_hist = {}
+
     for rel in buckets["audio"]:
         p = os.path.join(tmp, rel)
         st = audio_stats(p)
         if st:
-            # salva só o rel para não vazar caminho local
             st_out = dict(st)
             st_out["rel_path"] = rel
             st_out.pop("path", None)
             audio_infos.append(st_out)
 
-            if st_out["duration_seconds"]:
+            if st_out.get("duration_seconds"):
                 total_audio_dur += float(st_out["duration_seconds"])
+
             sr = st_out.get("sample_rate")
             if sr:
                 sr_hist[str(sr)] = sr_hist.get(str(sr), 0) + 1
@@ -248,26 +229,30 @@ def extract_project_from_archive(
         created_at=now_ts(),
     )
 
-    # escreve JSON do projeto
     safe_mkdir(output_projects_dir)
     out_path = os.path.join(output_projects_dir, f"{project_id}.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(asdict(proj), f, ensure_ascii=False, indent=2)
 
-    # limpeza
     shutil.rmtree(tmp, ignore_errors=True)
     return proj, None
+
+def _collect_archives_recursive(archives_dir: str) -> List[str]:
+    """
+    Acha .zip/.rar em qualquer subpasta.
+    """
+    found = []
+    for base, _, files in os.walk(archives_dir):
+        for fn in files:
+            ext = os.path.splitext(fn)[1].lower()
+            if ext in ARCHIVE_EXTS:
+                found.append(os.path.join(base, fn))
+    return sorted(found)
 
 def build_corpus(
     archives_dir: str,
     output_dir: str = "corpus_out",
 ) -> str:
-    """
-    Pega uma pasta com .zip/.rar e gera:
-    - corpus_out/<corpus_id>/corpus_index.json
-    - corpus_out/<corpus_id>/projects/*.json
-    Retorna corpus_path.
-    """
     corpus_id = f"flp_corpus_{now_ts()}"
     corpus_path = os.path.join(output_dir, corpus_id)
     projects_dir = os.path.join(corpus_path, "projects")
@@ -278,15 +263,9 @@ def build_corpus(
     projects: List[ProjectRef] = []
     pending: List[Dict] = []
 
-    # coleta archives
-    archives = []
-    for fn in os.listdir(archives_dir):
-        p = os.path.join(archives_dir, fn)
-        if os.path.isfile(p) and os.path.splitext(fn)[1].lower() in ARCHIVE_EXTS:
-            archives.append(p)
+    archives = _collect_archives_recursive(archives_dir)
 
-    # processa
-    for arc in sorted(archives):
+    for arc in archives:
         proj, pend = extract_project_from_archive(
             archive_path=arc,
             work_dir=work_dir,
@@ -297,10 +276,8 @@ def build_corpus(
         if pend:
             pending.append(pend)
 
-    # duplicatas por hash do FLP principal (ou primeiro FLP)
     dup_map: Dict[str, List[str]] = {}
     for p in projects:
-        key = None
         if p.flp_files:
             key = p.flp_files[0]["sha256"]
         else:
@@ -334,7 +311,6 @@ def build_corpus(
     shutil.rmtree(work_dir, ignore_errors=True)
     return corpus_path
 
-# --------- CLI ---------
 
 if __name__ == "__main__":
     import argparse
