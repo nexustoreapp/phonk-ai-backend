@@ -1,0 +1,129 @@
+{
+  "project_id": "passo-bem-solto-remake-by-kxrsed-bdd6984b",
+  "title": "PASSO BEM SOLTO REMAKE BY KXRSED",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/PASSO BEM SOLTO REMAKE BY KXRSED.zip",
+  "flp_files": [
+    {
+      "rel_path": "remake passo bem solto.flp",
+      "size_bytes": 230055,
+      "sha256": "bdd6984b7c8eb8640dee7b59dabb34ace33b3ce16677a8da7ea7249e1aa046fb"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.2719501133786848,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 11993,
+      "peak": 0.999908447265625,
+      "rms": 0.13188891112804413,
+      "rel_path": "[L] OPEN HAT (7).wav"
+    },
+    {
+      "duration_seconds": 4.340249433106576,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 191405,
+      "peak": 1.0,
+      "rms": 0.4956977963447571,
+      "rel_path": "[S] ZECKI BASS (1).wav"
+    },
+    {
+      "duration_seconds": 103.403875,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 4963386,
+      "peak": 1.074761986732483,
+      "rms": 0.24531777203083038,
+      "rel_path": "PASSO BEM SOLTO.mp3"
+    },
+    {
+      "duration_seconds": 0.4615419501133787,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20354,
+      "peak": 1.0,
+      "rms": 0.5335697531700134,
+      "rel_path": "Kick DJ Ayzen (7).wav"
+    },
+    {
+      "duration_seconds": 0.8882766439909298,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 39173,
+      "peak": 0.1717711091041565,
+      "rms": 0.015821147710084915,
+      "rel_path": "[CxL] OPEN HAT (3).wav"
+    },
+    {
+      "duration_seconds": 0.3461451247165533,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15265,
+      "peak": 1.0,
+      "rms": 0.1344064325094223,
+      "rel_path": "[LXFD] Phonk Mano Clap 1.wav"
+    },
+    {
+      "duration_seconds": 0.26497916666666665,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 12719,
+      "peak": 1.0589599609375,
+      "rms": 0.3179313838481903,
+      "rel_path": "Sample Tubarão ZS.mp3"
+    },
+    {
+      "duration_seconds": 0.21428571428571427,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 9450,
+      "peak": 1.0,
+      "rms": 0.9182518124580383,
+      "rel_path": "kicks - (15).wav"
+    },
+    {
+      "duration_seconds": 0.410375,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 19698,
+      "peak": 2.9268171787261963,
+      "rms": 0.9434739947319031,
+      "rel_path": "[Dolor] Brazil Kick 5.wav"
+    },
+    {
+      "duration_seconds": 33.23077097505669,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 1465477,
+      "peak": 0.8413951396942139,
+      "rms": 0.16485558450222015,
+      "rel_path": "[WET] Loopsy - Vocal Hooks - Solto - 130 - C#m.wav"
+    },
+    {
+      "duration_seconds": 0.35156462585034015,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15504,
+      "peak": 0.7857222557067871,
+      "rms": 0.3642103672027588,
+      "rel_path": "Lie Down Kick.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 11,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 144.18401374716552,
+    "sample_rate_histogram": {
+      "44100": 8,
+      "48000": 3
+    },
+    "archive_size_bytes": 17952229
+  },
+  "created_at": 1772211326
+}
