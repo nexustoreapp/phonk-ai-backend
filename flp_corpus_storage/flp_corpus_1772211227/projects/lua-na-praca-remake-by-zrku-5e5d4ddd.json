@@ -1,0 +1,174 @@
+{
+  "project_id": "lua-na-praca-remake-by-zrku-5e5d4ddd",
+  "title": "LUA NA PRACA REMAKE BY ZRKU",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/LUA NA PRACA REMAKE BY ZRKU.zip",
+  "flp_files": [
+    {
+      "rel_path": "lua na praca.flp",
+      "size_bytes": 147982,
+      "sha256": "5e5d4ddd45bb58979078edc22cc55bfe8c2e06a0ded762272f4fed8bfda4d765"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 4.17501133786848,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 184118,
+      "peak": 0.76373291015625,
+      "rms": 0.05604249984025955,
+      "rel_path": "[CJR] ONE SHOT (69).wav"
+    },
+    {
+      "duration_seconds": 1.245532879818594,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 54928,
+      "peak": 0.92022705078125,
+      "rms": 0.2506318688392639,
+      "rel_path": "[CJR] ONE SHOT (135)_2.wav"
+    },
+    {
+      "duration_seconds": 0.985578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43464,
+      "peak": 0.451141357421875,
+      "rms": 0.2505791485309601,
+      "rel_path": "reverse bass start_2.wav"
+    },
+    {
+      "duration_seconds": 0.6703333333333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 32176,
+      "peak": 1.0,
+      "rms": 0.3071965277194977,
+      "rel_path": "[BRP] Kick (26).wav"
+    },
+    {
+      "duration_seconds": 0.6703333333333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 32176,
+      "peak": 1.0,
+      "rms": 0.3071965277194977,
+      "rel_path": "[BRF] Kick (22)_2.wav"
+    },
+    {
+      "duration_seconds": 1.569125,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 75318,
+      "peak": 0.92218017578125,
+      "rms": 0.05243104323744774,
+      "rel_path": "Z BETA SAMPLE.wav"
+    },
+    {
+      "duration_seconds": 1.245532879818594,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 54928,
+      "peak": 0.92022705078125,
+      "rms": 0.2506318688392639,
+      "rel_path": "[CJR] ONE SHOT (135).wav"
+    },
+    {
+      "duration_seconds": 0.520045351473923,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 22934,
+      "peak": 1.0,
+      "rms": 0.5361447334289551,
+      "rel_path": "Fleshpean - newkickkiy - 2019-Oct-21_2.wav"
+    },
+    {
+      "duration_seconds": 88.66902494331066,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3910304,
+      "peak": 0.9657635688781738,
+      "rms": 0.1347416192293167,
+      "rel_path": "LUA NA PRAÇA_vocals.wav"
+    },
+    {
+      "duration_seconds": 1.0926757369614513,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 48187,
+      "peak": 1.0,
+      "rms": 0.45886340737342834,
+      "rel_path": "WEIRD TAIL KICK.wav"
+    },
+    {
+      "duration_seconds": 3.4239909297052153,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 150998,
+      "peak": 0.9827880859375,
+      "rms": 0.04010405018925667,
+      "rel_path": "Default.wav"
+    },
+    {
+      "duration_seconds": 2.6470521541950114,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 116735,
+      "peak": 0.554107666015625,
+      "rms": 0.4300096929073334,
+      "rel_path": "bass sub.wav"
+    },
+    {
+      "duration_seconds": 88.74666666666667,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3913728,
+      "peak": 1.8368754386901855,
+      "rms": 0.4615737497806549,
+      "rel_path": "LUA NA PRAÇA.mp3"
+    },
+    {
+      "duration_seconds": 0.8,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 35280,
+      "peak": 0.988555908203125,
+      "rms": 0.44996991753578186,
+      "rel_path": "KICK (46).wav"
+    },
+    {
+      "duration_seconds": 3.879455782312925,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 171084,
+      "peak": 0.999908447265625,
+      "rms": 0.04754381999373436,
+      "rel_path": "[CJR] ONE SHOT (138).wav"
+    },
+    {
+      "duration_seconds": 6.3980625,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 307107,
+      "peak": 1.0,
+      "rms": 0.38220447301864624,
+      "rel_path": "[CJR] ONE SHOT (221).wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 16,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 206.73842106009073,
+    "sample_rate_histogram": {
+      "44100": 12,
+      "48000": 4
+    },
+    "archive_size_bytes": 37113064
+  },
+  "created_at": 1772211258
+}
