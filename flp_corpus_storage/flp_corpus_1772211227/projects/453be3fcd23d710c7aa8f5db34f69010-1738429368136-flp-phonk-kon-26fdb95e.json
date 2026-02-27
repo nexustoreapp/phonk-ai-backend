@@ -1,0 +1,375 @@
+{
+  "project_id": "453be3fcd23d710c7aa8f5db34f69010-1738429368136-flp-phonk-kon-26fdb95e",
+  "title": "453be3fcd23d710c7aa8f5db34f69010_1738429368136-_FLP__Phonk_Kong_-_Montagem_Lunar_Diamante_Style_incl_FLP_and_Bonus_Drumkit",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/453be3fcd23d710c7aa8f5db34f69010_1738429368136-_FLP__Phonk_Kong_-_Montagem_Lunar_Diamante_Style_incl_FLP_and_Bonus_Drumkit.zip",
+  "flp_files": [
+    {
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Phonk Kong - Montagem Lunar Demo Track.flp",
+      "size_bytes": 462111,
+      "sha256": "26fdb95e0f0b251745d1ffe45e6f04b49ac0f3b85ecaadafabbadaa9ec000aff"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.1592517006802721,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 7023,
+      "peak": 0.2340087890625,
+      "rms": 0.02263590320944786,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Basic 808 HiHat.wav"
+    },
+    {
+      "duration_seconds": 7.3823541666666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 354353,
+      "peak": 0.225433349609375,
+      "rms": 0.04622737690806389,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Brazil Acapella 9.wav"
+    },
+    {
+      "duration_seconds": 3.142520833333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 150841,
+      "peak": 0.70684814453125,
+      "rms": 0.059511665254831314,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Vocal - 16.wav"
+    },
+    {
+      "duration_seconds": 6.4695238095238095,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 285306,
+      "peak": 0.7960406541824341,
+      "rms": 0.42805391550064087,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/808 - 13 - C.wav"
+    },
+    {
+      "duration_seconds": 0.18653061224489795,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 8226,
+      "peak": 0.82275390625,
+      "rms": 0.18322189152240753,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Basic 808 Snare.wav"
+    },
+    {
+      "duration_seconds": 3.4653125,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 166335,
+      "peak": 0.99993896484375,
+      "rms": 0.279849112033844,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Phonk Kong Synth 4.wav"
+    },
+    {
+      "duration_seconds": 0.4615419501133787,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20354,
+      "peak": 0.975006103515625,
+      "rms": 0.49565643072128296,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/KICK 14.wav"
+    },
+    {
+      "duration_seconds": 5.543265306122449,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 244458,
+      "peak": 0.47027587890625,
+      "rms": 0.10406056046485901,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Phonk Kong Bass 2.wav"
+    },
+    {
+      "duration_seconds": 0.42165532879818596,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 18595,
+      "peak": 0.999969482421875,
+      "rms": 0.2770597040653229,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Basic 808 Kick.wav"
+    },
+    {
+      "duration_seconds": 7.265646258503401,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 320415,
+      "peak": 0.9999998807907104,
+      "rms": 0.36939820647239685,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Impact - Sub.wav"
+    },
+    {
+      "duration_seconds": 0.2630612244897959,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 11601,
+      "peak": 0.82275390625,
+      "rms": 0.11091288179159164,
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/FLP/Basic 808 Clap.wav"
+    },
+    {
+      "duration_seconds": 2.799342403628118,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 123451,
+      "peak": 1.0,
+      "rms": 0.15344573557376862,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 6.wav"
+    },
+    {
+      "duration_seconds": 1.8850566893424037,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 83131,
+      "peak": 0.982444167137146,
+      "rms": 0.08430583029985428,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 8.mp3"
+    },
+    {
+      "duration_seconds": 1.8850566893424037,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 83131,
+      "peak": 0.7900660037994385,
+      "rms": 0.04988832771778107,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 9.mp3"
+    },
+    {
+      "duration_seconds": 4.283310657596372,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 188894,
+      "peak": 0.8222427368164062,
+      "rms": 0.204904705286026,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 3.wav"
+    },
+    {
+      "duration_seconds": 1.8850566893424037,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 83131,
+      "peak": 1.0168131589889526,
+      "rms": 0.04722081869840622,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 7.mp3"
+    },
+    {
+      "duration_seconds": 3.4653125,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 166335,
+      "peak": 0.99993896484375,
+      "rms": 0.279849112033844,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 4.wav"
+    },
+    {
+      "duration_seconds": 6.007823129251701,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 264945,
+      "peak": 0.9103565216064453,
+      "rms": 0.0563337579369545,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 1.wav"
+    },
+    {
+      "duration_seconds": 4.526848072562358,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 199634,
+      "peak": 0.8861352205276489,
+      "rms": 0.1914602369070053,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 5.wav"
+    },
+    {
+      "duration_seconds": 2.5615192743764172,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 112963,
+      "peak": 0.999969482421875,
+      "rms": 0.0890922024846077,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 10.wav"
+    },
+    {
+      "duration_seconds": 3.6018820861678003,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 158843,
+      "peak": 0.9147974252700806,
+      "rms": 0.11769083142280579,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Synth/Phonk Kong Synth 2.wav"
+    },
+    {
+      "duration_seconds": 9.259614512471655,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 408349,
+      "peak": 0.913970947265625,
+      "rms": 0.13578076660633087,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong FX/Phonk Kong FX 5.wav"
+    },
+    {
+      "duration_seconds": 6.456734693877551,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 284742,
+      "peak": 0.97503662109375,
+      "rms": 0.09605534374713898,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong FX/Phonk Kong FX 3.wav"
+    },
+    {
+      "duration_seconds": 12.927891156462586,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 570120,
+      "peak": 0.68316650390625,
+      "rms": 0.05693129822611809,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong FX/Phonk Kong FX 2.wav"
+    },
+    {
+      "duration_seconds": 0.528843537414966,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 23322,
+      "peak": 0.647918701171875,
+      "rms": 0.20029303431510925,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong FX/Phonk Kong FX 4.wav"
+    },
+    {
+      "duration_seconds": 6.6709977324263035,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 294191,
+      "peak": 1.8329869508743286,
+      "rms": 0.11347370594739914,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong FX/Phonk Kong FX 1.wav"
+    },
+    {
+      "duration_seconds": 0.4326984126984127,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 19082,
+      "peak": 0.97503662109375,
+      "rms": 0.5096789002418518,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Kick/Phonk Kong Kick 1.wav"
+    },
+    {
+      "duration_seconds": 0.23482993197278912,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 10356,
+      "peak": 1.0,
+      "rms": 0.4604257047176361,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Kick/Phonk Kong Kick 4.wav"
+    },
+    {
+      "duration_seconds": 0.3461451247165533,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15265,
+      "peak": 0.999542236328125,
+      "rms": 0.5460879802703857,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Kick/Phonk Kong Kick 3.wav"
+    },
+    {
+      "duration_seconds": 0.4981632653061224,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 21969,
+      "peak": 0.999969482421875,
+      "rms": 0.772930920124054,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Kick/Phonk Kong Kick 5.wav"
+    },
+    {
+      "duration_seconds": 0.3461451247165533,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15265,
+      "peak": 0.999542236328125,
+      "rms": 0.5460879802703857,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Kick/Phonk Kong Kick 2.wav"
+    },
+    {
+      "duration_seconds": 6.819024943310658,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 300719,
+      "peak": 0.7232223749160767,
+      "rms": 0.16499201953411102,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Bass/Phonk Kong Bass 1.wav"
+    },
+    {
+      "duration_seconds": 0.42857142857142855,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 18900,
+      "peak": 0.999969482421875,
+      "rms": 0.27846822142601013,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Bass/Phonk Kong Bass 4.wav"
+    },
+    {
+      "duration_seconds": 1.0966666666666667,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 48363,
+      "peak": 1.4642398357391357,
+      "rms": 0.37274712324142456,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Bass/Phonk Kong Bass 3.wav"
+    },
+    {
+      "duration_seconds": 1.7646938775510204,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 77823,
+      "peak": 0.9787847995758057,
+      "rms": 0.36192935705184937,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Bass/Phonk Kong Bass 2.wav"
+    },
+    {
+      "duration_seconds": 7.384625850340136,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 325662,
+      "peak": 0.511199951171875,
+      "rms": 0.35995373129844666,
+      "rel_path": "[BONUS] Phonk Kong - Montagem Lunar Drumkit/Phonk Kong Bass/Phonk Kong Bass 5.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/Thank You.jpg",
+      "size_bytes": 696920,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/Phonk Kong.jpg",
+      "size_bytes": 150509,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/Check it Out.jpg",
+      "size_bytes": 630139,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - Montagem Lunar Diamante Style incl FLP and Bonus Drumkit/Phonk Kong - How to Use Project Files.pdf",
+      "size_bytes": 133669,
+      "ext": ".pdf"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 36,
+    "other_count": 4,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 122.85751814058958,
+    "sample_rate_histogram": {
+      "44100": 32,
+      "48000": 4
+    },
+    "archive_size_bytes": 19458018
+  },
+  "created_at": 1772211234
+}
