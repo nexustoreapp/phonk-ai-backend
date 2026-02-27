@@ -1,0 +1,110 @@
+{
+  "project_id": "sxllx-oliveira-mc-011-mama-ma-remake-by-dj-gvx-6c31d67b",
+  "title": "SXLLX, Oliveira Mc 011- MAMA MA REMAKE BY DJ GVX",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/SXLLX, Oliveira Mc 011- MAMA MA REMAKE BY DJ GVX.zip",
+  "flp_files": [
+    {
+      "rel_path": "REAMKE MAMA MA.flp",
+      "size_bytes": 343698,
+      "sha256": "6c31d67b3e8a93a9b835c8ca157430ca20562a54db245a329cfb82f8c51f9784"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 72.89183673469388,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3214530,
+      "peak": 1.1352837085723877,
+      "rms": 0.139928936958313,
+      "rel_path": "SpotiDownloader.com - MAMA MA - SXLLX_vocals.wav"
+    },
+    {
+      "duration_seconds": 72.89183673469388,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3214530,
+      "peak": 1.1401187181472778,
+      "rms": 0.3300022482872009,
+      "rel_path": "SpotiDownloader.com - MAMA MA - SXLLX_bass.wav"
+    },
+    {
+      "duration_seconds": 73.25961451247166,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3230749,
+      "peak": 1.0768117904663086,
+      "rms": 0.5215017795562744,
+      "rel_path": "SpotiDownloader.com - MAMA MA - SXLLX.mp3"
+    },
+    {
+      "duration_seconds": 0.41705215419501135,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 18392,
+      "peak": 1.9500508308410645,
+      "rms": 0.4724220931529999,
+      "rel_path": "[CYP] KICK (28).wav"
+    },
+    {
+      "duration_seconds": 0.75,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 33075,
+      "peak": 0.8912508487701416,
+      "rms": 0.1483992487192154,
+      "rel_path": "DS_BPT_synth_lead_culture_C.wav"
+    },
+    {
+      "duration_seconds": 0.6874829931972789,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 30318,
+      "peak": 0.8912508487701416,
+      "rms": 0.2661615312099457,
+      "rel_path": "DS_BPT_synth_pluck_world_C.wav"
+    },
+    {
+      "duration_seconds": 0.6874829931972789,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 30318,
+      "peak": 0.8912508487701416,
+      "rms": 0.266185462474823,
+      "rel_path": "DS_BPT_synth_pluck_scan_C.wav"
+    },
+    {
+      "duration_seconds": 2.3809297052154195,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 104999,
+      "peak": 0.8912508487701416,
+      "rms": 0.2709479033946991,
+      "rel_path": "[CJR] REESE BASS (8).wav"
+    },
+    {
+      "duration_seconds": 2.3124943310657597,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 101981,
+      "peak": 0.615753173828125,
+      "rms": 0.07468239963054657,
+      "rel_path": "REAMKE MAMA MA.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 9,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 226.27873015873013,
+    "sample_rate_histogram": {
+      "44100": 9
+    },
+    "archive_size_bytes": 52398833
+  },
+  "created_at": 1772211387
+}
