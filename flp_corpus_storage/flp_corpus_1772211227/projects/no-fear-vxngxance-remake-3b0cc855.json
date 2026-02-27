@@ -1,0 +1,206 @@
+{
+  "project_id": "no-fear-vxngxance-remake-3b0cc855",
+  "title": "NO FEAR! (VXNGXANCE REMAKE)",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/NO FEAR! (VXNGXANCE REMAKE).zip",
+  "flp_files": [
+    {
+      "rel_path": "NO FEAR! (VXNGXANCE REMAKE).flp",
+      "size_bytes": 360974,
+      "sha256": "3b0cc8550452d10712e399d9e656d9714a4503efba0a9de4f54c3d8b06afa915"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.9230839002267573,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 40708,
+      "peak": 0.841461181640625,
+      "rms": 0.11769837886095047,
+      "rel_path": "Snare Fill Mano 2.wav"
+    },
+    {
+      "duration_seconds": 33.23077097505669,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 1465477,
+      "peak": 0.9999999403953552,
+      "rms": 0.19593121111392975,
+      "rel_path": "[WET] Loopsy - Vocal Hooks - Solto - 130 - C#m_2.wav"
+    },
+    {
+      "duration_seconds": 3.711950113378685,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 163697,
+      "peak": 0.719757080078125,
+      "rms": 0.12387944757938385,
+      "rel_path": "[N3] LXNGVX - MYSTERIOUS GAME.wav"
+    },
+    {
+      "duration_seconds": 0.16043083900226757,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 7075,
+      "peak": 2.3465137481689453,
+      "rms": 1.371846318244934,
+      "rel_path": "[FMJ] KICK (22).wav"
+    },
+    {
+      "duration_seconds": 0.8571428571428571,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 37800,
+      "peak": 0.715301513671875,
+      "rms": 0.20869381725788116,
+      "rel_path": "[CxL] BASS SHOT (55).wav"
+    },
+    {
+      "duration_seconds": 0.2445578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 10785,
+      "peak": 0.7574462890625,
+      "rms": 0.4134536683559418,
+      "rel_path": "[N3] ETERNXLKZ - Kick 3.wav"
+    },
+    {
+      "duration_seconds": 3.4726530612244897,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 153144,
+      "peak": 1.0,
+      "rms": 0.28082403540611267,
+      "rel_path": "MARCAÇAO VEMM.wav"
+    },
+    {
+      "duration_seconds": 0.5432653061224489,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 23958,
+      "peak": 0.999969482421875,
+      "rms": 0.4778309166431427,
+      "rel_path": "[N3] REVERSE KICK .wav"
+    },
+    {
+      "duration_seconds": 5.177891156462585,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 228345,
+      "peak": 0.458251953125,
+      "rms": 0.04297933354973793,
+      "rel_path": "[N3] ETERNXLKZ - Aguda 14 (consolidated).wav"
+    },
+    {
+      "duration_seconds": 0.5826303854875283,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 25694,
+      "peak": 0.9999998807907104,
+      "rms": 0.31401678919792175,
+      "rel_path": "[CxL] BASS SHOT (44).wav"
+    },
+    {
+      "duration_seconds": 1.8701814058956916,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 82475,
+      "peak": 0.90985107421875,
+      "rms": 0.24165400862693787,
+      "rel_path": "[N3] VAI.wav"
+    },
+    {
+      "duration_seconds": 1.8701814058956916,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 82475,
+      "peak": 0.76751708984375,
+      "rms": 0.0989166647195816,
+      "rel_path": "[N3] ETERNXLKZ - Aguda 12.wav"
+    },
+    {
+      "duration_seconds": 8.062494331065759,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 355556,
+      "peak": 0.515533447265625,
+      "rms": 0.17552167177200317,
+      "rel_path": "REESE BASS (15).wav"
+    },
+    {
+      "duration_seconds": 109.90004535147392,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4846592,
+      "peak": 1.2232887744903564,
+      "rms": 0.4735306203365326,
+      "rel_path": "ANDROMEDA & KVRXD - NO FEAR! [Brazilian Phonk].mp3"
+    },
+    {
+      "duration_seconds": 0.8141723356009071,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 35905,
+      "peak": 1.0,
+      "rms": 0.22121091187000275,
+      "rel_path": "[CxL] BASS SHOT (47).wav"
+    },
+    {
+      "duration_seconds": 9.23077097505669,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 407077,
+      "peak": 0.0291748046875,
+      "rms": 0.009076626040041447,
+      "rel_path": "rg.wav"
+    },
+    {
+      "duration_seconds": 1.8164172335600908,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 80104,
+      "peak": 0.98016357421875,
+      "rms": 0.22170846164226532,
+      "rel_path": "vl - vai vai vai clean.wav"
+    },
+    {
+      "duration_seconds": 7.384603174603175,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 325661,
+      "peak": 0.747467041015625,
+      "rms": 0.1864480972290039,
+      "rel_path": "[N3] VUK VUK.wav"
+    },
+    {
+      "duration_seconds": 1.8701814058956916,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 82475,
+      "peak": 0.878448486328125,
+      "rms": 0.11462019383907318,
+      "rel_path": "[N3] ETERNXLKZ - Aguda 14.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "[CxL] BASS SHOT (47).wav.zpa",
+      "size_bytes": 1128,
+      "ext": ".zpa"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 19,
+    "other_count": 1,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 191.72342403628116,
+    "sample_rate_histogram": {
+      "44100": 19
+    },
+    "archive_size_bytes": 38488150
+  },
+  "created_at": 1772211323
+}
