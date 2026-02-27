@@ -1,0 +1,165 @@
+{
+  "project_id": "remake-montagem-tamada-by-dj-gvx-3693165b",
+  "title": "REMAKE MONTAGEM TAMADA BY DJ GVX",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/REMAKE MONTAGEM TAMADA BY DJ GVX.zip",
+  "flp_files": [
+    {
+      "rel_path": "REMAKE MONTAGEM TAMADA BY DJ GVX.flp",
+      "size_bytes": 189459,
+      "sha256": "3693165bdb62bb4934c38d0d54855fa1503485d51d5872417d1b1b93063e336f"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.3846031746031746,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 61061,
+      "peak": 0.824920654296875,
+      "rms": 0.19916629791259766,
+      "rel_path": "ÓH ÒH.wav"
+    },
+    {
+      "duration_seconds": 1.1529791666666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 55343,
+      "peak": 1.0483341217041016,
+      "rms": 0.3205674886703491,
+      "rel_path": "SAMPLE DJ.MENOR_K7.mp3"
+    },
+    {
+      "duration_seconds": 0.5240362811791384,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 23110,
+      "peak": 0.999969482421875,
+      "rms": 0.39375707507133484,
+      "rel_path": "KICK LADRAOO.wav"
+    },
+    {
+      "duration_seconds": 69.47113378684807,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3063677,
+      "peak": 0.953940749168396,
+      "rms": 0.15744927525520325,
+      "rel_path": "[SPOTDOWNLOADER.COM] MONTAGEM TOMADA_vocals.wav"
+    },
+    {
+      "duration_seconds": 70.33124716553289,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3101608,
+      "peak": 1.0938720703125,
+      "rms": 0.5211918354034424,
+      "rel_path": "Montagem Ela Fica.mp3"
+    },
+    {
+      "duration_seconds": 69.47113378684807,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3063677,
+      "peak": 1.1525352001190186,
+      "rms": 0.31581681966781616,
+      "rel_path": "[SPOTDOWNLOADER.COM] MONTAGEM TOMADA_drums.wav"
+    },
+    {
+      "duration_seconds": 71.44780045351474,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3150848,
+      "peak": 1.1715874671936035,
+      "rms": 0.517132580280304,
+      "rel_path": "[SPOTDOWNLOADER.COM] MONTAGEM TOMADA.mp3"
+    },
+    {
+      "duration_seconds": 0.24519274376417233,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 10813,
+      "peak": 0.997222900390625,
+      "rms": 0.28188982605934143,
+      "rel_path": "223.wav"
+    },
+    {
+      "duration_seconds": 69.47113378684807,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3063677,
+      "peak": 1.2369529008865356,
+      "rms": 0.22262626886367798,
+      "rel_path": "[SPOTDOWNLOADER.COM] MONTAGEM TOMADA_instruments.wav"
+    },
+    {
+      "duration_seconds": 21.6,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 952560,
+      "peak": 0.8912508487701416,
+      "rms": 0.09950738400220871,
+      "rel_path": "vocal 24.wav"
+    },
+    {
+      "duration_seconds": 0.985578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43464,
+      "peak": 0.451141357421875,
+      "rms": 0.2505791485309601,
+      "rel_path": "reverse bass start.wav"
+    },
+    {
+      "duration_seconds": 0.9807709750566893,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43252,
+      "peak": 0.6522216796875,
+      "rms": 0.3009808361530304,
+      "rel_path": "bass ladrao.wav"
+    },
+    {
+      "duration_seconds": 1.906938775510204,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 84096,
+      "peak": 0.826629638671875,
+      "rms": 0.10017149150371552,
+      "rel_path": "WOW_SAMPLE.wav"
+    },
+    {
+      "duration_seconds": 0.985578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43464,
+      "peak": 0.966461181640625,
+      "rms": 0.425726979970932,
+      "rel_path": "BASS START.wav"
+    },
+    {
+      "duration_seconds": 69.47113378684807,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3063677,
+      "peak": 0.9418115615844727,
+      "rms": 0.28783848881721497,
+      "rel_path": "[SPOTDOWNLOADER.COM] MONTAGEM TOMADA_bass.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 15,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 449.4292603458049,
+    "sample_rate_histogram": {
+      "44100": 14,
+      "48000": 1
+    },
+    "archive_size_bytes": 96999349
+  },
+  "created_at": 1772211369
+}
