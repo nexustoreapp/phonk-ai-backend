@@ -1,0 +1,65 @@
+{
+  "project_id": "sei-vei-remake-by-sappy-b99fe84e",
+  "title": "SEI VEI remake by sappy.",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/SEI VEI remake by sappy..zip",
+  "flp_files": [
+    {
+      "rel_path": "SEI VEI remake_5.flp",
+      "size_bytes": 1429583,
+      "sha256": "b99fe84ed3754bb0227abc91908f30d1e0db04fb4e114ce0a34bd11be91eff87"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.12562358276643992,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 5540,
+      "peak": 2.9733502864837646,
+      "rms": 1.1613606214523315,
+      "rel_path": "kicksauce.wav"
+    },
+    {
+      "duration_seconds": 102.45224489795919,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4518144,
+      "peak": 1.0928112268447876,
+      "rms": 0.13048991560935974,
+      "rel_path": "Repsaj, SNXP, Slaymacow — VEI SEI (www.lightaudio.ru)_vocals_2.wav"
+    },
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.975161612033844,
+      "rms": 0.10872848331928253,
+      "rel_path": "SAMPLER CANALHA (1).wav"
+    },
+    {
+      "duration_seconds": 3.5717913832199546,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 157516,
+      "peak": 1.336876392364502,
+      "rms": 0.3589606285095215,
+      "rel_path": "Grave Vapo do Vapo.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 4,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 108.00061224489797,
+    "sample_rate_histogram": {
+      "44100": 4
+    },
+    "archive_size_bytes": 36188680
+  },
+  "created_at": 1772211375
+}
