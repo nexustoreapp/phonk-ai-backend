@@ -1,0 +1,120 @@
+{
+  "project_id": "montagem-rebola-vxngxance-remake-73e28183",
+  "title": "MONTAGEM REBOLA - VXNGXANCE REMAKE",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/MONTAGEM REBOLA - VXNGXANCE REMAKE.zip",
+  "flp_files": [
+    {
+      "rel_path": "MONTAGEM REBOLA - VXNGXANCE REMAKE.flp",
+      "size_bytes": 589017,
+      "sha256": "73e28183f642b5c6e7ec5d1c37f70ac28cb446a64bcb9a53a0febb02136988ae"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 2.7692290249433107,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 122123,
+      "peak": 0.9269012212753296,
+      "rms": 0.43494194746017456,
+      "rel_path": "Subb [C].wav"
+    },
+    {
+      "duration_seconds": 101.26375,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 4860660,
+      "peak": 1.1582026481628418,
+      "rms": 0.18047039210796356,
+      "rel_path": "ATLXS_DJ_FKU_-_MONTAGEM_REBOLA_(SkySound.cc)_vocals_2.wav"
+    },
+    {
+      "duration_seconds": 101.36922902494331,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4470383,
+      "peak": 1.1917905807495117,
+      "rms": 0.4961666166782379,
+      "rel_path": "ATLXS_DJ_FKU_-_MONTAGEM_REBOLA_(SkySound.cc).mp3"
+    },
+    {
+      "duration_seconds": 0.41841666666666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 20084,
+      "peak": 0.9976860284805298,
+      "rms": 0.35473307967185974,
+      "rel_path": "[SS] LADRAO SAMPLE_ORIGINAL.wav"
+    },
+    {
+      "duration_seconds": 2.03390022675737,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 89695,
+      "peak": 0.99981689453125,
+      "rms": 0.08355751633644104,
+      "rel_path": "KSHMR Shaker Loop 24 - 120BPM - High.wav"
+    },
+    {
+      "duration_seconds": 0.9586621315192744,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 42277,
+      "peak": 1.0,
+      "rms": 0.1210283488035202,
+      "rel_path": "[CxL] RIDE (6).wav"
+    },
+    {
+      "duration_seconds": 0.985578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43464,
+      "peak": 0.451141357421875,
+      "rms": 0.2505791485309601,
+      "rel_path": "reverse bass start.wav"
+    },
+    {
+      "duration_seconds": 0.23077097505668934,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 10177,
+      "peak": 0.97052001953125,
+      "rms": 0.24696335196495056,
+      "rel_path": "[F] Snare (40).wav"
+    },
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.999969482421875,
+      "rms": 0.1291041374206543,
+      "rel_path": "[N3] CHORDSHOT  (VEM VEM).wav"
+    },
+    {
+      "duration_seconds": 99.48595833333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 4775326,
+      "peak": 1.3677071332931519,
+      "rms": 0.34558209776878357,
+      "rel_path": "ATLXS_DJ_FKU_-_MONTAGEM_REBOLA_(SkySound.cc)_drums.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 10,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 311.36644699546486,
+    "sample_rate_histogram": {
+      "44100": 7,
+      "48000": 3
+    },
+    "archive_size_bytes": 77568099
+  },
+  "created_at": 1772211286
+}
