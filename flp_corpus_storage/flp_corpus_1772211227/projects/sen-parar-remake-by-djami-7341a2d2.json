@@ -1,0 +1,112 @@
+{
+  "project_id": "sen-parar-remake-by-djami-7341a2d2",
+  "title": "SEN PARAR REMAKE by DJAMI",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/SEN PARAR REMAKE by DJAMI.zip",
+  "flp_files": [
+    {
+      "rel_path": "SEN PARAR REMAKE by DJAMI/SEN PARAR REMAKE by DJAMI.flp",
+      "size_bytes": 131457,
+      "sha256": "7341a2d29efd812ff103ab00eb80aa60e1939fe49316d8b5dcdd8243931c99f9"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.41705215419501135,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 18392,
+      "peak": 1.9500508308410645,
+      "rms": 0.4724220931529999,
+      "rel_path": "SEN PARAR REMAKE by DJAMI/DJAMI - KICK DE SEN PARAR.wav"
+    },
+    {
+      "duration_seconds": 3.5717913832199546,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 157516,
+      "peak": 1.336876392364502,
+      "rms": 0.3589606285095215,
+      "rel_path": "SEN PARAR REMAKE by DJAMI/DJAMI - START SUBDROP DE SEN PARAR.wav"
+    },
+    {
+      "duration_seconds": 2.9182766439909296,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 128696,
+      "peak": 0.84429931640625,
+      "rms": 0.158307746052742,
+      "rel_path": "SEN PARAR REMAKE by DJAMI/DJAMI - SAMPLE DE SEN PARAR.wav"
+    },
+    {
+      "duration_seconds": 92.44734693877551,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4076928,
+      "peak": 1.2182457447052002,
+      "rms": 0.20749224722385406,
+      "rel_path": "SEN PARAR REMAKE by DJAMI/DJAMI - ACAPELLA DE SEN PARAR.wav"
+    },
+    {
+      "duration_seconds": 0.8,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 35280,
+      "peak": 0.988555908203125,
+      "rms": 0.44996991753578186,
+      "rel_path": "SEN PARAR REMAKE by DJAMI/DJAMI - HARDSTYLE KICK DE SEN PARAR.wav"
+    },
+    {
+      "duration_seconds": 1.5691156462585034,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 69198,
+      "peak": 0.82476806640625,
+      "rms": 0.048180706799030304,
+      "rel_path": "SEN PARAR REMAKE by DJAMI/DJAMI - Z-BETA SAMPLE DE SEN PARAR.wav"
+    },
+    {
+      "duration_seconds": 92.38494331065759,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4074176,
+      "peak": 1.3310304880142212,
+      "rms": 0.5967395305633545,
+      "rel_path": "SEN PARAR REMAKE by DJAMI/ORIGINAL TRACK SEN PARAR - MXZI.mp3"
+    },
+    {
+      "duration_seconds": 3.9240362811791383,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 173050,
+      "peak": 1.0,
+      "rms": 0.11324762552976608,
+      "rel_path": "SEN PARAR REMAKE by DJAMI/DJAMI - FSHHHH RISER DE SEN PARAR.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "SEN PARAR REMAKE by DJAMI/SEN PARAR.nfo",
+      "size_bytes": 93,
+      "ext": ".nfo"
+    },
+    {
+      "rel_path": "SEN PARAR REMAKE by DJAMI/img/sp.jpeg",
+      "size_bytes": 18888,
+      "ext": ".jpeg"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 8,
+    "other_count": 2,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 198.03256235827664,
+    "sample_rate_histogram": {
+      "44100": 8
+    },
+    "archive_size_bytes": 37860674
+  },
+  "created_at": 1772211380
+}
