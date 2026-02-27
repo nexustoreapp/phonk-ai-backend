@@ -1,0 +1,102 @@
+{
+  "project_id": "al-nacer-vxngxance-remake-49f60012",
+  "title": "AL NACER! - VXNGXANCE REMAKE",
+  "source_archive": "flp_uploads/batch_1772211130/FLP/AL NACER! - VXNGXANCE REMAKE.zip",
+  "flp_files": [
+    {
+      "rel_path": "AL NACER! - VXNGXANCE REMAKE.flp",
+      "size_bytes": 179343,
+      "sha256": "49f60012e65f852dcba564e80cb966207cb9eaf263a22dd341b49bfa9e599bde"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 3.6538548752834465,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 161135,
+      "peak": 0.99993896484375,
+      "rms": 0.41936710476875305,
+      "rel_path": "[N3] GRAVE .wav"
+    },
+    {
+      "duration_seconds": 7.559070294784581,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 333355,
+      "peak": 0.8968889713287354,
+      "rms": 0.07641585171222687,
+      "rel_path": "[CxL] BRAZILIAN LOOP (2).wav"
+    },
+    {
+      "duration_seconds": 2.7692290249433107,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 122123,
+      "peak": 0.9269012212753296,
+      "rms": 0.43494194746017456,
+      "rel_path": "Subb [C].wav"
+    },
+    {
+      "duration_seconds": 0.15891666666666668,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 7628,
+      "peak": 1.0,
+      "rms": 0.6776729226112366,
+      "rel_path": "kick - taffy_2.wav"
+    },
+    {
+      "duration_seconds": 0.41841666666666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 20084,
+      "peak": 0.9976860284805298,
+      "rms": 0.35473307967185974,
+      "rel_path": "[SS] LADRAO SAMPLE_ORIGINAL.wav"
+    },
+    {
+      "duration_seconds": 108.67297916666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 5216303,
+      "peak": 1.3079086542129517,
+      "rms": 0.4499874711036682,
+      "rel_path": "AL NACER!.mp3"
+    },
+    {
+      "duration_seconds": 0.5625170068027211,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 24807,
+      "peak": 0.6736375093460083,
+      "rms": 0.03885961323976517,
+      "rel_path": "[FMJ] HIHAT (73).wav"
+    },
+    {
+      "duration_seconds": 108.6651247165533,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4792132,
+      "peak": 1.2506259679794312,
+      "rms": 0.13817784190177917,
+      "rel_path": "untitled_vocals_3.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 8,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 232.46010841836735,
+    "sample_rate_histogram": {
+      "44100": 5,
+      "48000": 3
+    },
+    "archive_size_bytes": 40653911
+  },
+  "created_at": 1772211263
+}
