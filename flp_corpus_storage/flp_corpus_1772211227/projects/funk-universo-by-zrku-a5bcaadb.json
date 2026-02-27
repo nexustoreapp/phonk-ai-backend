@@ -1,0 +1,198 @@
+{
+  "project_id": "funk-universo-by-zrku-a5bcaadb",
+  "title": "funk universo by zrku",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/funk universo by zrku.zip",
+  "flp_files": [
+    {
+      "rel_path": "funk universo.flp",
+      "size_bytes": 582811,
+      "sha256": "a5bcaadbcdaaa161bb2999cb2a2c5aa47387a33e22af36452666bf217b0309da"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 7.549387755102041,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 332928,
+      "peak": 0.932647705078125,
+      "rms": 0.1187601312994957,
+      "rel_path": "voxx.wav"
+    },
+    {
+      "duration_seconds": 7.549387755102041,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 332928,
+      "peak": 0.99493408203125,
+      "rms": 0.16688884794712067,
+      "rel_path": "universo voc 2.wav"
+    },
+    {
+      "duration_seconds": 5.472979166666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 262703,
+      "peak": 1.0,
+      "rms": 0.3916420042514801,
+      "rel_path": "[N3] SLIDE.wav"
+    },
+    {
+      "duration_seconds": 3.7583673469387757,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 165744,
+      "peak": 0.4027911424636841,
+      "rms": 0.045154884457588196,
+      "rel_path": "Vocal - 188Beats (39).wav"
+    },
+    {
+      "duration_seconds": 7.549387755102041,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 332928,
+      "peak": 0.98455810546875,
+      "rms": 0.20879270136356354,
+      "rel_path": "universo vo.wav"
+    },
+    {
+      "duration_seconds": 0.34260770975056687,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15109,
+      "peak": 0.8887939453125,
+      "rms": 0.1941518485546112,
+      "rel_path": "SNARE 8.wav"
+    },
+    {
+      "duration_seconds": 3.6765079365079365,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 162134,
+      "peak": 0.999969482421875,
+      "rms": 0.18762816488742828,
+      "rel_path": "COPA CAPPANA BEAT.wav"
+    },
+    {
+      "duration_seconds": 11.612925170068028,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 512130,
+      "peak": 0.627685546875,
+      "rms": 0.04430994763970375,
+      "rel_path": "[MM] DOWNLIFTER (6).wav"
+    },
+    {
+      "duration_seconds": 7.250748299319728,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 319758,
+      "peak": 0.999969482421875,
+      "rms": 0.1291222870349884,
+      "rel_path": "Pattern 1 (consolidated)_33.wav"
+    },
+    {
+      "duration_seconds": 1.9401587301587302,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 85561,
+      "peak": 1.0960421562194824,
+      "rms": 0.18958191573619843,
+      "rel_path": "[BRF] Vocal (71).wav_vocals.wav"
+    },
+    {
+      "duration_seconds": 0.4615419501133787,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20354,
+      "peak": 1.0,
+      "rms": 0.5335697531700134,
+      "rel_path": "kicks - (7).wav"
+    },
+    {
+      "duration_seconds": 5.472979166666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 262703,
+      "peak": 1.0,
+      "rms": 0.3916420042514801,
+      "rel_path": "[N3] SLIDE_2.wav"
+    },
+    {
+      "duration_seconds": 1.8461666666666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 88616,
+      "peak": 0.691680908203125,
+      "rms": 0.24900288879871368,
+      "rel_path": "!SAMPLE FILTRADA 02.wav"
+    },
+    {
+      "duration_seconds": 0.6146875,
+      "sample_rate": 48000,
+      "channels": 1,
+      "frames": 29505,
+      "peak": 3.675510883331299,
+      "rms": 0.8358439207077026,
+      "rel_path": "kick - stock.wav"
+    },
+    {
+      "duration_seconds": 0.4615419501133787,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20354,
+      "peak": 1.0,
+      "rms": 0.5335697531700134,
+      "rel_path": "kicks - (7)_2.wav"
+    },
+    {
+      "duration_seconds": 0.0909750566893424,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4012,
+      "peak": 0.9999999403953552,
+      "rms": 0.11894026398658752,
+      "rel_path": "[SA] Rim (8).wav"
+    },
+    {
+      "duration_seconds": 6.02344671201814,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 265634,
+      "peak": 0.99993896484375,
+      "rms": 0.07481025159358978,
+      "rel_path": "FX [Hard Vinyl].wav"
+    },
+    {
+      "duration_seconds": 10.666666666666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 512000,
+      "peak": 0.718841552734375,
+      "rms": 0.4041595757007599,
+      "rel_path": "LOST ULTRA REESE 4.aif"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "[N3] SLIDE.wav.zpa",
+      "size_bytes": 46588,
+      "ext": ".zpa"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 18,
+    "other_count": 1,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 82.3404632936508,
+    "sample_rate_histogram": {
+      "44100": 13,
+      "48000": 5
+    },
+    "archive_size_bytes": 30785219
+  },
+  "created_at": 1772211408
+}
