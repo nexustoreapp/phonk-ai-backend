@@ -1,0 +1,140 @@
+{
+  "project_id": "no-batid-o-remake-by-djami-04b9cf30",
+  "title": "NO BATIDÃO REMAKE by DJAMI",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/NO BATIDÃO REMAKE by DJAMI.zip",
+  "flp_files": [
+    {
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/NO BATIDÃO REMAKE by DJAMI.flp",
+      "size_bytes": 107093,
+      "sha256": "04b9cf30a231698369f09c7512fea079dd9f3fa2e61d88a2cf0cbac771389f8a"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 15.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 720000,
+      "peak": 0.12735843658447266,
+      "rms": 0.01098912674933672,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - DOWNLIDER DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 89.74554166666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 4307786,
+      "peak": 1.7801899909973145,
+      "rms": 0.5146228075027466,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/ZXKAI - NO BATIDÃO.mp3"
+    },
+    {
+      "duration_seconds": 1.8750113378684807,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 82688,
+      "peak": 0.8602491617202759,
+      "rms": 0.0918460488319397,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - MANO FILL DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 0.2648979591836735,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 11682,
+      "peak": 1.0,
+      "rms": 0.14197221398353577,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - KICK 2 DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 0.1094375,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 5253,
+      "peak": 2.0,
+      "rms": 1.0963290929794312,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - KICK DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 89.80800453514739,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3960533,
+      "peak": 1.2061767578125,
+      "rms": 0.19230827689170837,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - ACAPELLA DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 1.6058956916099774,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 70820,
+      "peak": 0.8941807746887207,
+      "rms": 0.292361319065094,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - REVERSE BASS DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 0.41841666666666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 20084,
+      "peak": 0.9976860284805298,
+      "rms": 0.35473307967185974,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - SAMPLE DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 0.4705625,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 22587,
+      "peak": 0.9998779296875,
+      "rms": 0.43051794171333313,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - SAMPLE R9 DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 0.6923125,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 33231,
+      "peak": 1.0,
+      "rms": 0.20531335473060608,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - MANO FILL 2 DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 1.0926757369614513,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 48187,
+      "peak": 1.0,
+      "rms": 0.45886340737342834,
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/DJAMI - HARDSTYLE KICK DE NO BATIDÃO.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/NO BATIDÃO.nfo",
+      "size_bytes": 95,
+      "ext": ".nfo"
+    },
+    {
+      "rel_path": "NO BATIDÃO REMAKE by DJAMI/img/nb.jpeg",
+      "size_bytes": 24024,
+      "ext": ".jpeg"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 11,
+    "other_count": 2,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 201.08275609410433,
+    "sample_rate_histogram": {
+      "48000": 6,
+      "44100": 5
+    },
+    "archive_size_bytes": 39270849
+  },
+  "created_at": 1772211309
+}
