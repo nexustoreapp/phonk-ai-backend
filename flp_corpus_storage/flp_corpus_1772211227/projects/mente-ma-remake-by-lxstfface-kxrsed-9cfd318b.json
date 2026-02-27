@@ -1,0 +1,110 @@
+{
+  "project_id": "mente-ma-remake-by-lxstfface-kxrsed-9cfd318b",
+  "title": "MENTE MA REMAKE BY LXSTFFACE KXRSED",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/MENTE MA REMAKE BY LXSTFFACE KXRSED.zip",
+  "flp_files": [
+    {
+      "rel_path": "Mente Má Remake.flp",
+      "size_bytes": 1396989,
+      "sha256": "9cfd318bfc7ef6082a2357fe39b1bffd95c743e8c79e0e0e22b6e932a23520d1"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 3.687891156462585,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 162636,
+      "peak": 0.5538429021835327,
+      "rms": 0.039960943162441254,
+      "rel_path": "Sample Bruxaria 22.mp3"
+    },
+    {
+      "duration_seconds": 0.47768707482993195,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 21066,
+      "peak": 0.80499267578125,
+      "rms": 0.3306555449962616,
+      "rel_path": "[S] SHADXWBXRN BASSHOT (3).wav"
+    },
+    {
+      "duration_seconds": 75.30208616780045,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3320822,
+      "peak": 1.0214993953704834,
+      "rms": 0.3888007700443268,
+      "rel_path": "SpotiDownloader.com - MENTE MÁ - Nakama.mp3"
+    },
+    {
+      "duration_seconds": 75.30231292517007,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3320832,
+      "peak": 1.0,
+      "rms": 0.15409788489341736,
+      "rel_path": "1_Nakama, Mc Staff - MENTE MÁ_(Vocals).wav"
+    },
+    {
+      "duration_seconds": 0.4615419501133787,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20354,
+      "peak": 0.9123568534851074,
+      "rms": 0.3406642973423004,
+      "rel_path": "KICK (117).wav"
+    },
+    {
+      "duration_seconds": 0.4615192743764172,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20353,
+      "peak": 0.5152587890625,
+      "rms": 0.12887819111347198,
+      "rel_path": "SpotiDownloader.com - MENTE MÁ - Nakama - Part_1.wav"
+    },
+    {
+      "duration_seconds": 1.906938775510204,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 84096,
+      "peak": 0.826629638671875,
+      "rms": 0.10017149150371552,
+      "rel_path": "WOW_SAMPLE.wav"
+    },
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.975161612033844,
+      "rms": 0.10872848331928253,
+      "rel_path": "SAMPLER CANALHA (1)_2.wav"
+    },
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.975161612033844,
+      "rms": 0.10872848331928253,
+      "rel_path": "SAMPLER CANALHA (1).wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 9,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 161.3018820861678,
+    "sample_rate_histogram": {
+      "44100": 9
+    },
+    "archive_size_bytes": 18343136
+  },
+  "created_at": 1772211267
+}
