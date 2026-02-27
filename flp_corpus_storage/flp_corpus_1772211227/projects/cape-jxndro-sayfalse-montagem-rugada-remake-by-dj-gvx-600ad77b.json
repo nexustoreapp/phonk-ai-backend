@@ -1,0 +1,201 @@
+{
+  "project_id": "cape-jxndro-sayfalse-montagem-rugada-remake-by-dj-gvx-600ad77b",
+  "title": "cape, JXNDRO, sayfalse - MONTAGEM RUGADA REMAKE BY DJ GVX",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/cape, JXNDRO, sayfalse - MONTAGEM RUGADA REMAKE BY DJ GVX.zip",
+  "flp_files": [
+    {
+      "rel_path": "montagem rugada remake.flp",
+      "size_bytes": 886792,
+      "sha256": "600ad77bb8fef63c4441af2b70cd8d762de3e75978fd1ee6e1ba2e3a730fc997"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.1469614512471655,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 50581,
+      "peak": 0.94671630859375,
+      "rms": 0.3378745913505554,
+      "rel_path": "GRAVE 20 - Part_1.wav"
+    },
+    {
+      "duration_seconds": 92.44734693877551,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4076928,
+      "peak": 1.0570731163024902,
+      "rms": 0.1989050656557083,
+      "rel_path": "SpotiDownloader.com - MONTAGEM RUGADA - cape_vocals.wav"
+    },
+    {
+      "duration_seconds": 12.927891156462586,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 570120,
+      "peak": 0.68316650390625,
+      "rms": 0.05693129822611809,
+      "rel_path": "(DJ DK EDITS) VENTO.wav"
+    },
+    {
+      "duration_seconds": 9.37501133786848,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 413438,
+      "peak": 0.9879999160766602,
+      "rms": 0.05963633581995964,
+      "rel_path": "EFEITO 5.wav"
+    },
+    {
+      "duration_seconds": 0.42462585034013606,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 18726,
+      "peak": 0.49578857421875,
+      "rms": 0.0856553390622139,
+      "rel_path": "@jekira OH KURILKA.wav"
+    },
+    {
+      "duration_seconds": 1.8461458333333334,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 88615,
+      "peak": 0.6395263671875,
+      "rms": 0.10566885024309158,
+      "rel_path": "OI oi OI oi (very popular).wav"
+    },
+    {
+      "duration_seconds": 1.6058956916099774,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 70820,
+      "peak": 0.8941807746887207,
+      "rms": 0.292361319065094,
+      "rel_path": "ReiDoBrega TROPKILLAZ 808 04.wav"
+    },
+    {
+      "duration_seconds": 1.8616099773242631,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 82097,
+      "peak": 0.831207275390625,
+      "rms": 0.05383385717868805,
+      "rel_path": "@808vendetta - Passing 1 Riser.wav"
+    },
+    {
+      "duration_seconds": 0.5962585034013606,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 26295,
+      "peak": 0.8299560546875,
+      "rms": 0.13664355874061584,
+      "rel_path": "DJAMI - SNARE DE MONTAGEM DIREÇÃO.WAV"
+    },
+    {
+      "duration_seconds": 0.21006802721088436,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 9264,
+      "peak": 0.9999998807907104,
+      "rms": 0.15303248167037964,
+      "rel_path": "ReiDoBrega BLUE PERC 09.wav"
+    },
+    {
+      "duration_seconds": 1.384625850340136,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 61062,
+      "peak": 0.9999998807907104,
+      "rms": 0.21822760999202728,
+      "rel_path": "GRAVE BONITO_2.wav"
+    },
+    {
+      "duration_seconds": 1.5192290249433107,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 66998,
+      "peak": 0.18695068359375,
+      "rms": 0.02421257272362709,
+      "rel_path": "crash (2) - @k1llmeh.wav"
+    },
+    {
+      "duration_seconds": 1.384625850340136,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 61062,
+      "peak": 0.9999998807907104,
+      "rms": 0.21822760999202728,
+      "rel_path": "GRAVE BONITO.wav"
+    },
+    {
+      "duration_seconds": 4.340249433106576,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 191405,
+      "peak": 1.0,
+      "rms": 0.4956977963447571,
+      "rel_path": "[S] ZECKI BASS (1)_4.wav"
+    },
+    {
+      "duration_seconds": 1.569125,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 75318,
+      "peak": 0.92218017578125,
+      "rms": 0.05243104323744774,
+      "rel_path": "SAMPLE DJ MENOR DA DZ7 13_2.wav"
+    },
+    {
+      "duration_seconds": 0.6388662131519275,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 28174,
+      "peak": 0.2220458984375,
+      "rms": 0.03226108476519585,
+      "rel_path": "!tlm oh - lofi.wav"
+    },
+    {
+      "duration_seconds": 0.21875283446712018,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 9647,
+      "peak": 0.999969482421875,
+      "rms": 0.6125097870826721,
+      "rel_path": "@808vendetta - Bustdown Kick.wav"
+    },
+    {
+      "duration_seconds": 92.38462585034014,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4074162,
+      "peak": 1.1366190910339355,
+      "rms": 0.4729022681713104,
+      "rel_path": "SpotiDownloader.com - MONTAGEM RUGADA - cape.mp3"
+    },
+    {
+      "duration_seconds": 5.541179138321995,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 244366,
+      "peak": 0.950286865234375,
+      "rms": 0.3674117922782898,
+      "rel_path": "GRAVE 20.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 19,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 231.42309396258509,
+    "sample_rate_histogram": {
+      "44100": 17,
+      "48000": 2
+    },
+    "archive_size_bytes": 42724230
+  },
+  "created_at": 1772211404
+}
