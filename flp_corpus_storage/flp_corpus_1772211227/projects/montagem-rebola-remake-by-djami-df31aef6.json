@@ -1,0 +1,132 @@
+{
+  "project_id": "montagem-rebola-remake-by-djami-df31aef6",
+  "title": "MONTAGEM REBOLA REMAKE by DJAMI",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/MONTAGEM REBOLA REMAKE by DJAMI.zip",
+  "flp_files": [
+    {
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/MONTAGEM REBOLA REMAKE by DJAMI.flp",
+      "size_bytes": 655924,
+      "sha256": "df31aef67d0e6a98176f7a620c148e8f3b4b6a6f32ecd3ee2e2121ae3846ad8c"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.5962585034013606,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 26295,
+      "peak": 0.8299560546875,
+      "rms": 0.13664355874061584,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - SNARE DE MONTAGEM REBOLA.WAV"
+    },
+    {
+      "duration_seconds": 2.9182766439909296,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 128696,
+      "peak": 0.84429931640625,
+      "rms": 0.158307746052742,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - SAMPLE DE MONTAGEM REBOLA.wav"
+    },
+    {
+      "duration_seconds": 5.754807256235828,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 253787,
+      "peak": 0.953155517578125,
+      "rms": 0.5415457487106323,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - GRAVE DE MONTAGEM REBOLA.wav"
+    },
+    {
+      "duration_seconds": 3.5717913832199546,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 157516,
+      "peak": 1.336876392364502,
+      "rms": 0.3589606285095215,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - START BASS DE MONTAGEM REBOLA.wav"
+    },
+    {
+      "duration_seconds": 0.1094375,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 5253,
+      "peak": 2.0,
+      "rms": 1.0963290929794312,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - KICK DE MONTAGEM REBOLA.wav"
+    },
+    {
+      "duration_seconds": 1.5691156462585034,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 69198,
+      "peak": 0.82476806640625,
+      "rms": 0.048180706799030304,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - Z-BETA SAMPLE DE MONTAGEM REBOLA.wav"
+    },
+    {
+      "duration_seconds": 101.4073469387755,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4472064,
+      "peak": 1.201613187789917,
+      "rms": 0.1756165772676468,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - ACAPELLA DE MONTAGEM REBOLA.wav"
+    },
+    {
+      "duration_seconds": 101.3362358276644,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4468928,
+      "peak": 1.1655551195144653,
+      "rms": 0.49884602427482605,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJFKU - MONTAGEM REBOLA.mp3"
+    },
+    {
+      "duration_seconds": 3.9344444444444444,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 173509,
+      "peak": 1.0,
+      "rms": 0.15352873504161835,
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - HOUSE LOOP DE MONTAGEM REBOLA.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/MONTAGEM REBOLA.nfo",
+      "size_bytes": 100,
+      "ext": ".nfo"
+    },
+    {
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - SAMPLE DE MONTAGEM REBOLA.wav.zpa",
+      "size_bytes": 9024,
+      "ext": ".zpa"
+    },
+    {
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/DJAMI - Z-BETA SAMPLE DE MONTAGEM REBOLA.wav.zpa",
+      "size_bytes": 11856,
+      "ext": ".zpa"
+    },
+    {
+      "rel_path": "MONTAGEM REBOLA REMAKE by DJAMI/img/reb.jpeg",
+      "size_bytes": 21372,
+      "ext": ".jpeg"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 9,
+    "other_count": 4,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 221.1977141439909,
+    "sample_rate_histogram": {
+      "44100": 8,
+      "48000": 1
+    },
+    "archive_size_bytes": 42247323
+  },
+  "created_at": 1772211292
+}
