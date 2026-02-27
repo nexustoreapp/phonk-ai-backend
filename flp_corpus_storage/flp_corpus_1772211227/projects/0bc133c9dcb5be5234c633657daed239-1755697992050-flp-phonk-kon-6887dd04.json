@@ -1,0 +1,90 @@
+{
+  "project_id": "0bc133c9dcb5be5234c633657daed239-1755697992050-flp-phonk-kon-6887dd04",
+  "title": "0bc133c9dcb5be5234c633657daed239_1755697992050-_FLP__Phonk_Kong_-_How_to_Make_Song_like_ACELERADA_by_MXZI___Smasher",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/0bc133c9dcb5be5234c633657daed239_1755697992050-_FLP__Phonk_Kong_-_How_to_Make_Song_like_ACELERADA_by_MXZI___Smasher.zip",
+  "flp_files": [
+    {
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/FLP/Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher.flp",
+      "size_bytes": 324893,
+      "sha256": "6887dd0427bfbe325c952779199455de3297f27ffc1b42f13ef2993014084feb"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.975161612033844,
+      "rms": 0.10872848331928253,
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/FLP/SAMPLER CANALHA_2.wav"
+    },
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.975161612033844,
+      "rms": 0.10872848331928253,
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/FLP/SAMPLER CANALHA_7.wav"
+    },
+    {
+      "duration_seconds": 0.18013605442176872,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 7944,
+      "peak": 0.8721923828125,
+      "rms": 0.5923832654953003,
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/FLP/DIA DELÍCIA KICK.wav"
+    },
+    {
+      "duration_seconds": 7.265646258503401,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 320415,
+      "peak": 0.9999998807907104,
+      "rms": 0.36939820647239685,
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/FLP/Sub Drop (1).wav"
+    },
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.975161612033844,
+      "rms": 0.10872848331928253,
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/FLP/SAMPLER CANALHA_3.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/Thank You.jpg",
+      "size_bytes": 696920,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/Phonk Kong.jpg",
+      "size_bytes": 642572,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - How to Make Song like ACELERADA by MXZI & Smasher/Phonk Kong - How to Use Project Files.pdf",
+      "size_bytes": 133669,
+      "ext": ".pdf"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 5,
+    "other_count": 3,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 12.998639455782312,
+    "sample_rate_histogram": {
+      "44100": 5
+    },
+    "archive_size_bytes": 4027436
+  },
+  "created_at": 1772211228
+}
