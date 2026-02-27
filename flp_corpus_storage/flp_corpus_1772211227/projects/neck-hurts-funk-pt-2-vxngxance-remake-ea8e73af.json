@@ -1,0 +1,47 @@
+{
+  "project_id": "neck-hurts-funk-pt-2-vxngxance-remake-ea8e73af",
+  "title": "NECK HURTS FUNK PT. 2 - VXNGXANCE REMAKE",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/NECK HURTS FUNK PT. 2 - VXNGXANCE REMAKE.zip",
+  "flp_files": [
+    {
+      "rel_path": "NECK HURTS FUNK PT. 2 - VXNGXANCE REMAKE.flp",
+      "size_bytes": 125321,
+      "sha256": "ea8e73afe55d5f26ea01a9ebf4ed02490f2c720692aed314f87f9d06385d8dce"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.692312925170068,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 30531,
+      "peak": 0.999969482421875,
+      "rms": 0.15482138097286224,
+      "rel_path": "neck hurts.wav"
+    },
+    {
+      "duration_seconds": 0.235578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 10389,
+      "peak": 0.999969482421875,
+      "rms": 0.8309992551803589,
+      "rel_path": "[sa] sub kick (1).wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 2,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 0.927891156462585,
+    "sample_rate_histogram": {
+      "44100": 2
+    },
+    "archive_size_bytes": 1526902
+  },
+  "created_at": 1772211303
+}
