@@ -1,0 +1,213 @@
+{
+  "project_id": "montagem-maldicao-remake-by-djami-ead6a87d",
+  "title": "MONTAGEM MALDICAO REMAKE by DJAMI",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/MONTAGEM MALDICAO REMAKE by DJAMI.zip",
+  "flp_files": [
+    {
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/MONTAGEM MALDIÇÃO REMAKE by DJAMI.flp",
+      "size_bytes": 775168,
+      "sha256": "ead6a87d9234498cca4c1cf45fdc7c775d563e34e2a706f26e6c28d610c0b65c"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.8500907029478457,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81589,
+      "peak": 0.8436279296875,
+      "rms": 0.10481665283441544,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - WHISTLE DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 87.11968253968254,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3841978,
+      "peak": 1.0618553161621094,
+      "rms": 0.15996532142162323,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - ACAPELLA DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 0.35984126984126985,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15869,
+      "peak": 0.944244384765625,
+      "rms": 0.22461740672588348,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - KICK 2 DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 1.6058956916099774,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 70820,
+      "peak": 0.8941807746887207,
+      "rms": 0.292361319065094,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - REVERSE BASS DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 0.45369614512471657,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20008,
+      "peak": 0.7929189801216125,
+      "rms": 0.13403058052062988,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - TUCA DONKA VOX DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 2.9182766439909296,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 128696,
+      "peak": 0.84429931640625,
+      "rms": 0.158307746052742,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - SAMPLE DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 1.0926757369614513,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 48187,
+      "peak": 1.0,
+      "rms": 0.45886340737342834,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - HARDSTYLE KICK DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 7.619041666666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 365714,
+      "peak": 0.21371257305145264,
+      "rms": 0.016661424189805984,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - DOWNLIFTER 1 DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 0.353015873015873,
+      "sample_rate": 22050,
+      "channels": 1,
+      "frames": 7784,
+      "peak": 0.916534423828125,
+      "rms": 0.22465679049491882,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - BOING VOX DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 1.5691156462585034,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 69198,
+      "peak": 0.82476806640625,
+      "rms": 0.048180706799030304,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - Z-BETA DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 1.7187528344671201,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 75797,
+      "peak": 0.7309257984161377,
+      "rms": 0.06794706732034683,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - CLAP DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 1.8616099773242631,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 82097,
+      "peak": 0.831207275390625,
+      "rms": 0.05383385717868805,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - PASSING RISER DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 1.6665532879818594,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 73495,
+      "peak": 0.704986572265625,
+      "rms": 0.21127073466777802,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - FIU FIU WHISTLE DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 7.619041666666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 365714,
+      "peak": 0.213586688041687,
+      "rms": 0.019303059205412865,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - DOWNLIFTER 2 DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 0.4615419501133787,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20354,
+      "peak": 0.975341796875,
+      "rms": 0.3837852478027344,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - BOUNCE KICK DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 0.6,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 28800,
+      "peak": 0.996368408203125,
+      "rms": 0.23074708878993988,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - SNARE DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 0.42308390022675735,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 18658,
+      "peak": 0.999969482421875,
+      "rms": 0.3657784163951874,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - KICK DE MONTAGEM MALDIÇÃO.wav"
+    },
+    {
+      "duration_seconds": 87.11256235827665,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3841664,
+      "peak": 1.1578614711761475,
+      "rms": 0.45765992999076843,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJFKU - MONTAGEM MALDIÇÃO.mp3"
+    },
+    {
+      "duration_seconds": 2.142857142857143,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 94500,
+      "peak": 0.54693603515625,
+      "rms": 0.05629587173461914,
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/DJAMI - KORDHELL RISER DE MONTAGEM MALDIÇÃO.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/MONTAGEM MALDIÇÃO.nfo",
+      "size_bytes": 103,
+      "ext": ".nfo"
+    },
+    {
+      "rel_path": "MONTAGEM MALDICAO REMAKE by DJAMI/img/mal.jpg",
+      "size_bytes": 15193,
+      "ext": ".jpg"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 19,
+    "other_count": 2,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 208.54733503401363,
+    "sample_rate_histogram": {
+      "44100": 15,
+      "48000": 3,
+      "22050": 1
+    },
+    "archive_size_bytes": 38705008
+  },
+  "created_at": 1772211273
+}
