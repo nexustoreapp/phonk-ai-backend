@@ -1,0 +1,129 @@
+{
+  "project_id": "montagem-xonada-remake-by-zrku-3f7524a2",
+  "title": "Montagem xonada remake by zrku",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/Montagem xonada remake by zrku.zip",
+  "flp_files": [
+    {
+      "rel_path": "MONTAGEM XONADA remake.flp",
+      "size_bytes": 717045,
+      "sha256": "3f7524a2740701650521206b68f8bc89bbd897de1e5737a72d6e87b88ea47b80"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.1529791666666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 55343,
+      "peak": 1.0483341217041016,
+      "rms": 0.3205674886703491,
+      "rel_path": "SAMPLE DJ.MENOR_K7.mp3"
+    },
+    {
+      "duration_seconds": 0.5240362811791384,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 23110,
+      "peak": 0.999969482421875,
+      "rms": 0.39375707507133484,
+      "rel_path": "KICK LADRAOO.wav"
+    },
+    {
+      "duration_seconds": 0.4981632653061224,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 21969,
+      "peak": 0.999969482421875,
+      "rms": 0.772930920124054,
+      "rel_path": "GRAVE ZN.wav"
+    },
+    {
+      "duration_seconds": 75.78122448979592,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3341952,
+      "peak": 1.0274786949157715,
+      "rms": 0.19286885857582092,
+      "rel_path": "MONTAGEM XONADA_vocals.wav"
+    },
+    {
+      "duration_seconds": 1.245532879818594,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 54928,
+      "peak": 0.92022705078125,
+      "rms": 0.2506318688392639,
+      "rel_path": "[CJR] ONE SHOT (135)_2.wav"
+    },
+    {
+      "duration_seconds": 0.336734693877551,
+      "sample_rate": 44100,
+      "channels": 1,
+      "frames": 14850,
+      "peak": 0.998992919921875,
+      "rms": 0.21176081895828247,
+      "rel_path": "A Sick Snare 3_2.WAV"
+    },
+    {
+      "duration_seconds": 3.4555555555555557,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 152390,
+      "peak": 0.8912509679794312,
+      "rms": 0.13159941136837006,
+      "rel_path": "[MM] UPLIFTER (4).wav"
+    },
+    {
+      "duration_seconds": 6.3980625,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 307107,
+      "peak": 1.0,
+      "rms": 0.38220447301864624,
+      "rel_path": "[CJR] ONE SHOT (221)_2.wav"
+    },
+    {
+      "duration_seconds": 3.879455782312925,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 171084,
+      "peak": 0.999908447265625,
+      "rms": 0.04754381999373436,
+      "rel_path": "[CJR] ONE SHOT (138)_2.wav"
+    },
+    {
+      "duration_seconds": 4.17501133786848,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 184118,
+      "peak": 0.76373291015625,
+      "rms": 0.05604249984025955,
+      "rel_path": "[CJR] ONE SHOT (69)_2.wav"
+    },
+    {
+      "duration_seconds": 75.70430839002267,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3338560,
+      "peak": 1.1310324668884277,
+      "rms": 0.46728765964508057,
+      "rel_path": "MONTAGEM XONADA.mp3"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 11,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 173.15106434240363,
+    "sample_rate_histogram": {
+      "48000": 2,
+      "44100": 9
+    },
+    "archive_size_bytes": 37759536
+  },
+  "created_at": 1772211299
+}
