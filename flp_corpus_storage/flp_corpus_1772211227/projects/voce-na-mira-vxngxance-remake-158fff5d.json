@@ -1,0 +1,129 @@
+{
+  "project_id": "voce-na-mira-vxngxance-remake-158fff5d",
+  "title": "VOCE NA MIRA - VXNGXANCE REMAKE",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/VOCE NA MIRA - VXNGXANCE REMAKE.zip",
+  "flp_files": [
+    {
+      "rel_path": "VOCE NA MIRA - VXNGXANCE REMAKE.flp",
+      "size_bytes": 255709,
+      "sha256": "158fff5dcb177d216c3fec3a901e32b568eef00a572acb323c50642633a97cfe"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 136.82497916666668,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 6567599,
+      "peak": 1.4608521461486816,
+      "rms": 0.45715102553367615,
+      "rel_path": "VOCE NA MIRA.mp3"
+    },
+    {
+      "duration_seconds": 3.1368480725623584,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 138335,
+      "peak": 0.7633056640625,
+      "rms": 0.13031187653541565,
+      "rel_path": "Vocal Shot (4)_2.wav"
+    },
+    {
+      "duration_seconds": 136.82496598639455,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 6033981,
+      "peak": 0.84051513671875,
+      "rms": 0.1272570788860321,
+      "rel_path": "VOCE NA MIRA (Vocals).wav"
+    },
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.999969482421875,
+      "rms": 0.26705729961395264,
+      "rel_path": "[MM] POWER KICK (3).wav"
+    },
+    {
+      "duration_seconds": 1.3956875,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 66993,
+      "peak": 0.99993896484375,
+      "rms": 0.14624066650867462,
+      "rel_path": "[DA] PASSO BEM SOLTO_2.wav"
+    },
+    {
+      "duration_seconds": 2.03390022675737,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 89695,
+      "peak": 0.99981689453125,
+      "rms": 0.08355751633644104,
+      "rel_path": "KSHMR Shaker Loop 24 - 120BPM - High.wav"
+    },
+    {
+      "duration_seconds": 2.4119047619047618,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 106365,
+      "peak": 0.9885531663894653,
+      "rms": 0.24925465881824493,
+      "rel_path": "fill - snare glitch.wav"
+    },
+    {
+      "duration_seconds": 0.985578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43464,
+      "peak": 0.451141357421875,
+      "rms": 0.2505791485309601,
+      "rel_path": "reverse bass start.wav"
+    },
+    {
+      "duration_seconds": 0.6745833333333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 32380,
+      "peak": 1.0,
+      "rms": 0.32891806960105896,
+      "rel_path": "kick - taffy.wav"
+    },
+    {
+      "duration_seconds": 0.9113832199546485,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 40192,
+      "peak": 0.979034423828125,
+      "rms": 0.2254791557788849,
+      "rel_path": "vox - pok pok.wav"
+    },
+    {
+      "duration_seconds": 0.21528344671201813,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 9494,
+      "peak": 0.86767578125,
+      "rms": 0.11874796450138092,
+      "rel_path": "[N3] CHA.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 11,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 287.26606632653056,
+    "sample_rate_histogram": {
+      "48000": 3,
+      "44100": 8
+    },
+    "archive_size_bytes": 79606588
+  },
+  "created_at": 1772211398
+}
