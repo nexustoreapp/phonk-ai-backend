@@ -1,0 +1,130 @@
+{
+  "project_id": "murder-in-my-mind-b44a1b20",
+  "title": "Murder in my Mind",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/Murder in my Mind.zip",
+  "flp_files": [
+    {
+      "rel_path": "Murder in my Mind/murder in my mind not done.flp",
+      "size_bytes": 165722,
+      "sha256": "b44a1b20646fc5a496d50f29a8a51964806677aa90b90143a2657dddf15fb340"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.4951473922902494,
+      "sample_rate": 22050,
+      "channels": 1,
+      "frames": 32968,
+      "peak": 1.0,
+      "rms": 0.2804170250892639,
+      "rel_path": "Murder in my Mind/!K - FX (12).wav"
+    },
+    {
+      "duration_seconds": 8.037916666666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 385820,
+      "peak": 0.99993896484375,
+      "rms": 0.3426540493965149,
+      "rel_path": "Murder in my Mind/KORDHELL_-_MURDER_IN_MY_MIND_-_PARTE_END.wav"
+    },
+    {
+      "duration_seconds": 0.5962585034013606,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 26295,
+      "peak": 0.8299560546875,
+      "rms": 0.13664355874061584,
+      "rel_path": "Murder in my Mind/Kordhell_Snare_2.wav"
+    },
+    {
+      "duration_seconds": 145.00897959183675,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 6394896,
+      "peak": 1.383741855621338,
+      "rms": 0.22372889518737793,
+      "rel_path": "Murder in my Mind/murder in my mind vocal.mp3"
+    },
+    {
+      "duration_seconds": 8.006395833333332,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 384307,
+      "peak": 0.99993896484375,
+      "rms": 0.32920774817466736,
+      "rel_path": "Murder in my Mind/KORDHELL_-_MURDER_IN_MY_MIND_-_PARTE_2.wav"
+    },
+    {
+      "duration_seconds": 3.0379818594104306,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 133975,
+      "peak": 0.4224853515625,
+      "rms": 0.03045104816555977,
+      "rel_path": "Murder in my Mind/NIGXT DREXM RISERS (21).wav"
+    },
+    {
+      "duration_seconds": 8.028625,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 385374,
+      "peak": 0.99993896484375,
+      "rms": 0.32851874828338623,
+      "rel_path": "Murder in my Mind/KORDHELL_-_MURDER_IN_MY_MIND_-_PARTE_1.wav"
+    },
+    {
+      "duration_seconds": 3.75,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 165375,
+      "peak": 0.9999998807907104,
+      "rms": 0.10501278191804886,
+      "rel_path": "Murder in my Mind/Moondai Dreams - Perc Loop 02 - 128 BPM.wav"
+    },
+    {
+      "duration_seconds": 144.95453514739228,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 6392495,
+      "peak": 1.8542242050170898,
+      "rms": 0.5303855538368225,
+      "rel_path": "Murder in my Mind/MURDER IN MY MIND END PART.mp3"
+    },
+    {
+      "duration_seconds": 0.7894784580498866,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 34816,
+      "peak": 0.230377197265625,
+      "rms": 0.031660571694374084,
+      "rel_path": "Murder in my Mind/NIGXT DREXM RISERS (20).wav"
+    },
+    {
+      "duration_seconds": 144.95453514739228,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 6392495,
+      "peak": 1.8542242050170898,
+      "rms": 0.5303855538368225,
+      "rel_path": "Murder in my Mind/KORDHELL - MURDER IN MY MIND.mp3"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 11,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 468.6598535997732,
+    "sample_rate_histogram": {
+      "22050": 1,
+      "48000": 3,
+      "44100": 7
+    },
+    "archive_size_bytes": 16589477
+  },
+  "created_at": 1772211303
+}
