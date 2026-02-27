@@ -1,0 +1,192 @@
+{
+  "project_id": "luna-bala-remake-by-kxrsed-623389bd",
+  "title": "LUNA BALA REMAKE BY KXRSED",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/LUNA BALA REMAKE BY KXRSED.zip",
+  "flp_files": [
+    {
+      "rel_path": "luna bala.flp",
+      "size_bytes": 1497897,
+      "sha256": "623389bdd713c75b06b8914f96e6db01060ea302e7ff643ca5917c660ff21556"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 4.340249433106576,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 191405,
+      "peak": 1.0,
+      "rms": 0.4956977963447571,
+      "rel_path": "[S] ZECKI BASS (1).wav"
+    },
+    {
+      "duration_seconds": 3.9585034013605442,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 174570,
+      "peak": 0.707977294921875,
+      "rms": 0.11871840804815292,
+      "rel_path": "[CxL] IMPACT (8).wav"
+    },
+    {
+      "duration_seconds": 1.8461678004535147,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81416,
+      "peak": 0.9999999403953552,
+      "rms": 0.08236820250749588,
+      "rel_path": "[LXFD] Mano Cymbal.wav"
+    },
+    {
+      "duration_seconds": 1.7163492063492063,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 75691,
+      "peak": 0.9749755859375,
+      "rms": 0.0880519449710846,
+      "rel_path": "Voz - Vuk.wav"
+    },
+    {
+      "duration_seconds": 12.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 529200,
+      "peak": 0.8912508487701416,
+      "rms": 0.15655310451984406,
+      "rel_path": "DSS_100_spanish_vocal_hook_sunrise_lead_wet_Am.wav"
+    },
+    {
+      "duration_seconds": 5.538480725623582,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 244247,
+      "peak": 0.975860595703125,
+      "rms": 0.04843364283442497,
+      "rel_path": "[LXFD] BRAZILAGEDDON - Impact (1).wav"
+    },
+    {
+      "duration_seconds": 1.8461458333333334,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 88615,
+      "peak": 1.0,
+      "rms": 0.11124414205551147,
+      "rel_path": "Brazil Fill (20).wav"
+    },
+    {
+      "duration_seconds": 0.5898866213151928,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 26014,
+      "peak": 0.988555908203125,
+      "rms": 0.21802708506584167,
+      "rel_path": "KSHMR Stomp 01.wav"
+    },
+    {
+      "duration_seconds": 0.3461451247165533,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15265,
+      "peak": 1.0,
+      "rms": 0.1344064325094223,
+      "rel_path": "[LXFD] Phonk Mano Clap 1.wav"
+    },
+    {
+      "duration_seconds": 0.22802721088435374,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 10056,
+      "peak": 0.757476806640625,
+      "rms": 0.4281947910785675,
+      "rel_path": "[N3] AGRESIVO.wav"
+    },
+    {
+      "duration_seconds": 0.26497916666666665,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 12719,
+      "peak": 1.0589599609375,
+      "rms": 0.3179313838481903,
+      "rel_path": "Sample Tubarão ZS.mp3"
+    },
+    {
+      "duration_seconds": 0.21428571428571427,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 9450,
+      "peak": 1.0,
+      "rms": 0.9182518124580383,
+      "rel_path": "kicks - (15).wav"
+    },
+    {
+      "duration_seconds": 0.410375,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 19698,
+      "peak": 2.9268171787261963,
+      "rms": 0.9434739947319031,
+      "rel_path": "[Dolor] Brazil Kick 5.wav"
+    },
+    {
+      "duration_seconds": 2.1334375,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 102405,
+      "peak": 0.05664854869246483,
+      "rms": 0.007234286516904831,
+      "rel_path": "BELLSYNTH - beat mágico que mexe com sua mente (1).wav"
+    },
+    {
+      "duration_seconds": 3.7019274376417233,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 163255,
+      "peak": 0.7197265625,
+      "rms": 0.12404783815145493,
+      "rel_path": "ACAPELAS EXCLUSIVAS-MYSTERIUOS GAME.wav"
+    },
+    {
+      "duration_seconds": 0.35156462585034015,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15504,
+      "peak": 0.7857222557067871,
+      "rms": 0.3642103672027588,
+      "rel_path": "Lie Down Kick.wav"
+    },
+    {
+      "duration_seconds": 105.10367346938776,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4635072,
+      "peak": 1.2472398281097412,
+      "rms": 0.4244614243507385,
+      "rel_path": "LUNA BALA.mp3"
+    },
+    {
+      "duration_seconds": 105.10367346938776,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4635072,
+      "peak": 0.90582275390625,
+      "rms": 0.13453447818756104,
+      "rel_path": "1_LUNA BALA_(Vocals).wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 18,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 249.69387174036282,
+    "sample_rate_histogram": {
+      "44100": 14,
+      "48000": 4
+    },
+    "archive_size_bytes": 32305133
+  },
+  "created_at": 1772211263
+}
