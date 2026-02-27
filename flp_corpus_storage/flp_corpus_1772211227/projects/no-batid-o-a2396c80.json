@@ -1,0 +1,147 @@
+{
+  "project_id": "no-batid-o-a2396c80",
+  "title": "NO BATIDÃO",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/NO BATIDÃO.zip",
+  "flp_files": [
+    {
+      "rel_path": "NO BATIDÃO REMAKE.flp",
+      "size_bytes": 159941,
+      "sha256": "a2396c807bdfc2546fa4f87c700fc198ee677d54a1f9df861b96f581ed95a980"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.17188208616780046,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 7580,
+      "peak": 1.0,
+      "rms": 0.11840645968914032,
+      "rel_path": "[ACD] - Trap Snare.wav"
+    },
+    {
+      "duration_seconds": 0.692312925170068,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 30531,
+      "peak": 0.766448974609375,
+      "rms": 0.16340409219264984,
+      "rel_path": "Snare Fill Mano 5.wav"
+    },
+    {
+      "duration_seconds": 0.4339791666666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 20831,
+      "peak": 0.9998779296875,
+      "rms": 0.44829657673835754,
+      "rel_path": "DJAMI - SAMPLE R9 DE NO BATIDÃO_2.wav"
+    },
+    {
+      "duration_seconds": 0.985578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43464,
+      "peak": 0.966461181640625,
+      "rms": 0.425726979970932,
+      "rel_path": "REVERSE BASS.wav"
+    },
+    {
+      "duration_seconds": 0.1094375,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 5253,
+      "peak": 2.0,
+      "rms": 1.0963290929794312,
+      "rel_path": "DJAMI - KICK DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 0.35984126984126985,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15869,
+      "peak": 1.5343971252441406,
+      "rms": 0.3650032877922058,
+      "rel_path": "2232_3.wav"
+    },
+    {
+      "duration_seconds": 0.41841666666666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 20084,
+      "peak": 0.9976860284805298,
+      "rms": 0.35473307967185974,
+      "rel_path": "[SS] LADRAO SAMPLE_ORIGINAL_3.wav"
+    },
+    {
+      "duration_seconds": 89.80800453514739,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3960533,
+      "peak": 1.2061767578125,
+      "rms": 0.19230827689170837,
+      "rel_path": "NO BATIDÃO ACAPELLA.wav"
+    },
+    {
+      "duration_seconds": 15.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 720000,
+      "peak": 0.12735843658447266,
+      "rms": 0.01098912674933672,
+      "rel_path": "DOWNLIFTER.wav"
+    },
+    {
+      "duration_seconds": 0.985578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43464,
+      "peak": 0.451141357421875,
+      "rms": 0.2505791485309601,
+      "rel_path": "reverse bass start.wav"
+    },
+    {
+      "duration_seconds": 0.4339791666666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 20831,
+      "peak": 0.9998779296875,
+      "rms": 0.44829657673835754,
+      "rel_path": "DJAMI - SAMPLE R9 DE NO BATIDÃO.wav"
+    },
+    {
+      "duration_seconds": 89.76097916666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 4308527,
+      "peak": 1.4662418365478516,
+      "rms": 0.48911282420158386,
+      "rel_path": "ytmp3free.cc_no-batidao-youtubemp3free.org.mp3"
+    },
+    {
+      "duration_seconds": 0.7903628117913832,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 34855,
+      "peak": 2.1006813049316406,
+      "rms": 0.961997926235199,
+      "rel_path": "KICK (46)_2.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 13,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 199.95035175736962,
+    "sample_rate_histogram": {
+      "44100": 7,
+      "48000": 6
+    },
+    "archive_size_bytes": 35532053
+  },
+  "created_at": 1772211319
+}
