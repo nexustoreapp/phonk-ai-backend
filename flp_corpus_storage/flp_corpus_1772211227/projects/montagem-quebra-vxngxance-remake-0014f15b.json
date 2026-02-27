@@ -1,0 +1,102 @@
+{
+  "project_id": "montagem-quebra-vxngxance-remake-0014f15b",
+  "title": "MONTAGEM QUEBRA - VXNGXANCE REMAKE",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/MONTAGEM QUEBRA - VXNGXANCE REMAKE.zip",
+  "flp_files": [
+    {
+      "rel_path": "MONTAGEM QUEBRA - VXNGXANCE REMAKE.flp",
+      "size_bytes": 653741,
+      "sha256": "0014f15b79078277ad12245aaabbbbc9afe8f5912c33887f365fbeb06f7ffde3"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.8737868480725623,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 38534,
+      "peak": 0.8912509679794312,
+      "rms": 0.15750344097614288,
+      "rel_path": "[CxL] PERC (20).wav"
+    },
+    {
+      "duration_seconds": 0.41841666666666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 20084,
+      "peak": 0.9976860284805298,
+      "rms": 0.35473307967185974,
+      "rel_path": "[SS] LADRAO SAMPLE_ORIGINAL.wav"
+    },
+    {
+      "duration_seconds": 0.48077097505668936,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 21202,
+      "peak": 0.324493408203125,
+      "rms": 0.07898165285587311,
+      "rel_path": "[N3] DJ FKU OAH.wav"
+    },
+    {
+      "duration_seconds": 0.9179365079365079,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 40481,
+      "peak": 0.6897215247154236,
+      "rms": 0.1580996811389923,
+      "rel_path": "Whistle WiW_2.mp3"
+    },
+    {
+      "duration_seconds": 113.80897916666666,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 5462831,
+      "peak": 1.6301976442337036,
+      "rms": 0.4292694628238678,
+      "rel_path": "ytmp3free.cc_montagem-quebra-youtubemp3free.org.mp3"
+    },
+    {
+      "duration_seconds": 0.23077097505668934,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 10177,
+      "peak": 0.97052001953125,
+      "rms": 0.24696335196495056,
+      "rel_path": "[F] Snare (40).wav"
+    },
+    {
+      "duration_seconds": 0.47222916666666664,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 22667,
+      "peak": 0.901611328125,
+      "rms": 0.3653779923915863,
+      "rel_path": "DJ FKU KICK.wav"
+    },
+    {
+      "duration_seconds": 113.80897959183673,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 5018976,
+      "peak": 0.9901123046875,
+      "rms": 0.15676504373550415,
+      "rel_path": "audio [vocals] (2).wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 8,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 231.01186989795917,
+    "sample_rate_histogram": {
+      "44100": 5,
+      "48000": 3
+    },
+    "archive_size_bytes": 20735835
+  },
+  "created_at": 1772211276
+}
