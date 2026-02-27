@@ -1,0 +1,93 @@
+{
+  "project_id": "montagem-tomada-remake-c31d495f",
+  "title": "Montagem Tomada remake",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/Montagem Tomada remake.zip",
+  "flp_files": [
+    {
+      "rel_path": "Montagem Tomada remake.flp",
+      "size_bytes": 326193,
+      "sha256": "c31d495f69cd93edc071cea46bed73fbd37301b79726364ea86b360e144e4bc3"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.9615419501133786,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 86504,
+      "peak": 0.9999998807907104,
+      "rms": 0.3719312250614166,
+      "rel_path": "Dolor_Brazil_808_12_-_Loop_2.wav"
+    },
+    {
+      "duration_seconds": 2.4230612244897958,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 106857,
+      "peak": 0.8122114539146423,
+      "rms": 0.13060981035232544,
+      "rel_path": "MONTAGEM LADRAO - ATLXS_vocals_2.wav"
+    },
+    {
+      "duration_seconds": 0.35714285714285715,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15750,
+      "peak": 0.711517333984375,
+      "rms": 0.18417347967624664,
+      "rel_path": "perc - whistle 2.wav"
+    },
+    {
+      "duration_seconds": 102.99662131519274,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4542151,
+      "peak": 0.3298519551753998,
+      "rms": 0.03874700516462326,
+      "rel_path": "MC MN - ACAPELA E VINHETA PARA DJ EUPHORIA.mp3"
+    },
+    {
+      "duration_seconds": 0.22277083333333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 10693,
+      "peak": 0.8710553050041199,
+      "rms": 0.16620270907878876,
+      "rel_path": "ladrao.wav"
+    },
+    {
+      "duration_seconds": 0.16043083900226757,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 7075,
+      "peak": 2.3465137481689453,
+      "rms": 1.371846318244934,
+      "rel_path": "$B - Kick your ebalo (5).wav"
+    },
+    {
+      "duration_seconds": 2.0867120181405894,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 92024,
+      "peak": 0.9933553338050842,
+      "rms": 0.19960980117321014,
+      "rel_path": "NKM4 - Ó Ó.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 7,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 110.20828103741496,
+    "sample_rate_histogram": {
+      "44100": 6,
+      "48000": 1
+    },
+    "archive_size_bytes": 5323785
+  },
+  "created_at": 1772211294
+}
