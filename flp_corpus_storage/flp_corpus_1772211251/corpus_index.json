@@ -1,0 +1,588 @@
+{
+  "corpus_id": "flp_corpus_1772211251",
+  "created_at": 1772211423,
+  "projects": [
+    {
+      "project_id": "0bc133c9dcb5be5234c633657daed239-1755697992050-flp-phonk-kon-6887dd04",
+      "title": "0bc133c9dcb5be5234c633657daed239_1755697992050-_FLP__Phonk_Kong_-_How_to_Make_Song_like_ACELERADA_by_MXZI___Smasher",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 5,
+        "other_count": 3,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 12.998639455782312,
+        "sample_rate_histogram": {
+          "44100": 5
+        },
+        "archive_size_bytes": 4027436
+      }
+    },
+    {
+      "project_id": "39887ce3a65d3978a8ae244c7eeb8962-1761941415890-flp-phonk-kon-770d3476",
+      "title": "39887ce3a65d3978a8ae244c7eeb8962_1761941415890-_FLP__Phonk_Kong_-_How_to_make_a_Song_like_Montagem_Direcao_DJ_FKU",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 9,
+        "other_count": 3,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 67.0772947845805,
+        "sample_rate_histogram": {
+          "44100": 7,
+          "48000": 2
+        },
+        "archive_size_bytes": 11615815
+      }
+    },
+    {
+      "project_id": "453be3fcd23d710c7aa8f5db34f69010-1738429368136-flp-phonk-kon-26fdb95e",
+      "title": "453be3fcd23d710c7aa8f5db34f69010_1738429368136-_FLP__Phonk_Kong_-_Montagem_Lunar_Diamante_Style_incl_FLP_and_Bonus_Drumkit",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 36,
+        "other_count": 4,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 122.85751814058958,
+        "sample_rate_histogram": {
+          "44100": 32,
+          "48000": 4
+        },
+        "archive_size_bytes": 19458018
+      }
+    },
+    {
+      "project_id": "al-nacer-vxngxance-remake-49f60012",
+      "title": "AL NACER! - VXNGXANCE REMAKE",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 8,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 232.46010841836735,
+        "sample_rate_histogram": {
+          "44100": 5,
+          "48000": 3
+        },
+        "archive_size_bytes": 40653911
+      }
+    },
+    {
+      "project_id": "atlxs-mxzi-itamar-mc-montagem-ladrao-remake-by-dj-gvx-b244fb01",
+      "title": "ATLXS, MXZI, ITAMAR MC - MONTAGEM LADRAO REMAKE BY DJ GVX",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 17,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 408.5287063492064,
+        "sample_rate_histogram": {
+          "44100": 14,
+          "48000": 3
+        },
+        "archive_size_bytes": 99308014
+      }
+    },
+    {
+      "project_id": "los-voltage-remake-by-kxrsed-00c85cfb",
+      "title": "LOS VOLTAGE REMAKE BY KXRSED",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 11,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 121.90017998866212,
+        "sample_rate_histogram": {
+          "48000": 3,
+          "44100": 8
+        },
+        "archive_size_bytes": 10359997
+      }
+    },
+    {
+      "project_id": "lua-na-praca-remake-by-zrku-5e5d4ddd",
+      "title": "LUA NA PRACA REMAKE BY ZRKU",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 16,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 206.73842106009073,
+        "sample_rate_histogram": {
+          "44100": 12,
+          "48000": 4
+        },
+        "archive_size_bytes": 37113064
+      }
+    },
+    {
+      "project_id": "luna-bala-remake-by-kxrsed-623389bd",
+      "title": "LUNA BALA REMAKE BY KXRSED",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 18,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 249.69387174036282,
+        "sample_rate_histogram": {
+          "44100": 14,
+          "48000": 4
+        },
+        "archive_size_bytes": 32305133
+      }
+    },
+    {
+      "project_id": "mente-ma-remake-by-lxstfface-kxrsed-9cfd318b",
+      "title": "MENTE MA REMAKE BY LXSTFFACE KXRSED",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 9,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 161.3018820861678,
+        "sample_rate_histogram": {
+          "44100": 9
+        },
+        "archive_size_bytes": 18343136
+      }
+    },
+    {
+      "project_id": "montagem-maldicao-remake-by-djami-ead6a87d",
+      "title": "MONTAGEM MALDICAO REMAKE by DJAMI",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 19,
+        "other_count": 2,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 208.54733503401363,
+        "sample_rate_histogram": {
+          "44100": 15,
+          "48000": 3,
+          "22050": 1
+        },
+        "archive_size_bytes": 38705008
+      }
+    },
+    {
+      "project_id": "montagem-quebra-vxngxance-remake-0014f15b",
+      "title": "MONTAGEM QUEBRA - VXNGXANCE REMAKE",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 8,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 231.01186989795917,
+        "sample_rate_histogram": {
+          "44100": 5,
+          "48000": 3
+        },
+        "archive_size_bytes": 20735835
+      }
+    },
+    {
+      "project_id": "montagem-rebola-vxngxance-remake-73e28183",
+      "title": "MONTAGEM REBOLA - VXNGXANCE REMAKE",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 10,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 311.36644699546486,
+        "sample_rate_histogram": {
+          "44100": 7,
+          "48000": 3
+        },
+        "archive_size_bytes": 77568099
+      }
+    },
+    {
+      "project_id": "montagem-rebola-remake-by-djami-df31aef6",
+      "title": "MONTAGEM REBOLA REMAKE by DJAMI",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 9,
+        "other_count": 4,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 221.1977141439909,
+        "sample_rate_histogram": {
+          "44100": 8,
+          "48000": 1
+        },
+        "archive_size_bytes": 42247323
+      }
+    },
+    {
+      "project_id": "montagem-tomada-remake-c31d495f",
+      "title": "Montagem Tomada remake",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 7,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 110.20828103741496,
+        "sample_rate_histogram": {
+          "44100": 6,
+          "48000": 1
+        },
+        "archive_size_bytes": 5323785
+      }
+    },
+    {
+      "project_id": "montagem-xonada-remake-by-zrku-3f7524a2",
+      "title": "Montagem xonada remake by zrku",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 11,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 173.15106434240363,
+        "sample_rate_histogram": {
+          "48000": 2,
+          "44100": 9
+        },
+        "archive_size_bytes": 37759536
+      }
+    },
+    {
+      "project_id": "murder-in-my-mind-b44a1b20",
+      "title": "Murder in my Mind",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 11,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 468.6598535997732,
+        "sample_rate_histogram": {
+          "22050": 1,
+          "48000": 3,
+          "44100": 7
+        },
+        "archive_size_bytes": 16589477
+      }
+    },
+    {
+      "project_id": "neck-hurts-funk-pt-2-vxngxance-remake-ea8e73af",
+      "title": "NECK HURTS FUNK PT. 2 - VXNGXANCE REMAKE",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 2,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 0.927891156462585,
+        "sample_rate_histogram": {
+          "44100": 2
+        },
+        "archive_size_bytes": 1526902
+      }
+    },
+    {
+      "project_id": "no-batid-o-remake-by-djami-04b9cf30",
+      "title": "NO BATIDÃO REMAKE by DJAMI",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 11,
+        "other_count": 2,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 201.08275609410433,
+        "sample_rate_histogram": {
+          "48000": 6,
+          "44100": 5
+        },
+        "archive_size_bytes": 39270849
+      }
+    },
+    {
+      "project_id": "no-batid-o-remake-76f36b8b",
+      "title": "NO BATIDÃO REMAKE",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 11,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 198.53079435941044,
+        "sample_rate_histogram": {
+          "44100": 6,
+          "48000": 5
+        },
+        "archive_size_bytes": 35294285
+      }
+    },
+    {
+      "project_id": "no-batid-o-a2396c80",
+      "title": "NO BATIDÃO",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 13,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 199.95035175736962,
+        "sample_rate_histogram": {
+          "44100": 7,
+          "48000": 6
+        },
+        "archive_size_bytes": 35532053
+      }
+    },
+    {
+      "project_id": "no-fear-vxngxance-remake-3b0cc855",
+      "title": "NO FEAR! (VXNGXANCE REMAKE)",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 19,
+        "other_count": 1,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 191.72342403628116,
+        "sample_rate_histogram": {
+          "44100": 19
+        },
+        "archive_size_bytes": 38488150
+      }
+    },
+    {
+      "project_id": "passo-bem-solto-remake-by-kxrsed-bdd6984b",
+      "title": "PASSO BEM SOLTO REMAKE BY KXRSED",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 11,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 144.18401374716552,
+        "sample_rate_histogram": {
+          "44100": 8,
+          "48000": 3
+        },
+        "archive_size_bytes": 17952229
+      }
+    },
+    {
+      "project_id": "passso-rmake-6b0fdbdc",
+      "title": "PASSSO RMAKE",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 17,
+        "other_count": 1,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 766.1458331916101,
+        "sample_rate_histogram": {
+          "44100": 14,
+          "48000": 3
+        },
+        "archive_size_bytes": 223173741
+      }
+    },
+    {
+      "project_id": "remake-montagem-tamada-by-dj-gvx-3693165b",
+      "title": "REMAKE MONTAGEM TAMADA BY DJ GVX",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 15,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 449.4292603458049,
+        "sample_rate_histogram": {
+          "44100": 14,
+          "48000": 1
+        },
+        "archive_size_bytes": 96999349
+      }
+    },
+    {
+      "project_id": "safado-no-bail-o-remake-by-djami-10a91aac",
+      "title": "SAFADO NO BAILÃO REMAKE by DJAMI",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 16,
+        "other_count": 2,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 242.79980314625854,
+        "sample_rate_histogram": {
+          "44100": 14,
+          "48000": 2
+        },
+        "archive_size_bytes": 15511692
+      }
+    },
+    {
+      "project_id": "sei-vei-remake-by-sappy-b99fe84e",
+      "title": "SEI VEI remake by sappy.",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 4,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 108.00061224489797,
+        "sample_rate_histogram": {
+          "44100": 4
+        },
+        "archive_size_bytes": 36188680
+      }
+    },
+    {
+      "project_id": "sen-parar-remake-by-djami-7341a2d2",
+      "title": "SEN PARAR REMAKE by DJAMI",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 8,
+        "other_count": 2,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 198.03256235827664,
+        "sample_rate_histogram": {
+          "44100": 8
+        },
+        "archive_size_bytes": 37860674
+      }
+    },
+    {
+      "project_id": "sxllx-oliveira-mc-011-mama-ma-remake-by-dj-gvx-6c31d67b",
+      "title": "SXLLX, Oliveira Mc 011- MAMA MA REMAKE BY DJ GVX",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 9,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 226.27873015873013,
+        "sample_rate_histogram": {
+          "44100": 9
+        },
+        "archive_size_bytes": 52398833
+      }
+    },
+    {
+      "project_id": "te-conoci-vxngxance-remake-289f6e00",
+      "title": "TE CONOCI - VXNGXANCE REMAKE",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 11,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 260.37733333333335,
+        "sample_rate_histogram": {
+          "44100": 9,
+          "48000": 2
+        },
+        "archive_size_bytes": 24019943
+      }
+    },
+    {
+      "project_id": "voce-na-mira-vxngxance-remake-158fff5d",
+      "title": "VOCE NA MIRA - VXNGXANCE REMAKE",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 11,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 287.26606632653056,
+        "sample_rate_histogram": {
+          "48000": 3,
+          "44100": 8
+        },
+        "archive_size_bytes": 79606588
+      }
+    },
+    {
+      "project_id": "cape-jxndro-sayfalse-montagem-rugada-remake-by-dj-gvx-600ad77b",
+      "title": "cape, JXNDRO, sayfalse - MONTAGEM RUGADA REMAKE BY DJ GVX",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 19,
+        "other_count": 0,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 231.42309396258509,
+        "sample_rate_histogram": {
+          "44100": 17,
+          "48000": 2
+        },
+        "archive_size_bytes": 42724230
+      }
+    },
+    {
+      "project_id": "f005b389a410f01b5bfa36410425833d-1758898479908-flp-phonk-kon-b5fba1fd",
+      "title": "f005b389a410f01b5bfa36410425833d_1758898479908-_FLP__Phonk_Kong_-_How_to_make_a_song_like_AKAI_by_UdieNnx",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 7,
+        "other_count": 3,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 7.270430839002269,
+        "sample_rate_histogram": {
+          "44100": 7
+        },
+        "archive_size_bytes": 3054100
+      }
+    },
+    {
+      "project_id": "funk-universo-by-zrku-a5bcaadb",
+      "title": "funk universo by zrku",
+      "stats": {
+        "has_flp": true,
+        "flp_count": 1,
+        "audio_count": 18,
+        "other_count": 1,
+        "suspicious_count": 0,
+        "total_audio_duration_seconds_est": 82.3404632936508,
+        "sample_rate_histogram": {
+          "44100": 13,
+          "48000": 5
+        },
+        "archive_size_bytes": 30785219
+      }
+    }
+  ],
+  "duplicates": {},
+  "pending_archives": [
+    {
+      "archive": "flp_uploads/batch_1772211130/FLP/MONTAGEM BAILAO REMAKE BY KXRSED.rar",
+      "status": "pending",
+      "reason": "rar_error: Cannot find working tool (no Render free pode faltar suporte; recompacta em .zip)"
+    },
+    {
+      "archive": "flp_uploads/batch_1772211130/FLP/MONTAGEM BANDID.rar",
+      "status": "pending",
+      "reason": "rar_error: File MONTAGEM BANDID/Basic 808 Clap.wav requires password (no Render free pode faltar suporte; recompacta em .zip)"
+    },
+    {
+      "archive": "flp_uploads/batch_1772211130/FLP/MONTAGEM XONADA by Youssey.rar",
+      "status": "pending",
+      "reason": "rar_error: Cannot find working tool (no Render free pode faltar suporte; recompacta em .zip)"
+    }
+  ],
+  "totals": {
+    "archives_found": 36,
+    "projects_built": 33,
+    "pending_archives": 3,
+    "projects_with_flp": 33,
+    "projects_without_flp": 0,
+    "total_audio_files": 406,
+    "total_est_audio_duration_seconds": 7103.462607426304
+  }
+}
