@@ -1,0 +1,129 @@
+{
+  "project_id": "los-voltage-remake-by-kxrsed-00c85cfb",
+  "title": "LOS VOLTAGE REMAKE BY KXRSED",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/LOS VOLTAGE REMAKE BY KXRSED.zip",
+  "flp_files": [
+    {
+      "rel_path": "los voltage remake.flp",
+      "size_bytes": 258999,
+      "sha256": "00c85cfb134ff6fea65fbcf826dd503d7d4cd1060793a2093829ca11d0518a93"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 99.28572916666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 4765715,
+      "peak": 1.3359999656677246,
+      "rms": 0.4913043677806854,
+      "rel_path": "LOS VOLTAJE.mp3"
+    },
+    {
+      "duration_seconds": 4.340249433106576,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 191405,
+      "peak": 1.0,
+      "rms": 0.4956977963447571,
+      "rel_path": "[S] ZECKI BASS (1).wav"
+    },
+    {
+      "duration_seconds": 0.807687074829932,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 35619,
+      "peak": 1.0,
+      "rms": 0.16692614555358887,
+      "rel_path": "[LXFD] Rebooting Cowbell [E].wav"
+    },
+    {
+      "duration_seconds": 12.0,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 529200,
+      "peak": 0.8912508487701416,
+      "rms": 0.1601724624633789,
+      "rel_path": "DSS_100_spanish_vocal_hook_for_one_night_stack_wet_Am.wav"
+    },
+    {
+      "duration_seconds": 3.3668934240362813,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 148480,
+      "peak": 0.4701734781265259,
+      "rms": 0.20425492525100708,
+      "rel_path": "loop funk.mp3"
+    },
+    {
+      "duration_seconds": 0.15086167800453515,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 6653,
+      "peak": 0.997283935546875,
+      "rms": 0.23839446902275085,
+      "rel_path": "Cowbell 2.wav"
+    },
+    {
+      "duration_seconds": 0.3461451247165533,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15265,
+      "peak": 1.0,
+      "rms": 0.1344064325094223,
+      "rel_path": "[LXFD] Phonk Mano Clap 1.wav"
+    },
+    {
+      "duration_seconds": 0.26497916666666665,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 12719,
+      "peak": 1.0589599609375,
+      "rms": 0.3179313838481903,
+      "rel_path": "Sample Tubarão ZS.mp3"
+    },
+    {
+      "duration_seconds": 0.1346938775510204,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 5940,
+      "peak": 0.996368408203125,
+      "rms": 0.20684945583343506,
+      "rel_path": "Cowbell.wav"
+    },
+    {
+      "duration_seconds": 0.6703333333333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 32176,
+      "peak": 1.0,
+      "rms": 0.3071965277194977,
+      "rel_path": "Brazil Kick (26) (1).wav"
+    },
+    {
+      "duration_seconds": 0.5326077097505669,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 23488,
+      "peak": 0.999969482421875,
+      "rms": 0.33491724729537964,
+      "rel_path": "[N3] REIKA - KICK.wav"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 11,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 121.90017998866212,
+    "sample_rate_histogram": {
+      "48000": 3,
+      "44100": 8
+    },
+    "archive_size_bytes": 10359997
+  },
+  "created_at": 1772211253
+}
