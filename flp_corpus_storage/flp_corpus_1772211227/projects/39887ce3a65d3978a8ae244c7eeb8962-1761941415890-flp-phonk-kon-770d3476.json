@@ -1,0 +1,127 @@
+{
+  "project_id": "39887ce3a65d3978a8ae244c7eeb8962-1761941415890-flp-phonk-kon-770d3476",
+  "title": "39887ce3a65d3978a8ae244c7eeb8962_1761941415890-_FLP__Phonk_Kong_-_How_to_make_a_Song_like_Montagem_Direcao_DJ_FKU",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/39887ce3a65d3978a8ae244c7eeb8962_1761941415890-_FLP__Phonk_Kong_-_How_to_make_a_Song_like_Montagem_Direcao_DJ_FKU.zip",
+  "flp_files": [
+    {
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/Phonk Kong - How to make a Song like Montagem Direcao DJ FKU.flp",
+      "size_bytes": 242970,
+      "sha256": "770d347607af4caf8e60e2e5ebbd4d721607b1e89a63d248db25b3156ade1fda"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.5577324263038549,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 24596,
+      "peak": 4.041259765625,
+      "rms": 0.620509684085846,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/Sample1.wav"
+    },
+    {
+      "duration_seconds": 59.28,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 2845440,
+      "peak": 0.677734375,
+      "rms": 0.08470684289932251,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/Generated_by_FL_Hub_533.wav"
+    },
+    {
+      "duration_seconds": 2.144240362811791,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 94561,
+      "peak": 0.9752197265625,
+      "rms": 0.05008568987250328,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/Sample2.wav"
+    },
+    {
+      "duration_seconds": 1.5691156462585034,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 69198,
+      "peak": 0.82476806640625,
+      "rms": 0.048180706799030304,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/SAMPLE Z-BETA.wav"
+    },
+    {
+      "duration_seconds": 0.8,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 35280,
+      "peak": 0.988555908203125,
+      "rms": 0.44996991753578186,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/KICK (46).wav"
+    },
+    {
+      "duration_seconds": 0.35984126984126985,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 15869,
+      "peak": 0.944244384765625,
+      "rms": 0.22461740672588348,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/kick hard.wav"
+    },
+    {
+      "duration_seconds": 0.520045351473923,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 22934,
+      "peak": 1.0,
+      "rms": 0.5361447334289551,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/Kick Jump 1.wav"
+    },
+    {
+      "duration_seconds": 1.175986394557823,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 51861,
+      "peak": 1.0,
+      "rms": 0.3108307719230652,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/SAMPLE MONTAGEM LADRAO.wav"
+    },
+    {
+      "duration_seconds": 0.6703333333333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 32176,
+      "peak": 1.0,
+      "rms": 0.3071965277194977,
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/FLP/kick 39.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/Thank You.jpg",
+      "size_bytes": 696920,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/Phonk Kong.jpg",
+      "size_bytes": 642572,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - How to make a Song like Montagem Direcao DJ FKU/Phonk Kong - How to Use Project Files.pdf",
+      "size_bytes": 133669,
+      "ext": ".pdf"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 9,
+    "other_count": 3,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 67.0772947845805,
+    "sample_rate_histogram": {
+      "44100": 7,
+      "48000": 2
+    },
+    "archive_size_bytes": 11615815
+  },
+  "created_at": 1772211231
+}
