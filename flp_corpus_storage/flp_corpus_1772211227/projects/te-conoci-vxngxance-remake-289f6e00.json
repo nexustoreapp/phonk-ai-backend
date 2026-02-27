@@ -1,0 +1,129 @@
+{
+  "project_id": "te-conoci-vxngxance-remake-289f6e00",
+  "title": "TE CONOCI - VXNGXANCE REMAKE",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/TE CONOCI - VXNGXANCE REMAKE.zip",
+  "flp_files": [
+    {
+      "rel_path": "TE CONOCI - VXNGXANCE REMAKE.flp",
+      "size_bytes": 802866,
+      "sha256": "289f6e00c1de94e1f0faf548126d862f3f795c2006115acb7fb461bd29f3e0db"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.8701814058956916,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 82475,
+      "peak": 0.14715576171875,
+      "rms": 0.030023757368326187,
+      "rel_path": "LUNA BALA LEAD.wav"
+    },
+    {
+      "duration_seconds": 0.9230839002267573,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 40708,
+      "peak": 0.841461181640625,
+      "rms": 0.11769837886095047,
+      "rel_path": "Snare Fill Mano 2.wav"
+    },
+    {
+      "duration_seconds": 5.656621315192743,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 249457,
+      "peak": 0.707977294921875,
+      "rms": 0.1367870569229126,
+      "rel_path": "[sa] impact (8).wav"
+    },
+    {
+      "duration_seconds": 1.3956875,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 66993,
+      "peak": 0.99993896484375,
+      "rms": 0.14624066650867462,
+      "rel_path": "[DA] PASSO BEM SOLTO_3.wav"
+    },
+    {
+      "duration_seconds": 120.26775510204082,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 5303808,
+      "peak": 0.98858642578125,
+      "rms": 0.11145894974470139,
+      "rel_path": "ytmp3free.cc_bxkq-pxlwyse-te-conoci-official-audio-youtubemp3free.org [vocals].wav"
+    },
+    {
+      "duration_seconds": 0.4615419501133787,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20354,
+      "peak": 1.0,
+      "rms": 0.5335697531700134,
+      "rel_path": "[MM] POWER KICK (2).wav"
+    },
+    {
+      "duration_seconds": 0.40748299319727893,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 17970,
+      "peak": 0.999969482421875,
+      "rms": 0.4577547609806061,
+      "rel_path": "[N3] BIG CHAIN.wav"
+    },
+    {
+      "duration_seconds": 1.8461451247165532,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81415,
+      "peak": 0.997955322265625,
+      "rms": 0.11124417930841446,
+      "rel_path": "[N3] MY FAV.wav"
+    },
+    {
+      "duration_seconds": 3.7019274376417233,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 163255,
+      "peak": 0.53125,
+      "rms": 0.12634031474590302,
+      "rel_path": "[N3] LAUGH LOOP.wav"
+    },
+    {
+      "duration_seconds": 3.7019274376417233,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 163255,
+      "peak": 0.71978759765625,
+      "rms": 0.12404784560203552,
+      "rel_path": "[N3] Mysterious Game.wav"
+    },
+    {
+      "duration_seconds": 120.14497916666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 5766959,
+      "peak": 1.4860975742340088,
+      "rms": 0.4978962242603302,
+      "rel_path": "ytmp3free.cc_te-conoci-youtubemp3free.org.mp3"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 11,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 260.37733333333335,
+    "sample_rate_histogram": {
+      "44100": 9,
+      "48000": 2
+    },
+    "archive_size_bytes": 24019943
+  },
+  "created_at": 1772211391
+}
