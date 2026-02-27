@@ -1,0 +1,183 @@
+{
+  "project_id": "atlxs-mxzi-itamar-mc-montagem-ladrao-remake-by-dj-gvx-b244fb01",
+  "title": "ATLXS, MXZI, ITAMAR MC - MONTAGEM LADRAO REMAKE BY DJ GVX",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/ATLXS, MXZI, ITAMAR MC - MONTAGEM LADRAO REMAKE BY DJ GVX.zip",
+  "flp_files": [
+    {
+      "rel_path": "REMAKE MTG LADRAO.flp",
+      "size_bytes": 440550,
+      "sha256": "b244fb01409fd08fdf7722664dab55518eefcf2aa829bff712fa799b019a26ba"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 1.3846031746031746,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 61061,
+      "peak": 0.824920654296875,
+      "rms": 0.19916629791259766,
+      "rel_path": "ÓH ÒH.wav"
+    },
+    {
+      "duration_seconds": 70.630589569161,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3114809,
+      "peak": 0.8437888026237488,
+      "rms": 0.2000957578420639,
+      "rel_path": "SpotiDownloader.com - MONTAGEM LADRAO - ATLXS_bass.wav"
+    },
+    {
+      "duration_seconds": 70.630589569161,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3114809,
+      "peak": 0.8686575889587402,
+      "rms": 0.10654018074274063,
+      "rel_path": "SpotiDownloader.com - MONTAGEM LADRAO - ATLXS_instruments.wav"
+    },
+    {
+      "duration_seconds": 3.7042083333333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 177802,
+      "peak": 0.905670166015625,
+      "rms": 0.14208365976810455,
+      "rel_path": "VOCAL SHOT (316).wav"
+    },
+    {
+      "duration_seconds": 0.5240362811791384,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 23110,
+      "peak": 0.999969482421875,
+      "rms": 0.39375707507133484,
+      "rel_path": "KICK LADRAOO.wav"
+    },
+    {
+      "duration_seconds": 70.630589569161,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3114809,
+      "peak": 1.2059882879257202,
+      "rms": 0.36636438965797424,
+      "rel_path": "SpotiDownloader.com - MONTAGEM LADRAO - ATLXS_drums.wav"
+    },
+    {
+      "duration_seconds": 75.24038548752834,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3318101,
+      "peak": 1.0232917070388794,
+      "rms": 0.44144406914711,
+      "rel_path": "SpotiDownloader.com - MONTAGEM LADRAO - ATLXS.mp3"
+    },
+    {
+      "duration_seconds": 8.942312925170068,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 394356,
+      "peak": 0.8314208984375,
+      "rms": 0.05677763745188713,
+      "rel_path": "AND LASER RISADA.wav"
+    },
+    {
+      "duration_seconds": 0.985578231292517,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43464,
+      "peak": 0.451141357421875,
+      "rms": 0.2505791485309601,
+      "rel_path": "reverse bass start.wav"
+    },
+    {
+      "duration_seconds": 0.9807709750566893,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 43252,
+      "peak": 0.6522216796875,
+      "rms": 0.3009808361530304,
+      "rel_path": "bass ladrao.wav"
+    },
+    {
+      "duration_seconds": 23.928979166666668,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 1148591,
+      "peak": 0.5525781512260437,
+      "rms": 0.07129955291748047,
+      "rel_path": "Acapella itamar mc full.mp3"
+    },
+    {
+      "duration_seconds": 1.906938775510204,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 84096,
+      "peak": 0.826629638671875,
+      "rms": 0.10017149150371552,
+      "rel_path": "WOW_SAMPLE.wav"
+    },
+    {
+      "duration_seconds": 70.630589569161,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 3114809,
+      "peak": 0.8474747538566589,
+      "rms": 0.08531007170677185,
+      "rel_path": "SpotiDownloader.com - MONTAGEM LADRAO - ATLXS_vocals.wav"
+    },
+    {
+      "duration_seconds": 2.30843537414966,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 101802,
+      "peak": 0.6660292148590088,
+      "rms": 0.12344881892204285,
+      "rel_path": "SpotiDownloader.com - MONTAGEM LADRAO - ATLXS_vocals_2.wav"
+    },
+    {
+      "duration_seconds": 0.5240362811791384,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 23110,
+      "peak": 0.999969482421875,
+      "rms": 0.39375707507133484,
+      "rel_path": "kick34.wav"
+    },
+    {
+      "duration_seconds": 4.423083900226757,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 195058,
+      "peak": 0.505950927734375,
+      "rms": 0.13705989718437195,
+      "rel_path": "BRASILLL.wav"
+    },
+    {
+      "duration_seconds": 1.1529791666666667,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 55343,
+      "peak": 1.0483341217041016,
+      "rms": 0.3205674886703491,
+      "rel_path": "SAMPLE @DJ.MENOR_K7 102.mp3"
+    }
+  ],
+  "other_files": [],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 17,
+    "other_count": 0,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 408.5287063492064,
+    "sample_rate_histogram": {
+      "44100": 14,
+      "48000": 3
+    },
+    "archive_size_bytes": 99308014
+  },
+  "created_at": 1772211251
+}
