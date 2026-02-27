@@ -1,0 +1,108 @@
+{
+  "project_id": "f005b389a410f01b5bfa36410425833d-1758898479908-flp-phonk-kon-b5fba1fd",
+  "title": "f005b389a410f01b5bfa36410425833d_1758898479908-_FLP__Phonk_Kong_-_How_to_make_a_song_like_AKAI_by_UdieNnx",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/f005b389a410f01b5bfa36410425833d_1758898479908-_FLP__Phonk_Kong_-_How_to_make_a_song_like_AKAI_by_UdieNnx.zip",
+  "flp_files": [
+    {
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/FLP/Phonk Kong - How to make a song like AKAI by UdieNnx.flp",
+      "size_bytes": 1454780,
+      "sha256": "b5fba1fd479944a810fc69558fcb028c773d51d48f6cc837df456c195f073140"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 0.1592517006802721,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 7023,
+      "peak": 0.2340087890625,
+      "rms": 0.02263590320944786,
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/FLP/Basic 808 HiHat.wav"
+    },
+    {
+      "duration_seconds": 3.5999773242630386,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 158759,
+      "peak": 0.8912508487701416,
+      "rms": 0.7720645666122437,
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/FLP/DS_BPT_bass_808_huge_C.wav"
+    },
+    {
+      "duration_seconds": 2.455510204081633,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 108288,
+      "peak": 0.7870724201202393,
+      "rms": 0.14932593703269958,
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/FLP/[BRAZ PHONK V.1] VOCAL SHOT (1).wav"
+    },
+    {
+      "duration_seconds": 0.18444444444444444,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 8134,
+      "peak": 0.7276817560195923,
+      "rms": 0.16805823147296906,
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/FLP/espaco_2.wav"
+    },
+    {
+      "duration_seconds": 0.18653061224489795,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 8226,
+      "peak": 0.82275390625,
+      "rms": 0.18322189152240753,
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/FLP/Basic 808 Snare.wav"
+    },
+    {
+      "duration_seconds": 0.42165532879818596,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 18595,
+      "peak": 0.999969482421875,
+      "rms": 0.2770597040653229,
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/FLP/Basic 808 Kick.wav"
+    },
+    {
+      "duration_seconds": 0.2630612244897959,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 11601,
+      "peak": 0.82275390625,
+      "rms": 0.11091288179159164,
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/FLP/Basic 808 Clap.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/Thank You.jpg",
+      "size_bytes": 696920,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/Phonk Kong.jpg",
+      "size_bytes": 642572,
+      "ext": ".jpg"
+    },
+    {
+      "rel_path": "[FLP] Phonk Kong - How to make a song like AKAI by UdieNnx/Phonk Kong - How to Use Project Files.pdf",
+      "size_bytes": 133669,
+      "ext": ".pdf"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 7,
+    "other_count": 3,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 7.270430839002269,
+    "sample_rate_histogram": {
+      "44100": 7
+    },
+    "archive_size_bytes": 3054100
+  },
+  "created_at": 1772211405
+}
