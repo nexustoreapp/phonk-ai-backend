@@ -1,0 +1,185 @@
+{
+  "project_id": "safado-no-bail-o-remake-by-djami-10a91aac",
+  "title": "SAFADO NO BAILÃO REMAKE by DJAMI",
+  "source_archive": "flp_uploads/batch_1772211109/FLP/SAFADO NO BAILÃO REMAKE by DJAMI.zip",
+  "flp_files": [
+    {
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/SAFADO NO BAILÃO REMAKE.flp",
+      "size_bytes": 616187,
+      "sha256": "10a91aac5bc0d034d81cb6f3a94c4146205fe5d212f081499c2705090c2bd553"
+    }
+  ],
+  "audio_files": [
+    {
+      "duration_seconds": 105.79011337868481,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 4665344,
+      "peak": 1.033043384552002,
+      "rms": 0.2208046019077301,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - ACAPELLA DE SAFADO NO BAILAO.mp3"
+    },
+    {
+      "duration_seconds": 1.245532879818594,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 54928,
+      "peak": 0.92022705078125,
+      "rms": 0.2506318688392639,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - BACK MELODY Z-BETA DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 2.9182766439909296,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 128696,
+      "peak": 0.84429931640625,
+      "rms": 0.158307746052742,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - SAMPLE DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 1.850952380952381,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81627,
+      "peak": 0.975161612033844,
+      "rms": 0.10872848331928253,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - CANALHA SAMPLE DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 0.46634920634920635,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 20566,
+      "peak": 0.571868896484375,
+      "rms": 0.05410382151603699,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - SHAKER 2 DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 0.13943310657596372,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 6149,
+      "peak": 0.994903564453125,
+      "rms": 0.20498499274253845,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - PERC DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 1.8500907029478457,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 81589,
+      "peak": 0.8436279296875,
+      "rms": 0.10481665283441544,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - FIU VOX DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 7.5,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 330750,
+      "peak": 0.6106574535369873,
+      "rms": 0.054522160440683365,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - FX SHHHH DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 0.6,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 28800,
+      "peak": 0.996368408203125,
+      "rms": 0.23074708878993988,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - SNARE DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 1.5691156462585034,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 69198,
+      "peak": 0.82476806640625,
+      "rms": 0.048180706799030304,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - Z-BETA DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 2.142857142857143,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 94500,
+      "peak": 0.54693603515625,
+      "rms": 0.05629587173461914,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - KORDHELL RISER DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 1.1586621315192744,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 51097,
+      "peak": 0.97515869140625,
+      "rms": 0.04525366798043251,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - SHAKER DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 2.0867120181405894,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 92024,
+      "peak": 0.9933553338050842,
+      "rms": 0.19960980117321014,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - OH OH OH DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 105.67402083333333,
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 5072353,
+      "peak": 1.4101979732513428,
+      "rms": 0.4730631113052368,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJ FKU - SAFADO NO BAILÃO.mp3"
+    },
+    {
+      "duration_seconds": 7.384603174603175,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 325661,
+      "peak": 0.8912508487701416,
+      "rms": 0.0946161225438118,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - IMPACT DE SAFADO NO BAILAO.wav"
+    },
+    {
+      "duration_seconds": 0.42308390022675735,
+      "sample_rate": 44100,
+      "channels": 2,
+      "frames": 18658,
+      "peak": 0.999969482421875,
+      "rms": 0.3657784163951874,
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/DJAMI - KICK DE SAFADO NO BAILAO.wav"
+    }
+  ],
+  "other_files": [
+    {
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/SAFADO NO BAILÃO.nfo",
+      "size_bytes": 108,
+      "ext": ".nfo"
+    },
+    {
+      "rel_path": "SAFADO NO BAILÃO REMAKE by DJAMI/img/snb.jpg",
+      "size_bytes": 22046,
+      "ext": ".jpg"
+    }
+  ],
+  "suspicious_files": [],
+  "stats": {
+    "has_flp": true,
+    "flp_count": 1,
+    "audio_count": 16,
+    "other_count": 2,
+    "suspicious_count": 0,
+    "total_audio_duration_seconds_est": 242.79980314625854,
+    "sample_rate_histogram": {
+      "44100": 14,
+      "48000": 2
+    },
+    "archive_size_bytes": 15511692
+  },
+  "created_at": 1772211372
+}
